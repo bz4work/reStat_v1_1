@@ -40,4 +40,19 @@ class WorkDB{
         }
 
     }
+
+    /**
+     * insert, update only. No return result
+     * @param $sql
+     * @return bool
+     * @throws Exception
+     */
+    public function insertData($sql){
+        if ($result = DB::getDB()->query($sql)){
+            return true;
+        }else{
+            throw new Exception ("Не удалось выполнить запрос в методе:".__METHOD__.
+                ". Проверить правильность запроса: ". $result->error);
+        }
+    }
 }

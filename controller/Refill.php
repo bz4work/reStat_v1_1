@@ -9,6 +9,15 @@
 class Refill
 {
     public $dataArr;
+    public $user_id;
+
+    public function setUserId($user_id){
+        $this->user_id = $user_id;
+    }
+
+    public function getUserId(){
+        return $this->user_id;
+    }
 
     public function index($user_id){
 
@@ -22,9 +31,15 @@ class Refill
         return $renderViewRefill->render("refill", $this->dataArr);
     }
 
-    public function addRecord(){
+    public function generateFormAddRecord(){
         //TO DO: сделать метод добавления данных в базу
-       Redirect::redirect("index.php?page=main");
+       //Redirect::redirect("index.php?refill=addRecord");
+
+        $formAddRecordView = new View();
+
+        $str[] = $formAddRecordView->renderFormAddRecord();
+
+        return $formAddRecordView->render("refill",$str);
     }
 
     public function editRecord(){

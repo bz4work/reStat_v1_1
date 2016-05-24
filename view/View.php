@@ -50,39 +50,42 @@ class View{
      * @throws Exception
      */
     protected function renderModule($moduleName,$data = array()){
-    if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
+        if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
-    extract($data);
+        extract($data);
 
-    //for table "Refill statistic" in "My Cabinet"
-    for ($i = 1; $i < count($data)+1; $i++){
-        $dataKey[] = $i;
-    }
+        //for table "Refill statistic" in "My Cabinet"
+        for ($i = 1; $i < count($data)+1; $i++){
+            $dataKey[] = $i;
+        }
 
-    ob_start();
-
-    $moduleContent = $this->_dir.$this->_ds."template".$this->_ds."module".$this->_ds.$moduleName.".html";
-
-    //не крсивый участок, попробовать через switch чтоли
-    if (!file_exists($moduleContent)){
-        $moduleContent = $this->_dir.$this->_ds."template".$this->_ds."forms".$this->_ds.$moduleName.".html";
-    }
-
-    include "$moduleContent";
-
-    $moduleDataHtml = ob_get_clean();
-    return $moduleDataHtml;
-}
-
-
-
-   /* public function renderLoginForm(){
         ob_start();
 
-        $loginForm = $this->_dir.$this->_ds.'template'.$this->_ds.'forms'.$this->_ds.'loginForm.html';
-        include "$loginForm";
+        $moduleContent = $this->_dir.$this->_ds."template".$this->_ds."module".$this->_ds.$moduleName.".html";
 
-        $create_form = ob_get_clean();
-        echo $create_form;
-    }*/
+        //не крсивый участок, попробовать через switch чтоли
+        if (!file_exists($moduleContent)){
+            $moduleContent = $this->_dir.$this->_ds."template".$this->_ds."forms".$this->_ds.$moduleName.".html";
+        }
+
+        include "$moduleContent";
+
+        $moduleDataHtml = ob_get_clean();
+        return $moduleDataHtml;
+    }
+
+    /**
+     * @return string
+     */
+    public function renderFormAddRecord(){
+        ob_start();
+        $moduleContent =
+            $this->_dir.$this->_ds."template".$this->_ds."forms".$this->_ds."addRefills.html";
+
+        include "$moduleContent";
+
+        $formAddRecordHTML = ob_get_clean();
+        return $formAddRecordHTML;
+    }
+
 }
