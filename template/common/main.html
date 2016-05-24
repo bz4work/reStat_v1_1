@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./template/style/main.css">
+
+</head>
+<body>
+<header>
+    <span class="userWidget">Hello,
+        <?php
+            echo isset($_SESSION['user'])
+            ? $_SESSION['user']." <a href='index.php?login=logout'><button>logout</button></a>"
+            : "Guest";
+        ?>
+    </span>
+    <nav>
+        <?=$topMenu?>
+    </nav>
+</header>
+
+
+<div class="content">
+    <?=$moduleContent?>
+</div>
+
+<footer>
+    <span>@copyright 2016.</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<h3>Ввод данных:</h3>
+<div style="text-align: left; border: 0px solid black; width: 280px;">
+    <form action="" method="post">
+        <input type="text" name="date" value="<?= $date = isset($_POST['date']) ? $_POST['date'] : date('d.m.y', time());?>"> date<br>
+        <input type="text" name="time" value="<?= $time = isset($_POST['time']) ? $_POST['time'] : date('H:i:s', time());?>"> time<br><br>
+        <label>Бак сухой?</label>
+        <input type="radio" name="over" value="no" <?=@$_POST['over'] == 'no' ? "checked" : "checked";?>> NO
+        <input type="radio" name="over" value="yes" <?=@$_POST['over'] == 'yes' ? "checked" : ""?>> YES<br>
+        <label>Что заправляем?</label>
+        <input type="radio" name="fuel_type" value="gas" <?=@$_POST['fuel_type'] == 'gas' ? "checked" : "checked";?>> Газ
+        <input type="radio" name="fuel_type" value="benzin" <?=@$_POST['fuel_type'] == 'benzin' ? "checked" : "";?>> Бензин<br>
+        <input type="text" name="odo" value="<?= @($_POST['odo']) ? $_POST['odo'] : ""; ?>" placeholder="175 558"> odometr<br><br>
+        <input type="text" name="total_sum" value="<?=@$_POST['total_sum']?>"> summa<br>
+        <input type="text" name="price_gas" value="<?=@$_POST['price_gas']?>"> price gas<br>
+        <input type="text" name="total_litres" value="<?=@round($total_lit,2)?>"> total liters
+        <input type="submit" name="get_litres" value="посчитать"><br><br>
+        <input type="text" name="id_zapravki" value="<?= @($_POST['id_zapravki']) ? $_POST['id_zapravki'] : ""; ?>" placeholder="номер заправки"> id gas station<br><br>
+        <input type="submit" name="add_to_db" value="Добавить">
+    </form>
+</div>
