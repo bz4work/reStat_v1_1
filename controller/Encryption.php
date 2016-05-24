@@ -14,7 +14,6 @@ class Encryption
         foreach ($arr as $el) {
             
         }
-        //////
 
 
     }
