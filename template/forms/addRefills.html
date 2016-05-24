@@ -1,6 +1,6 @@
 <h3>Ввод данных:</h3>
 <div style="text-align: left; border: 0px solid black; width: 280px;">
-    <form action="" method="post">
+    <form action="index.php?refill=addRecord" method="post">
         <input type="text" name="date" value="<?= $date = isset($_POST['date']) ? $_POST['date'] : date('d.m.y', time());?>"> date<br>
         <input type="text" name="time" value="<?= $time = isset($_POST['time']) ? $_POST['time'] : date('H:i:s', time());?>"> time<br><br>
         <label>Бак сухой?</label>

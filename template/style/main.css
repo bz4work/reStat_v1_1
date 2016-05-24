@@ -13,3 +13,8 @@ span .userWidget{
     display: inline;
     margin-right: 5px;
 }
+
+div .errorOutBlock{
+    display: inline;
+    border: 3px red dotted;
+}

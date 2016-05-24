@@ -55,6 +55,34 @@ class Refill
 
     public function addRecord(){
         //TO DO: сделать метод добавления записи в БД
+        $dt = time();
+        $tm = time();
+
+        $id_user = $_SESSION['id'];
+
+        $odo = Request::clearData($_POST['odo']);
+        $tot_sum = Request::clearData($_POST['total_sum'], "float");
+        $tot_lit = Request::clearData($_POST['total_litres'], "float");
+        $prc_gas = Request::clearData($_POST['price_gas'], "float");
+
+        //$id_zapravki = Request::clearData($_POST['id_zapravki']);
+        //$over = Request::clearData($_POST['over'], "string");
+
+        $sql_insert_record = "INSERT INTO `refill`
+                          (`id_user`,`date`,`time`,`odometr`,`total_sum`,`total_liters`,`price_gas`)
+						  VALUES
+						  ('$id_user','$dt','$tm','$odo','$tot_sum','$tot_lit','$prc_gas')";
+
+        try {
+            WorkDB::insertData($sql_insert_record);
+            $_SESSION['result'] = "Данные добавлены в БД";
+            Redirect::redirect("index.php?refill=index");
+        }catch (Exception $e){
+            $_SESSION['error'] = $e->getMessage();
+            Redirect::redirect("index.php?refill=index");
+        }
+
+
     }
 
     public function editRecord(){
