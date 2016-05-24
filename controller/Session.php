@@ -18,4 +18,6 @@ class Session{
         return $this->_username[$name];
     }
 
+
+
 }

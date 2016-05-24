@@ -17,7 +17,7 @@ class WorkDB{
      * @return array
      * @throws Exception
      */
-    public static function getData ($sql){
+    static public function getData ($sql){
         $res_data = array();
 
         if ($result = DB::getDB()->query($sql)) {
@@ -47,12 +47,12 @@ class WorkDB{
      * @return bool
      * @throws Exception
      */
-    public function insertData($sql){
+    static public function insertData($sql){
         if ($result = DB::getDB()->query($sql)){
             return true;
         }else{
             throw new Exception ("Не удалось выполнить запрос в методе:".__METHOD__.
-                ". Проверить правильность запроса: ". $result->error);
+                ". Проверить правильность запроса: ");
         }
     }
 }
