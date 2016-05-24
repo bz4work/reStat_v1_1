@@ -51,8 +51,11 @@ class WorkDB{
         if ($result = DB::getDB()->query($sql)){
             return true;
         }else{
+            $logger = new Log();
+            Log::writeToFile(__METHOD__,__FILE__,__LINE__,$sql);
+
             throw new Exception ("Не удалось выполнить запрос в методе:".__METHOD__.
-                ". Проверить правильность запроса: ");
+                ". Проверить правильность запроса.");
         }
     }
 }

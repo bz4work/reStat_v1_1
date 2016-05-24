@@ -29,4 +29,9 @@ class Page
         $renderViewRefill = new View();
         return $renderViewRefill->render("main");
     }
+
+    /*public function emptyPage(){
+        $renderViewRefill = new View();
+        return $renderViewRefill->renderEmptyPage("empty");
+    }*/
 }

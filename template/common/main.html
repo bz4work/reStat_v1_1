@@ -21,7 +21,20 @@
 </header>
 
 
-<div class="content">
+<div>
+    <div class="resultOut">
+        <?php
+        $del_but = "<a href='index.php?result=destroyResultVar'><button>x</button></a>";
+        echo isset($_SESSION['result'])? $_SESSION['result'].' '.$del_but : "";
+        ?>
+    </div>
+
+    <div class="errorOutBlock">
+        <?php
+        $del_but = "<a href='index.php?result=destroyErrorVar'><button>x</button></a>";
+        echo isset($_SESSION['error'])? $_SESSION['error'].' '.$del_but : "";
+        ?>
+    </div>
     <?=$moduleContent?>
 </div>
 

@@ -16,6 +16,9 @@ class View{
         $this->setRootPath();
     }
 
+    /**
+     *
+     */
     private function setRootPath(){
         $this->_dir = dirname(__DIR__);
         $this->_ds = DIRECTORY_SEPARATOR;
@@ -26,13 +29,12 @@ class View{
      * @param array $data
      * @throws Exception
      */
-
     public function render($moduleName, $data = array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
-        ob_start();
-
         $moduleContent = $this->renderModule($moduleName,$data);
+
+        ob_start();
 
         $topMenu = file_get_contents($this->_dir.$this->_ds."template".$this->_ds."menu".$this->_ds."topMenu.html");
 
@@ -47,31 +49,13 @@ class View{
     /**
      * @param $moduleName
      * @param array $data
-     * @param array $decorate
      * @return string
      * @throws Exception
      */
-
     protected function renderModule($moduleName,$data = array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
-
-        /** если в пришедших данных есть ячейка с доп. формами или кнопками
-         * включим их в шаблон  */
-        if(array_key_exists("decorate",$data)){
-            $data_decorate = $data['decorate'];
-            extract($data_decorate);
-        }
-
-        //данные из БД лежат в ячейке $data['dataDB']
-        if(array_key_exists("dataDB",$data)){
-            //переопрделим значение $data для цикла for ниже
-            $data = $data['dataDB'];
-            extract($data);
-        }else{
-            extract($data);
-        }
-
+        extract($data);
 
         //for table "Refill statistic" in "My Cabinet"
         for ($i = 1; $i < count($data)+1; $i++){
@@ -94,17 +78,41 @@ class View{
     }
 
     /**
+     * @param string $form_name
      * @return string
+     * @throws Exception
      */
-    public function renderFormAddRecord(){
+    public function renderFormAddRecord($form_name = "addRefills"){
         ob_start();
         $moduleContent =
-            $this->_dir.$this->_ds."template".$this->_ds."forms".$this->_ds."addRefills.html";
+            $this->_dir.$this->_ds."template".$this->_ds."forms".$this->_ds.$form_name.".html";
 
-        include "$moduleContent";
+        if(file_exists($moduleContent)){
+            include "$moduleContent";
+        }else{
+            throw new Exception ("файл addRefills.html не существует или переименован");
+        }
 
         $formAddRecordHTML = ob_get_clean();
         return $formAddRecordHTML;
     }
 
+    /**
+     * @param string $page
+     * @return string
+     */
+    public function renderEmptyPage($empty_page_name="empty"){
+        ob_start();
+
+        $emptyPage = $this->_dir.$this->_ds."template".$this->_ds."module".$this->_ds.$empty_page_name.".html";
+
+        if (file_exists($emptyPage)){
+            include "$emptyPage";
+        }else{
+            $_SESSION['error'] = "страница empty.html не найдена";
+        }
+
+        $emptyPageHtml = ob_get_clean();
+        return $emptyPageHtml;
+    }
 }

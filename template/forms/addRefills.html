@@ -1,7 +1,19 @@
 <h3>Ввод данных:</h3>
+<div class="resultOut">
+    <?php
+        $del_but = "<a href='index.php?result=destroyAddResultVar'><button>x</button></a>";
+    echo isset($_SESSION['add_result'])? $_SESSION['add_result'].' '.$del_but : "";
+    ?>
+</div>
+<div class="errorOutBlock">
+    <?php
+        $del_but = "<a href='index.php?result=destroyAddErrorVar'><button>x</button></a>";
+    echo isset($_SESSION['add_error'])? $_SESSION['add_error'].' '.$del_but : "";
+    ?>
+</div>
 <div style="text-align: left; border: 0px solid black; width: 280px;">
     <form action="index.php?refill=addRecord" method="post">
-        <input type="text" name="date" value="<?= $date = isset($_POST['date']) ? $_POST['date'] : date('d.m.y', time());?>"> date<br>
+        <input type="text" name="date" value="<?= $date = isset($_POST['date']) ? $_POST['date'] : date('Y-m-d', time());?>"> date<br>
         <input type="text" name="time" value="<?= $time = isset($_POST['time']) ? $_POST['time'] : date('H:i:s', time());?>"> time<br><br>
         <label>Бак сухой?</label>
         <input type="radio" name="over" value="no" <?=@$_POST['over'] == 'no' ? "checked" : "checked";?>> NO

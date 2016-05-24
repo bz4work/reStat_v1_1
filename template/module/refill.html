@@ -1,22 +1,6 @@
 <h1>Данные по заправкам:</h1>
 
-<div class="addRecForm">
-    <?=@$addRec?>
-</div>
 
-<div class="resultOut">
-    <?php
-        $del_but = "<a href='index.php?result=destroyResultVar'><button>x</button></a>";
-        echo isset($_SESSION['result'])? $_SESSION['result'].' '.$del_but : "";
-    ?>
-</div>
-
-<div class="errorOutBlock">
-    <?php
-        $del_but = "<a href='index.php?result=destroyErrorVar'><button>x</button></a>";
-    echo isset($_SESSION['error'])? $_SESSION['error'].' '.$del_but : "";
-    ?>
-</div>
 
 <table border="1px">
     <tr>
@@ -34,8 +18,8 @@
 	        if (isset($data) && !is_string($data)) {
 		foreach ($data as $row) {
 			echo "<td align='center'>".array_pop($dataKey)."</td>";
-        echo "<td align='center' width='100px'>" . date("d.m.y", $row['date']) . "</td>";
-        echo "<td align='center' width='100px'>" . date("H:i:s", $row['time']) . "</td>";
+        echo "<td align='center' width='100px'>" . $row['date'] . "</td>";
+        echo "<td align='center' width='100px'>" . $row['time'] . "</td>";
         echo "<td align='center'>" . $row['odometr'] . "</td>";
         echo "<td align='center'>$row[total_sum]</td>";
         echo "<td align='center'>$row[total_liters]</td>";

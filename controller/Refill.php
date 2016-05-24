@@ -19,52 +19,48 @@ class Refill
         return $this->user_id;
     }
 
-    public function index($decorate=array()){
-
-        if(count($decorate) != 0){
-            foreach ($decorate as $key=>$item) {
-                $this->dataArr[$key] = $item;
-            }
-        }
+    public function index(){
 
         if(isset($_SESSION['id'])){
-
             $user_id = $_SESSION['id'];
-
         }elseif(empty($user_id = $this->getUserId())){
             throw new Exception ("Эта страница не доступна вам,войдите (elseif)");
         }
 
         $sql_getdata = "SELECT id,id_user,date,time,odometr,total_sum,total_liters,price_gas
                         FROM refill WHERE id_user=".$user_id." ORDER BY id DESC;";
-
-        $this->dataArr['dataDB'] = WorkDB::getData($sql_getdata);
+        try {
+            $this->dataArr = WorkDB::getData($sql_getdata);
+        }catch (Exception $e){
+            $logger = new Log();
+            Log::writeToFile(__METHOD__,__FILE__,__LINE__,$e->getMessage());
+            $generateEmptyPage = new View();
+            return $generateEmptyPage->render("empty");
+        }
 
         $renderViewRefill = new View();
-
         return $renderViewRefill->render("refill", $this->dataArr);
     }
 
+    /**
+     * @throws Exception
+     */
     public function generateFormAddRecord(){
         $formAddRecordView = new View();
-
-        $arrDecoreHtml['decorate']['addRec'] = $formAddRecordView->renderFormAddRecord();
-
-        return $this->index($arrDecoreHtml);
+        return $formAddRecordView->render("addRefills");
     }
 
+    /**
+     *
+     */
     public function addRecord(){
-        //TO DO: сделать метод добавления записи в БД
-        $dt = time();
-        $tm = time();
-
+        $dt = Request::clearData($_POST['date']);
+        $tm = Request::clearData($_POST['time']);
         $id_user = $_SESSION['id'];
-
         $odo = Request::clearData($_POST['odo']);
         $tot_sum = Request::clearData($_POST['total_sum'], "float");
         $tot_lit = Request::clearData($_POST['total_litres'], "float");
         $prc_gas = Request::clearData($_POST['price_gas'], "float");
-
         //$id_zapravki = Request::clearData($_POST['id_zapravki']);
         //$over = Request::clearData($_POST['over'], "string");
 
@@ -75,14 +71,12 @@ class Refill
 
         try {
             WorkDB::insertData($sql_insert_record);
-            $_SESSION['result'] = "Данные добавлены в БД";
-            Redirect::redirect("index.php?refill=index");
+            $_SESSION['add_result'] = "Данные добавлены в БД";
+            return Redirect::redirect("index.php?refill=generateFormAddRecord");
         }catch (Exception $e){
-            $_SESSION['error'] = $e->getMessage();
-            Redirect::redirect("index.php?refill=index");
+            $_SESSION['add_error'] = $e->getMessage();
+            Redirect::redirect("index.php?refill=generateFormAddRecord");
         }
-
-
     }
 
     public function editRecord(){
@@ -92,6 +86,4 @@ class Refill
     public function deleteRecord(){
         //TO DO: сделать метод удвления записи
     }
-
-
 }
