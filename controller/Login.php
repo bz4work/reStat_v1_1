@@ -21,7 +21,11 @@ class Login{
             $id = $userData->getUserInfo("id");
 
             $refill_content = new Refill();
-            return $refill_content->index($id);
+
+            $refill_content->setUserId($id);
+
+            return $refill_content->index();
+
         }else{
             $this->formLogin();
         }
@@ -48,8 +52,9 @@ class Login{
                 $createSession = new Session("id",$id);
 
                 $refill_content = new Refill();
+                $refill_content->setUserId($id);
 
-                return $refill_content->index($id);
+                return $refill_content->index();
             }else{
                 throw new Exception ("Пароль или логин введены не верно");
             }

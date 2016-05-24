@@ -26,6 +26,7 @@ class View{
      * @param array $data
      * @throws Exception
      */
+
     public function render($moduleName, $data = array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
@@ -46,13 +47,31 @@ class View{
     /**
      * @param $moduleName
      * @param array $data
+     * @param array $decorate
      * @return string
      * @throws Exception
      */
+
     protected function renderModule($moduleName,$data = array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
-        extract($data);
+
+        /** если в пришедших данных есть ячейка с доп. формами или кнопками
+         * включим их в шаблон  */
+        if(array_key_exists("decorate",$data)){
+            $data_decorate = $data['decorate'];
+            extract($data_decorate);
+        }
+
+        //данные из БД лежат в ячейке $data['dataDB']
+        if(array_key_exists("dataDB",$data)){
+            //переопрделим значение $data для цикла for ниже
+            $data = $data['dataDB'];
+            extract($data);
+        }else{
+            extract($data);
+        }
+
 
         //for table "Refill statistic" in "My Cabinet"
         for ($i = 1; $i < count($data)+1; $i++){
