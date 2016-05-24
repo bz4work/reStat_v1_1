@@ -53,6 +53,10 @@ class Refill
         return $this->index($arrDecoreHtml);
     }
 
+    public function addRecord(){
+        //TO DO: сделать метод добавления записи в БД
+    }
+
     public function editRecord(){
         //TO DO: сделать метод редактирования записи
     }
