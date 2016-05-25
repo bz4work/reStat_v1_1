@@ -24,15 +24,15 @@
 <div>
     <div class="resultOut">
         <?php
-        $del_but = "<a href='index.php?result=destroyResultVar'><button>x</button></a>";
-        echo isset($_SESSION['result'])? $_SESSION['result'].' '.$del_but : "";
+        $del_but = "<a href='index.php?result=destroyGlobal&name=globalResult&refill=index'><button>x</button></a>";
+        echo isset($_SESSION['globalResult'])? $_SESSION['globalResult'].' '.$del_but : "";
         ?>
     </div>
 
     <div class="errorOutBlock">
         <?php
-        $del_but = "<a href='index.php?result=destroyErrorVar'><button>x</button></a>";
-        echo isset($_SESSION['error'])? $_SESSION['error'].' '.$del_but : "";
+        $del_but = "<a href='index.php?result=destroyGlobal&name=globalError&refill=index'><button>x</button></a>";
+        echo isset($_SESSION['globalError'])? $_SESSION['globalError'].' '.$del_but : "";
         ?>
     </div>
     <?=$moduleContent?>

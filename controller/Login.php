@@ -48,6 +48,11 @@ class Login{
                 $id = $userData->getUserInfo("id");
                 $username = $userData->getUserInfo("username");
 
+
+
+
+
+
                 $createSession = new Session("user",$username);
                 $createSession = new Session("id",$id);
 

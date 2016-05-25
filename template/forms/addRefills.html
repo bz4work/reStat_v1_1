@@ -1,13 +1,19 @@
 <h3>Ввод данных:</h3>
 <div class="resultOut">
     <?php
-        $del_but = "<a href='index.php?result=destroyAddResultVar'><button>x</button></a>";
+        $del_but = "
+        <a href='index.php?result=destroyLocal&name=add_result&refill=generateFormAddRecord'>
+            <button>x</button>
+        </a>";
     echo isset($_SESSION['add_result'])? $_SESSION['add_result'].' '.$del_but : "";
     ?>
 </div>
 <div class="errorOutBlock">
     <?php
-        $del_but = "<a href='index.php?result=destroyAddErrorVar'><button>x</button></a>";
+        $del_but = "
+        <a href='index.php?result=destroyLocal&name=add_error&refill=generateFormAddRecord'>
+            <button>x</button>
+        </a>";
     echo isset($_SESSION['add_error'])? $_SESSION['add_error'].' '.$del_but : "";
     ?>
 </div>
@@ -21,10 +27,10 @@
         <label>Что заправляем?</label>
         <input type="radio" name="fuel_type" value="gas" <?=@$_POST['fuel_type'] == 'gas' ? "checked" : "checked";?>> Газ
         <input type="radio" name="fuel_type" value="benzin" <?=@$_POST['fuel_type'] == 'benzin' ? "checked" : "";?>> Бензин<br>
-        <input type="text" name="odo" value="<?= @($_POST['odo']) ? $_POST['odo'] : ""; ?>" placeholder="175 558"> odometr<br><br>
-        <input type="text" name="total_sum" value="<?=@$_POST['total_sum']?>"> summa<br>
-        <input type="text" name="price_gas" value="<?=@$_POST['price_gas']?>"> price gas<br>
-        <input type="text" name="total_litres" value="<?=@round($total_lit,2)?>"> total liters
+        <input type="text" name="odo" value="<?=@($_POST['odo'])?$_POST['odo']:'1'?>" placeholder="175 558"> odometr<br><br>
+        <input type="text" name="total_sum" value="<?=@($_POST['total_sum'])?$_POST['total_sum']:'1'?>"> summa<br>
+        <input type="text" name="price_gas" value="<?=@($_POST['price_gas'])?$_POST['price_gas']:'1'?>"> price gas<br>
+        <input type="text" name="total_litres" value="<?=@(round($total_lit,2))?round($total_lit,2):'1'?>"> total liters
         <input type="submit" name="get_litres" value="посчитать"><br><br>
         <input type="text" name="id_zapravki" value="<?= @($_POST['id_zapravki']) ? $_POST['id_zapravki'] : ""; ?>" placeholder="номер заправки"> id gas station<br><br>
         <input type="submit" name="add_to_db" value="Добавить">

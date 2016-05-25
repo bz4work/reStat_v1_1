@@ -21,6 +21,19 @@ class Request{
     }
 
     /**
+     * @param $key
+     * @return bool|float|int|string
+     */
+    static public function getGet($key)
+    {
+        if (isset($_GET[$key])) {
+            return self::clearData($_GET[$key]);
+        } else {
+            return false;
+        }
+    }
+
+    /**
      * @param $data
      * @param string $type
      * @return float|int|string

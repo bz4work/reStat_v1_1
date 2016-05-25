@@ -14,22 +14,22 @@
         <th>Действия</th>
     </tr>
     <tr>
-        <?php
-	        if (isset($data) && !is_string($data)) {
+    <?php
+	if (isset($data) && !is_string($data)) {
 		foreach ($data as $row) {
 			echo "<td align='center'>".array_pop($dataKey)."</td>";
-        echo "<td align='center' width='100px'>" . $row['date'] . "</td>";
-        echo "<td align='center' width='100px'>" . $row['time'] . "</td>";
-        echo "<td align='center'>" . $row['odometr'] . "</td>";
-        echo "<td align='center'>$row[total_sum]</td>";
-        echo "<td align='center'>$row[total_liters]</td>";
-        echo "<td align='center'>$row[price_gas]</td>";
-        echo "<td align='center'><a href='index-gas.php?delete=" . $row['id'] . "'>удалить</a>
-        <br><a href='index-gas.php?edit=" . $row['id'] . "'>изменить</a></td>";
-        echo "</tr>";
-    }
+            echo "<td align='center' width='100px'>" . $row['date'] . "</td>";
+            echo "<td align='center' width='100px'>" . $row['time'] . "</td>";
+            echo "<td align='center'>" . $row['odometr'] . "</td>";
+            echo "<td align='center'>$row[total_sum]</td>";
+            echo "<td align='center'>$row[total_liters]</td>";
+            echo "<td align='center'>$row[price_gas]</td>";
+            echo "<td align='center'><a href='index.php?refill=$row[id]'>удалить</a>
+            <br><a href='index.php?refill=generateFormEditRecord&id=$row[id]'>изменить</a></td>";
+            echo "</tr>";
+        }
     }else{
-    echo @$DataArr;
+        echo @$DataArr;
     }
     ?>
 </table>

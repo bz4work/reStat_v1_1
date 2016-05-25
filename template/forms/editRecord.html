@@ -1,0 +1,33 @@
+<h3>Редактирование записи:</h3>
+<div class="resultOut">
+    <?php
+        $del_but = "
+        <a href='index.php?result=destroyLocal&name=edit_result&refill=generateFormEditRecord'>
+            <button>x</button>
+        </a>";
+    echo isset($_SESSION['edit_result'])? $_SESSION['edit_result'].' '.$del_but : "";
+    ?>
+</div>
+<div class="errorOutBlock">
+    <?php
+        $del_but = "
+        <a href='index.php?result=destroyLocal&name=edit_error&refill=generateFormEditRecord'>
+            <button>x</button>
+        </a>";
+    echo isset($_SESSION['edit_error'])? $_SESSION['edit_error'].' '.$del_but : "";
+    ?>
+</div>
+<div style="text-align: left; border: 0px solid black; width: 280px;">
+    <form action="index.php?refill=editRecord" method="post">
+        <input type="hidden" name='id' value='<?=$data['0']['id']?>'>
+        date <input type='text' name='dt' value='<?=$data['0']['date']?>'><br>
+        time <input type='text' name='tm' value='<?=$data['0']['time']?>'><br>
+        odometr <input type='text' name='odo' value='<?=$data['0']['odometr']?>'><br>
+        summa <input type='text' name='tot_sum' value='<?=$data['0']['total_sum']?>'><br>
+        liters <input type='text' name='tot_lit' value='<?=$data['0']['total_liters']?>'><br>
+        price <input type='text' name='prc_gas' value='<?=$data['0']['price_gas']?>'><br>
+        <input type="submit" name="go_edited" value="Сохранить">
+    </form>
+</div>
+
+<a href="index.php?login=checkUser"><button>Закрыть форму</button></a>

@@ -9,7 +9,7 @@ session_start();
 error_reporting(-1);
 
 include_once "./vendor/lib-custom-func.php";
-
+SystemConfig::initConfig("sysconfig.ini");
 Config::initConfig("config.ini");
 
 date_default_timezone_set(Config::getConfig("timezone"));

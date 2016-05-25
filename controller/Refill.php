@@ -46,41 +46,101 @@ class Refill
      * @throws Exception
      */
     public function generateFormAddRecord(){
-        $formAddRecordView = new View();
-        return $formAddRecordView->render("addRefills");
+        if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
+            $formAddRecordView = new View();
+            return $formAddRecordView->render("addRefills");
+        }else{
+            Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            Redirect::redirect("index.php?".SystemConfig::getConfig('login')."=checkUser");
+        }
+
     }
 
     /**
-     *
+     * @param $id
+     * @throws Exception
      */
-    public function addRecord(){
-        $dt = Request::clearData($_POST['date']);
-        $tm = Request::clearData($_POST['time']);
-        $id_user = $_SESSION['id'];
-        $odo = Request::clearData($_POST['odo']);
-        $tot_sum = Request::clearData($_POST['total_sum'], "float");
-        $tot_lit = Request::clearData($_POST['total_litres'], "float");
-        $prc_gas = Request::clearData($_POST['price_gas'], "float");
-        //$id_zapravki = Request::clearData($_POST['id_zapravki']);
-        //$over = Request::clearData($_POST['over'], "string");
+    public function generateFormEditRecord($id){
+        if(isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+            $id_rec = $id['id'];
 
-        $sql_insert_record = "INSERT INTO `refill`
-                          (`id_user`,`date`,`time`,`odometr`,`total_sum`,`total_liters`,`price_gas`)
-						  VALUES
-						  ('$id_user','$dt','$tm','$odo','$tot_sum','$tot_lit','$prc_gas')";
+            $formAddRecordView = new View();
 
-        try {
-            WorkDB::insertData($sql_insert_record);
-            $_SESSION['add_result'] = "Данные добавлены в БД";
-            return Redirect::redirect("index.php?refill=generateFormAddRecord");
-        }catch (Exception $e){
-            $_SESSION['add_error'] = $e->getMessage();
-            Redirect::redirect("index.php?refill=generateFormAddRecord");
+            $getData = new RecordAction();
+            $dt = $getData->getRecord($_SESSION['id'], $id_rec);
+
+            return $formAddRecordView->render("editRecord", $dt);
+        }else{
+            Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            Redirect::redirect("index.php?".SystemConfig::getConfig('login')."=checkUser");
         }
     }
 
+    /**
+     * @throws Exception
+     */
+    public function addRecord(){
+        $data = array(
+            "dt" => Request::getPost('date'),
+            "tm" => Request::getPost('time'),
+            "id_user" => $_SESSION['id'],
+            "odo" => Request::getPost('odo'),
+            "tot_sum" => Request::getPost('total_sum'),
+            "tot_lit" => Request::getPost('total_litres'),
+            "prc_gas" => Request::getPost('price_gas'),
+            //"id_zapravki" => Request::getPost('id_zapravki'),
+            //"over" => Request::getPost('over')
+        );
+
+        $add = new RecordAction();
+
+        try{
+            $add->createRecord($data);
+        }catch(Exception $e){
+            $err_text = $e->getMessage();
+            Result::errorCreate("globalError",$err_text);
+        }
+
+        return Redirect::redirect("index.php?refill=generateFormAddRecord");
+    }
+
     public function editRecord(){
-        //TO DO: сделать метод редактирования записи
+        if(isset($_SESSION['user']) || !empty($_SESSION['user'])) {
+            $data = array(
+                "dt" => Request::getPost('dt'),
+                "tm" => Request::getPost('tm'),
+                "odo" => Request::getPost('odo'),
+                "tot_sum" => Request::getPost('tot_sum'),
+                "tot_lit" => Request::getPost('tot_lit'),
+                "prc_gas" => Request::getPost('prc_gas'),
+                //"id_zapravki" => Request::getPost('id_zapravki'),
+                //"over" => Request::getPost('over')
+            );
+
+            $id_rec = Request::getPost("id");
+
+            if (isset($id_rec) && !empty($id_rec)) {
+
+                $add = new RecordAction();
+
+                $result = $add->updateRecord($id_rec, $data);
+
+                if (!is_string($result)) {
+                    Result::successCreate('globalResult', 'Данные обновлены!');
+                } else {
+                    Result::errorCreate('globalError', 'Данные не обновлены! Причина: ' . $result);
+                }
+
+                return Redirect::redirect("index.php?refill=index");
+
+            } else {
+                throw new Exception ("id не существует или не передан");
+            }
+        }else{
+            Log::writeToFile(__METHOD__,__FILE__,__LINE__,"попытка доступа не авторизированного юзера к методу editRecord");
+            Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            Redirect::redirect("index.php?login=checkUser");
+        }
     }
 
     public function deleteRecord(){

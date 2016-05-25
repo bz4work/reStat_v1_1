@@ -42,7 +42,7 @@ class WorkDB{
     }
 
     /**
-     * insert, update only. No return result
+     * insert, update, delete only. No return result
      * @param $sql
      * @return bool
      * @throws Exception

@@ -8,24 +8,40 @@
  */
 class Result{
 
-    public function destroyResultVar(){
-        unset($_SESSION["result"]);
-        Redirect::redirect("index.php?refill=index");
+    static public function successCreate($var_name,$value){
+        $_SESSION[$var_name] = $value;
     }
 
-    public function destroyErrorVar(){
-        unset($_SESSION["error"]);
-        Redirect::redirect("index.php?refill=index");
+    static public function errorCreate($var_name,$value){
+        $_SESSION[$var_name] = $value;
     }
 
-    public function destroyAddResultVar(){
-        unset($_SESSION["add_result"]);
-        Redirect::redirect("index.php?refill=generateFormAddRecord");
+    public function destroyGlobal($arrParam){
+        foreach ($arrParam as $k=>$v) {
+            if ($k != 'name'){
+                $controller = $k;
+                $method = $v;
+            }
+        }
+        $name = $arrParam['name'];
+
+        unset($_SESSION[$name]);
+
+        Redirect::redirect("index.php?$controller=$method");
     }
 
-    public function destroyAddErrorVar(){
-        unset($_SESSION["add_error"]);
-        Redirect::redirect("index.php?refill=generateFormAddRecord");
+    public function destroyLocal($arrParam){
+        foreach ($arrParam as $k=>$v) {
+            if ($k != 'name'){
+                $controller = $k;
+                $method = $v;
+            }
+        }
+        $name = $arrParam['name'];
+
+        unset($_SESSION[$name]);
+
+        Redirect::redirect("index.php?$controller=$method");
     }
 
 }
