@@ -1,0 +1,771 @@
+
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 19:39:21] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [38] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 19:41:04] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [38] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 19:55:15] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [38] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:30:23] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [38] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:33:05] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [38] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:36:01] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [38] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:36:05] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [38] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:41:57] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [38] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:53:43] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [41] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:12] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:18] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:20] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [41] | [id] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:24] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:25] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [41] | [id] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:26] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:30] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [41] | [id] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:31] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:54] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [41] | [id] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:54:56] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:55:47] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:55:48] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:56:03] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:56:03] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:57:13] | [POST] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[UserDB::getUserInfo] | [C:\AppServ\www\bz4work\reStat_v1_1\model\UserDB.php] | [41] | [password] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:58:28] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:58:31] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:58:31] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 20:58:33] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 21:01:19] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 21:01:56] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 21:01:59] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 21:02:00] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 21:02:03] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 21:02:06] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 21:02:08] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [44] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:36:33] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:36:33] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [34] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:37:07] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:37:07] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [34] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:37:24] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:37:24] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [34] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:38:41] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:38:41] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [35] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:39:31] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:39:31] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [35] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:39:37] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:39:37] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [35] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:41:19] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:41:19] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [35] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:41:56] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:41:56] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [35] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:42:20] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:42:20] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [35] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:42:41] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,id_user,
+                                  date_add,
+                                  time_add,
+                                  name,
+                                  start_odo,
+                                  interval,
+                                  finish_odo,
+                                  start_date,
+                                  interval_days,
+                                  finish_date,
+                                  comment,
+                                  notify
+                        FROM service_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:42:41] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [35] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:46:50] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `service_intervals`
+                          (`id_user`,`date_add`,`time_add`,`name`,`start_odo`,`interval`,
+                          `finish_odo`,`comment`,`notify`)
+						  VALUES
+						  ('2','','','',
+						  '','','')] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[26.05.2016 23:47:44] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `service_intervals`
+                          (`id_user`,`date_add`,`time_add`,`name`,`start_odo`,`interval`,
+                          `finish_odo`,`comment`,`notify`)
+						  VALUES
+						  ('2','','','',
+						  '','','')] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 00:01:04] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `service_intervals`
+                          (`id_user`,`date_add`,`time_add`,`name`,`start_odo`,`interval`,
+                          `finish_odo`,`comment`,`notify`)
+						  VALUES
+						  ('2','','','',
+						  '','','')] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:10:16] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[ServiceIntervals::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\ServiceIntervals.php] | [52] | [Записей нет.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:25:29] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:25:29] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:26:42] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:27:07] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:30:02] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:30:09] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:32:04] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:32:04] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:32:29] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:32:29] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:33:22] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:33:22] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:33:35] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:33:35] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:34:53] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:34:53] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:35:36] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:35:36] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:37:52] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT AAAAAAA_id,name,status FROM name_intervals WHERE id_user=2 ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:37:52] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:39:47] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:39:59] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:42:06] | [GET] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\AppServ\www\bz4work\reStat_v1_1\model\WorkDB.php] | [36] | [SELECT id,name,status FROM name_intervals WHERE id_user=Array ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:42:06] | [GET] | [no_session_name] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [84] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:48:51] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [88] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:49:04] | [GET] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getNameIntervals] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [88] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:52:32] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [47] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:52:35] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[Refill::index] | [C:\AppServ\www\bz4work\reStat_v1_1\controller\Refill.php] | [47] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 02:58:40] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:00:51] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:02:27] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:02:33] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:04:07] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:04:47] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:04:58] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:07:37] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:11:12] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:18:23] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:18:42] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:19:08] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:19:53] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:24:01] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:24:49] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:25:24] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:26:16] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:26:24] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:26:30] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:26:38] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:29:28] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:29:29] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:30:39] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:30:51] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:30:54] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:32:01] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:32:21] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:32:25] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:32:28] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:32:44] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:33:17] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:33:23] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:33:26] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:33:45] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:33:48] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:33:57] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:33:58] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:36:29] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:36:47] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[27.05.2016 03:37:13] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 

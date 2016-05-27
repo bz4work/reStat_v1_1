@@ -25,9 +25,8 @@ class WorkDB{
                 $res_data[] = $row;
             }
 
-
             if (count($res_data) == 0) {
-                throw new Exception ("Записей нет.");
+                throw new Exception ("Записи в БД отсутствуют.");
             }else{
                 return $res_data;
             }

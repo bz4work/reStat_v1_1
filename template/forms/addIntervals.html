@@ -1,0 +1,25 @@
+<form method="post" action="index.php?serviceIntervals=addRecord">
+    data<input type="text" name="date_add" value="<?=date('Y-m-d',time())?>"><br>
+    time<input type="text" name="time_add" value="<?=date('H:i:s',time())?>"><br>
+
+    select interval:
+        <select size="1" name="name_interval">
+        <option disabled selected>&nbsp;</option>
+
+        <?php
+            foreach ($data as $intervals){
+                echo "<option value='id_".$intervals['id']."'>$intervals[name]</option>";
+            }
+        ?>
+        </select><br>
+
+    start_odo<input type="text" name="start_odo" value=""><br>
+    interval<input type="text" name="interval" value=""><br>
+    finish_odo<input type="text" name="finish_odo" value=""><br>
+    start_date<input type="text" name="start_date" value="<?=date('Y-m-d',time())?>"><br>
+    interval_days<input type="text" name="interval_days" value="30"><br>
+    finish_date<input type="text" name="finish_date" value=""><br>
+    comment<input type="text" name="comment" value="test coment"><br>
+    notify<input type="text" name="notify" value="1"><br>
+    <input type="submit" name="button" value="Add">
+</form>

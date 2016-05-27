@@ -19,36 +19,30 @@ class Refill
         return $this->user_id;
     }
 
+    /**
+     * @throws Exception
+     */
     public function index(){
-
-        if(isset($_SESSION['id'])){
-            $user_id = $_SESSION['id'];
-        }elseif(empty($user_id = $this->getUserId())){
-            throw new Exception ("Эта страница не доступна вам,войдите (elseif)");
+        if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
+            /*$id = $this->getUserId();
+            if(!isset($id)){
+                $this->setUserId($_SESSION['id']);
+            }*/
+            Result::errorCreate("globalError","Эта страница Вам не доступна, войдите.");
+            return Redirect::redirect();
         }
 
-        $sql_getdata = "SELECT id,id_user,date,time,odometr,total_sum,total_liters,price_gas
-                        FROM refill WHERE id_user=".$user_id." ORDER BY id DESC;";
-        try {
-            $this->dataArr = WorkDB::getData($sql_getdata);
-        }catch (Exception $e){
-            $logger = new Log();
-            Log::writeToFile(__METHOD__,__FILE__,__LINE__,$e->getMessage());
-            $generateEmptyPage = new View();
-            return $generateEmptyPage->render("empty");
-        }
+        $getRecord = new RefillRecordAction();
+        $this->dataArr = $getRecord->getRecord($_SESSION['id']);
 
         $renderViewRefill = new View();
         return $renderViewRefill->render("refill", $this->dataArr);
     }
 
-    /**
-     * @throws Exception
-     */
-    public function generateFormAddRecord(){
+    public function generateFormAddRecord($param){
         if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
             $formAddRecordView = new View();
-            return $formAddRecordView->render("addRefills");
+            return $formAddRecordView->render($param['module']);
         }else{
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
             Redirect::redirect("index.php?".SystemConfig::getConfig('login')."=checkUser");
@@ -57,19 +51,19 @@ class Refill
     }
 
     /**
-     * @param $id
+     * @param $param
      * @throws Exception
      */
-    public function generateFormEditRecord($id){
+    public function generateFormEditRecord($param){
         if(isset($_SESSION['user']) && !empty($_SESSION['user'])) {
-            $id_rec = $id['id'];
+            $id_rec = $param['id'];
 
             $formAddRecordView = new View();
 
-            $getData = new RecordAction();
-            $dt = $getData->getRecord($_SESSION['id'], $id_rec);
+            $getData = new RefillRecordAction();
+            $data = $getData->getRecord($_SESSION['id'], $id_rec);
 
-            return $formAddRecordView->render("editRecord", $dt);
+            return $formAddRecordView->render($param['module'], $data);
         }else{
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
             Redirect::redirect("index.php?".SystemConfig::getConfig('login')."=checkUser");
@@ -92,8 +86,7 @@ class Refill
             //"over" => Request::getPost('over')
         );
 
-        $add = new RecordAction();
-
+        $add = new RefillRecordAction();
         try{
             $add->createRecord($data);
         }catch(Exception $e){
@@ -101,7 +94,7 @@ class Refill
             Result::errorCreate("globalError",$err_text);
         }
 
-        return Redirect::redirect("index.php?refill=generateFormAddRecord");
+        return Redirect::redirect();
     }
 
     public function editRecord(){
@@ -121,7 +114,7 @@ class Refill
 
             if (isset($id_rec) && !empty($id_rec)) {
 
-                $add = new RecordAction();
+                $add = new RefillRecordAction();
 
                 $result = $add->updateRecord($id_rec, $data);
 

@@ -1,22 +1,14 @@
 <h3>Ввод данных:</h3>
-<div class="resultOut">
     <?php
-        $del_but = "
-        <a href='index.php?result=destroyLocal&name=add_result&refill=generateFormAddRecord'>
-            <button>x</button>
-        </a>";
-    echo isset($_SESSION['add_result'])? $_SESSION['add_result'].' '.$del_but : "";
+        if (isset($_SESSION['add_result'])){
+            $del_but = "<a href='index.php?result=destroyLocal&name=add_result'><button>x</button></a";
+            echo "<div class='resultOut'>".$_SESSION['add_result'].$del_but."</div>";
+        }
+        if (isset($_SESSION['add_error'])){
+            $del_but = "<a href='index.php?result=destroyLocal&name=add_error'><button>x</button></a>";
+            echo "<div class='errorOutBlock'>".$_SESSION['add_error'].$del_but."</div>";
+        }
     ?>
-</div>
-<div class="errorOutBlock">
-    <?php
-        $del_but = "
-        <a href='index.php?result=destroyLocal&name=add_error&refill=generateFormAddRecord'>
-            <button>x</button>
-        </a>";
-    echo isset($_SESSION['add_error'])? $_SESSION['add_error'].' '.$del_but : "";
-    ?>
-</div>
 <div style="text-align: left; border: 0px solid black; width: 280px;">
     <form action="index.php?refill=addRecord" method="post">
         <input type="text" name="date" value="<?= $date = isset($_POST['date']) ? $_POST['date'] : date('Y-m-d', time());?>"> date<br>

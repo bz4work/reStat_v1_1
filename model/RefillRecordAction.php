@@ -6,7 +6,7 @@
  * Date: 25.05.2016
  * Time: 18:20
  */
-class RecordAction
+class RefillRecordAction
 {
     public function getRecord($id_user,$id_record = null){
         if(!$id_user){
@@ -28,7 +28,23 @@ class RecordAction
         }catch (Exception $e){
             $logger = new Log();
             Log::writeToFile(__METHOD__,__FILE__,__LINE__,$e->getMessage());
-            return $e->getMessage();
+
+
+
+
+
+            ////????
+            $data['err']['text'] = $e->getMessage();
+
+
+
+
+
+
+
+
+
+            return $data;
         }
     }
 

@@ -22,19 +22,16 @@
 
 
 <div>
-    <div class="resultOut">
-        <?php
-        $del_but = "<a href='index.php?result=destroyGlobal&name=globalResult&refill=index'><button>x</button></a>";
-        echo isset($_SESSION['globalResult'])? $_SESSION['globalResult'].' '.$del_but : "";
-        ?>
-    </div>
-
-    <div class="errorOutBlock">
-        <?php
-        $del_but = "<a href='index.php?result=destroyGlobal&name=globalError&refill=index'><button>x</button></a>";
-        echo isset($_SESSION['globalError'])? $_SESSION['globalError'].' '.$del_but : "";
-        ?>
-    </div>
+    <?php
+        if (isset($_SESSION['globalResult'])){
+            $del_but = "<a href='index.php?result=destroyGlobal&name=globalResult'><button>x</button></a>";
+            echo "<div class='resultOut'>".$_SESSION['globalResult'].$del_but."</div>";
+        }
+        if (isset($_SESSION['globalError'])){
+            $del_but = "<a href='index.php?result=destroyGlobal&name=globalError'><button>x</button></a>";
+            echo "<div class='errorOutBlock'>".$_SESSION['globalError'].$del_but."</div>";
+        }
+    ?>
     <?=$moduleContent?>
 </div>
 

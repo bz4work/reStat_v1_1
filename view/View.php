@@ -97,22 +97,4 @@ class View{
         return $formAddRecordHTML;
     }
 
-    /**
-     * @param string $page
-     * @return string
-     */
-    public function renderEmptyPage($empty_page_name="empty"){
-        ob_start();
-
-        $emptyPage = $this->_dir.$this->_ds."template".$this->_ds."module".$this->_ds.$empty_page_name.".html";
-
-        if (file_exists($emptyPage)){
-            include "$emptyPage";
-        }else{
-            $_SESSION['error'] = "страница empty.html не найдена";
-        }
-
-        $emptyPageHtml = ob_get_clean();
-        return $emptyPageHtml;
-    }
 }

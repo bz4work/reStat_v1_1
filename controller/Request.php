@@ -34,6 +34,14 @@ class Request{
     }
 
     /**
+     * @param $key
+     * @param $value
+     */
+    static public function setPost($key,$value){
+        $_POST[$key] = $value;
+    }
+
+    /**
      * @param $data
      * @param string $type
      * @return float|int|string

@@ -11,7 +11,10 @@ class Redirect{
     {
     }
 
-    public static function redirect($url){
+    public static function redirect($url = "empty"){
+        if ($url === "empty"){
+            $url = $_SERVER['HTTP_REFERER'];
+        }
         return header ("Location: $url");
     }
 }

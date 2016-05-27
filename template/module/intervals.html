@@ -1,0 +1,51 @@
+<h1>Межсервисные интервалы:</h1>
+<span>Максимальное значение интервала в днях : 7500 дней, дальше система считает не правильно. </span>
+<br><br>
+<table border="1px">
+    <tr>
+        <th>Номер<br>интревала</th>
+        <th>Дата создания</th>
+        <th>Время создания</th>
+        <th>Название интервала</th>
+        <th>Текущие показания одометра</th>
+        <th>Интервал замены</th>
+        <th>Финишные показания одометра</th>
+        <th>Дата (начало интервала)</th>
+        <th>Заменить через (дней)</th>
+        <th>Дата (конец интревала)</th>
+        <th>Комментраий</th>
+        <th>Уведомлять о приближающемся событии?</th>
+        <th>Действия</th>
+    </tr>
+    <tr>
+    <?php
+	if (isset($data)) {
+	    if(isset($data['err'])){
+	        echo $data['err']['text']." Добавьте свою первую запись с помощь кнопки (Добавить запись)";
+        }else{
+		    foreach ($data as $row) {
+                echo "<td align='center'>".array_pop($dataKey)."</td>";
+                echo "<td align='center' width='100px'>$row[date_add]</td>";
+                echo "<td align='center' width='100px'>$row[time_add]</td>";
+                echo "<td align='center'>$row[name]</td>";
+                echo "<td align='center'>$row[start_odo]</td>";
+                echo "<td align='center'>$row[interval]</td>";
+                echo "<td align='center'>$row[finish_odo]</td>";
+                echo "<td align='center'>$row[start_date]</td>";
+                echo "<td align='center'>$row[interval_days]</td>";
+                echo "<td align='center'>$row[finish_date]</td>";
+                echo "<td align='center'>$row[comment]</td>";
+                echo "<td align='center'>$row[notify]</td>";
+                echo "<td align='center'><a href='#'>Изменить</a><br><a href='#'>Удалить</a></td>";
+                echo "</tr>";
+            }
+        }
+    }
+    ?>
+</table>
+<br>
+<br>
+<br>
+<a href="index.php?serviceIntervals=generateFormAddRecord&module=addIntervals">
+    <button>Добавить запись(new)</button>
+</a>

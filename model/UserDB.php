@@ -10,21 +10,24 @@ class UserDB
 {
     public $userData;
 
-    public function __construct($search_data=null, $column_table="email"){
-        if (isset($search_data) && !empty($search_data)) {
+    public function __construct(){}
+
+    public function generateUserDataArray ($user_email=null, $column_table="email"){
+        if (isset($user_email) && !empty($user_email)) {
             $sql = "SELECT * FROM users
-                                WHERE ".$column_table."='" . $search_data . "';";
+                                WHERE ".$column_table."='" . $user_email . "';";
             try{
                 $arr = WorkDB::getData($sql);
             }catch(Exception $e){
-                return $e->getMessage();
+                //если поймали исключение "Записей нет", отдаем false
+                return "false";
             }
 
             $this->userData = $arr[0];
         }else{
 
             $log = new Log();
-            $log->writeToFile(__METHOD__,__FILE__,__LINE__,$search_data,$column_table);
+            $log->writeToFile(__METHOD__,__FILE__,__LINE__,$user_email,$column_table);
 
             throw new Exception ("Не передано имя пользователя и/или имя колонки не верное");
         }
@@ -37,7 +40,7 @@ class UserDB
             $log = new Log();
             $log->writeToFile(__METHOD__,__FILE__,__LINE__,$key);
 
-            throw new Exception ("Не удалось получить данные юзера");
+            throw new Exception ("Не удалось получить данные юзера, переданный ключ не существует.");
         }
 
     }

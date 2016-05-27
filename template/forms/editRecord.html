@@ -2,18 +2,14 @@
 <div class="resultOut">
     <?php
         $del_but = "
-        <a href='index.php?result=destroyLocal&name=edit_result&refill=generateFormEditRecord'>
-            <button>x</button>
-        </a>";
+        <a href='index.php?result=destroyLocal&name=edit_result'><button>x</button></a>";
     echo isset($_SESSION['edit_result'])? $_SESSION['edit_result'].' '.$del_but : "";
     ?>
 </div>
 <div class="errorOutBlock">
     <?php
         $del_but = "
-        <a href='index.php?result=destroyLocal&name=edit_error&refill=generateFormEditRecord'>
-            <button>x</button>
-        </a>";
+        <a href='index.php?result=destroyLocal&name=edit_error'><button>x</button></a>";
     echo isset($_SESSION['edit_error'])? $_SESSION['edit_error'].' '.$del_but : "";
     ?>
 </div>

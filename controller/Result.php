@@ -17,31 +17,16 @@ class Result{
     }
 
     public function destroyGlobal($arrParam){
-        foreach ($arrParam as $k=>$v) {
-            if ($k != 'name'){
-                $controller = $k;
-                $method = $v;
-            }
-        }
         $name = $arrParam['name'];
-
         unset($_SESSION[$name]);
+        Redirect::redirect($_SERVER['HTTP_REFERER']);
 
-        Redirect::redirect("index.php?$controller=$method");
     }
 
     public function destroyLocal($arrParam){
-        foreach ($arrParam as $k=>$v) {
-            if ($k != 'name'){
-                $controller = $k;
-                $method = $v;
-            }
-        }
         $name = $arrParam['name'];
-
         unset($_SESSION[$name]);
-
-        Redirect::redirect("index.php?$controller=$method");
+        Redirect::redirect($_SERVER['HTTP_REFERER']);
     }
 
 }
