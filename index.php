@@ -15,7 +15,10 @@ Config::initConfig("config.ini");
 date_default_timezone_set(Config::getConfig("timezone"));
 
 try{
-    $router = new Router();
+    /*$router = new Router();
+    $router->setRoute($_SERVER['REQUEST_URI']);
+    $router->create();*/
+    $router = new RouterNew();
     $router->setRoute($_SERVER['REQUEST_URI']);
     $router->create();
 

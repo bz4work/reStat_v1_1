@@ -1,19 +1,52 @@
-<!-- <ul class="hr">
-        <li><a href="index.php?page=main">Main</a></li>
-        <li><a href="index.php">Main2</a></li>
-        <li><a href="index.php?login=checkUser">My Account</a></li>
-        <li><a href="#">Registration</a></li>
-        <li><a href="index.php?page=about">About</a></li>
-    </ul>-->
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#">Bootstrap theme</a>-->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/page/about">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/refill/index/">Reffils</a></li>
+                        <li><a href="/serviceIntervals/index/">Intervals</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Setting</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">#</a></li>
+                        <li><a href="#">#</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <b style="color: white"><?=isset($_SESSION['user'])?$_SESSION['user']:""?></b>
+                </li>
+                <?if(!isset($_SESSION['user'])){ ?>
+                <li>
+                    <form class="form-signin" action="/login/verificationUser/" method="post">
+                        <!--<label for="inputEmail" class="sr-only">@</label>-->
+                        <input name="email" type="email" id="inputEmail" class="test" placeholder="Email address" required autofocus>
+                        <!--<label for="inputPassword" class="sr-only">Password</label>-->
+                        <input name="pass" type="password" id="inputPassword" class="" placeholder="Password" required>
+                        <button class="btn btn-xs btn-primary" type="submit">Sign in</button>
+                    </form>
+                </li>
+                <?}?>
+                <li>
+                    <?=isset(!$_SESSION['user'])?'
+                    <a href="/login/logout/"><button type="button" class="btn btn-xs btn-danger">Logout</button></a>':""?>
+                </li>
 
- <ul id="nav7">
-         <li><a href="index.php">Main</a>
-         <li><a href="index.php?login=formLogin">Sign In</a>
-         <li><a href="#">My Account</a>
-                 <ul>
-                         <li><a href="index.php?refill=index">Refill</a>
-                         <li><a href="index.php?serviceIntervals=index">Intervals</a>
-                         <li><a href="#">Contacts</a>
-                 </ul>
-         <li><a href="index.php?page=about">About</a>
- </ul>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>

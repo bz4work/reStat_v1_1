@@ -14,7 +14,7 @@
     ?>
 </div>
 <div style="text-align: left; border: 0px solid black; width: 280px;">
-    <form action="index.php?refill=editRecord" method="post">
+    <form action="/refill/editRecord/" method="post">
         <input type="hidden" name='id' value='<?=$data['0']['id']?>'>
         date <input type='text' name='dt' value='<?=$data['0']['date']?>'><br>
         time <input type='text' name='tm' value='<?=$data['0']['time']?>'><br>
@@ -26,4 +26,4 @@
     </form>
 </div>
 
-<a href="index.php?login=checkUser"><button>Закрыть форму</button></a>
+<a href="/login/checkUser/"><button>Закрыть форму</button></a>

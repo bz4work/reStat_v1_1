@@ -44,7 +44,7 @@ class Login{
 
             if($userData->generateUserDataArray($post_email) == "false"){
                 Result::errorCreate("globalError","Такого юзера не существуеты");
-                return Redirect::redirect("index.php?login=checkUser");
+                return Redirect::redirect("/login/checkUser/");
             }
 
             try{
@@ -52,7 +52,7 @@ class Login{
             }catch(Exception $e){
                 $err_txt = $e->getMessage();
                 Result::errorCreate("globalError",$err_txt);
-                return Redirect::redirect("index.php?login=checkUser");
+                return Redirect::redirect("/login/checkUser/");
             }
 
             if($post_password == $pass_user_db) {
@@ -66,13 +66,16 @@ class Login{
                 $refill_content = new Refill();
                 $refill_content->setUserId($id);
 
+                /*$clearMsg = new Result();
+                $clearMsg->clearAll();*/
+
                 return $refill_content->index();
             }else{
                 throw new Exception ("Пароль или логин введены не верно");
             }
         }else{
             Result::errorCreate("globalError","Не все поля заполнены!");
-            return Redirect::redirect("index.php?login=checkUser");
+            return Redirect::redirect("/login/checkUser/");
         }
     }
 
@@ -85,6 +88,6 @@ class Login{
 
     public function logout(){
         session_destroy();
-        Redirect::redirect("index.php?page=main");
+        Redirect::redirect("/page/main/");
     }
 }

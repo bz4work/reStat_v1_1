@@ -29,7 +29,7 @@ class Refill
                 $this->setUserId($_SESSION['id']);
             }*/
             Result::errorCreate("globalError","Эта страница Вам не доступна, войдите.");
-            return Redirect::redirect();
+            return Redirect::redirect("/login/checkUser/");
         }
 
         $getRecord = new RefillRecordAction();
@@ -45,7 +45,7 @@ class Refill
             return $formAddRecordView->render($param['module']);
         }else{
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            Redirect::redirect("index.php?".SystemConfig::getConfig('login')."=checkUser");
+            Redirect::redirect("/login/checkUser/");
         }
 
     }
@@ -66,7 +66,7 @@ class Refill
             return $formAddRecordView->render($param['module'], $data);
         }else{
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            Redirect::redirect("index.php?".SystemConfig::getConfig('login')."=checkUser");
+            Redirect::redirect("/login/checkUser/");
         }
     }
 
@@ -129,7 +129,7 @@ class Refill
                     Result::errorCreate('globalError', 'Данные не обновлены! Причина: ' . $result);
                 }
 
-                return Redirect::redirect("index.php?refill=index");
+                return Redirect::redirect("/login/checkUser/");
 
             } else {
                 throw new Exception ("id не существует или не передан");

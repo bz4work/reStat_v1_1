@@ -11,7 +11,7 @@
     ?>
 <br>
 <div style="text-align: left; border: 0px solid black; width: 280px;">
-    <form action="index.php?refill=addRecord" method="post">
+    <form action="/refill/addRecord/" method="post">
         <input type="text" name="date" value="<?= $date = isset($_POST['date']) ? $_POST['date'] : date('Y-m-d', time());?>"> date<br>
         <input type="text" name="time" value="<?= $time = isset($_POST['time']) ? $_POST['time'] : date('H:i:s', time());?>"> time<br><br>
         <label>Бак сухой?</label>

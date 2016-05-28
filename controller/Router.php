@@ -16,6 +16,7 @@ class Router{
         $method = null;
         $params = array();
 
+        //Router with non ModRewrite
         ///bz4work/test/mvc/index.php? refill=index & username=slava & id=1
         if (!stristr(self::getRoute(),"?")){
             self::setRoute(Config::getConfig("defaultRoute"));
