@@ -73,7 +73,8 @@ class Refill
     /**
      * @throws Exception
      */
-    public function addRecord(){
+    public function addRecord()
+    {
         $data = array(
             "dt" => Request::getPost('date'),
             "tm" => Request::getPost('time'),
@@ -83,15 +84,19 @@ class Refill
             "tot_lit" => Request::getPost('total_litres'),
             "prc_gas" => Request::getPost('price_gas'),
             //"id_zapravki" => Request::getPost('id_zapravki'),
-            //"over" => Request::getPost('over')
+            "over" => Request::getPost('over')
         );
 
         $add = new RefillRecordAction();
-        try{
-            $add->createRecord($data);
-        }catch(Exception $e){
-            $err_text = $e->getMessage();
-            Result::errorCreate("globalError",$err_text);
+        $btn = Request::getPost("add_to_db");
+        if (isset($btn)) {
+
+            try {
+                $add->createRecord($data);
+            } catch (Exception $e) {
+                $err_text = $e->getMessage();
+                Result::errorCreate("globalError", $err_text);
+            }
         }
 
         return Redirect::redirect();
@@ -136,7 +141,36 @@ class Refill
         }
     }
 
-    public function deleteRecord(){
-        //TO DO: сделать метод удвления записи
+    public function deleteRecord($param){
+        $id = $param['id'];
+
+        $add = new RefillRecordAction();
+
+
+        if (isset($_SESSION['user'])) {
+
+            try {
+                $add->deleteRecord($id);
+            } catch (Exception $e) {
+                $err_text = $e->getMessage();
+                Result::errorCreate("globalError", $err_text);
+            }
+        }else{
+            Result::errorCreate("globalError","Вы не вошли. Войдите.");
+            Redirect::redirect();
+        }
+        Redirect::redirect();
+
+    }
+
+    public function getLiters(){
+        $ovr = Request::getPost("over");
+        $sum = Request::getPost("total_sum");
+        $prc = Request::getPost("price_gas");
+        if (isset($ovr,$sum,$prc)){
+            $result = $sum/$prc;
+            return Request::setPost("total_litres",$result);
+        }
+
     }
 }

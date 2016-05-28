@@ -38,7 +38,8 @@ class View{
 
         $topMenu = file_get_contents($this->_dir.$this->_ds."template".$this->_ds."menu".$this->_ds."topMenu.html");
 
-        $main_html = $this->_dir.$this->_ds."template".$this->_ds."common".$this->_ds."main.html";
+        //$main_html = $this->_dir.$this->_ds."template".$this->_ds."common".$this->_ds."main.html";
+        $main_html = $this->_dir.$this->_ds."template".$this->_ds."common".$this->_ds."index.html";
         include "$main_html";
 
         $final_html = ob_get_clean();
@@ -75,26 +76,6 @@ class View{
 
         $moduleDataHtml = ob_get_clean();
         return $moduleDataHtml;
-    }
-
-    /**
-     * @param string $form_name
-     * @return string
-     * @throws Exception
-     */
-    public function renderFormAddRecord($form_name = "addRefills"){
-        ob_start();
-        $moduleContent =
-            $this->_dir.$this->_ds."template".$this->_ds."forms".$this->_ds.$form_name.".html";
-
-        if(file_exists($moduleContent)){
-            include "$moduleContent";
-        }else{
-            throw new Exception ("файл addRefills.html не существует или переименован");
-        }
-
-        $formAddRecordHTML = ob_get_clean();
-        return $formAddRecordHTML;
     }
 
 }

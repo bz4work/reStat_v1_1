@@ -1,7 +1,7 @@
 <h3>Ввод данных:</h3>
     <?php
         if (isset($_SESSION['add_result'])){
-            $del_but = "<a href='index.php?result=destroyLocal&name=add_result'><button>x</button></a";
+            $del_but = "<a href='index.php?result=destroyLocal&name=add_result'><button>x</button></a>";
             echo "<div class='resultOut'>".$_SESSION['add_result'].$del_but."</div>";
         }
         if (isset($_SESSION['add_error'])){
@@ -9,6 +9,7 @@
             echo "<div class='errorOutBlock'>".$_SESSION['add_error'].$del_but."</div>";
         }
     ?>
+<br>
 <div style="text-align: left; border: 0px solid black; width: 280px;">
     <form action="index.php?refill=addRecord" method="post">
         <input type="text" name="date" value="<?= $date = isset($_POST['date']) ? $_POST['date'] : date('Y-m-d', time());?>"> date<br>
@@ -22,8 +23,8 @@
         <input type="text" name="odo" value="<?=@($_POST['odo'])?$_POST['odo']:'1'?>" placeholder="175 558"> odometr<br><br>
         <input type="text" name="total_sum" value="<?=@($_POST['total_sum'])?$_POST['total_sum']:'1'?>"> summa<br>
         <input type="text" name="price_gas" value="<?=@($_POST['price_gas'])?$_POST['price_gas']:'1'?>"> price gas<br>
-        <input type="text" name="total_litres" value="<?=@(round($total_lit,2))?round($total_lit,2):'1'?>"> total liters
-        <input type="submit" name="get_litres" value="посчитать"><br><br>
+        <input type="text" name="total_litres" value="<?=isset($_POST['total_litres'])?round($_POST['total_litres'],2):''?>"> total liters
+        <a href="index.php?refill=getLiters"><button>Посчитать</button></a><br><br>
         <input type="text" name="id_zapravki" value="<?= @($_POST['id_zapravki']) ? $_POST['id_zapravki'] : ""; ?>" placeholder="номер заправки"> id gas station<br><br>
         <input type="submit" name="add_to_db" value="Добавить">
     </form>

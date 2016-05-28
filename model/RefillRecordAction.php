@@ -29,21 +29,7 @@ class RefillRecordAction
             $logger = new Log();
             Log::writeToFile(__METHOD__,__FILE__,__LINE__,$e->getMessage());
 
-
-
-
-
-            ////????
             $data['err']['text'] = $e->getMessage();
-
-
-
-
-
-
-
-
-
             return $data;
         }
     }
@@ -73,6 +59,17 @@ class RefillRecordAction
     }
 
     public function deleteRecord($id){
+        if(!isset($id) || empty($id)){
+            throw new Exception ("Не передан параметр для удаление или передан пустой.");
+        }
+        $sql_del = "DELETE FROM refill WHERE `id` = $id;";
+
+        try {
+            WorkDB::insertData($sql_del);
+            return true;
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
 
     }
 

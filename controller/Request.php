@@ -11,12 +11,12 @@ class Request{
      * @param $key
      * @return bool
      */
-    static public function getPost($key)
+    static public function getPost($key=null)
     {
         if (isset($_POST[$key])) {
             return self::clearData($_POST[$key]);
         } else {
-            return false;
+            return $_POST;
         }
     }
 

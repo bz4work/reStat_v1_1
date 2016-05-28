@@ -769,3 +769,81 @@
 [27.05.2016 03:37:13] | [GET] | [slava] | IP:[::1]
 [Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
 [IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 12:18:26] | [POST] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\restat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 12:18:30] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\AppServ\www\bz4work\restat_v1_1\model\IntervalRecordAction.php] | [58] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 12:18:36] | [GET] | [slava] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\restat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 12:33:18] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\restat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `refill`
+                          (`id_user`,`date`,`time`,`odometr`,`total_sum`,`total_liters`,`price_gas`)
+						  VALUES
+						  ('2','2016-05-28','12:33:15','1',
+						  '1','','1')] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 12:35:38] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\restat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `refill`
+                          (`id_user`,`date`,`time`,`odometr`,`total_sum`,`total_liters`,`price_gas`)
+						  VALUES
+						  ('2','2016-05-28','12:33:18','1',
+						  '1','','1')] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 12:36:30] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\restat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `refill`
+                          (`id_user`,`date`,`time`,`odometr`,`total_sum`,`total_liters`,`price_gas`)
+						  VALUES
+						  ('2','2016-05-28','12:36:27','1',
+						  '1','','1')] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 12:36:53] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\restat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `refill`
+                          (`id_user`,`date`,`time`,`odometr`,`total_sum`,`total_liters`,`price_gas`)
+						  VALUES
+						  ('2','2016-05-28','12:36:51','1',
+						  '1','','1')] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 15:35:39] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\restat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `refill`
+                          (`id_user`,`date`,`time`,`odometr`,`total_sum`,`total_liters`,`price_gas`)
+						  VALUES
+						  ('2','2016-05-28','15:35:35','1',
+						  '1','','1')] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 15:47:18] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\restat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `refill`
+                          (`id_user`,`date`,`time`,`odometr`,`total_sum`,`total_liters`,`price_gas`)
+						  VALUES
+						  ('2','2016-05-28','15:47:16','1',
+						  '1','','1')] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[28.05.2016 15:47:21] | [POST] | [test] | IP:[::1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\AppServ\www\bz4work\restat_v1_1\model\WorkDB.php] | [54] | [INSERT INTO `refill`
+                          (`id_user`,`date`,`time`,`odometr`,`total_sum`,`total_liters`,`price_gas`)
+						  VALUES
+						  ('2','2016-05-28','15:47:18','1',
+						  '1','','1')] | 

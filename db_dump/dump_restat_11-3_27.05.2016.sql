@@ -10,9 +10,9 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Дамп структуры базы данных restat_11-2
-CREATE DATABASE IF NOT EXISTS `restat_11-2` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `restat_11-2`;
+-- Дамп структуры базы данных restat_11-3
+CREATE DATABASE IF NOT EXISTS `restat_11-3` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `restat_11-3`;
 
 
 -- Дамп структуры для таблица restat_11-2.group

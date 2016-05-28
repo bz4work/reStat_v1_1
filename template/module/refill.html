@@ -1,16 +1,13 @@
-<a href="index.php?serviceIntervals=index"><button>Межсервисные интревалы</button></a>
-<br>
-
 <h1>Данные по заправкам:</h1>
-<table border="1px">
-    <tr>
-        <th>Номер<br>заправки</th>
-        <th>Дата заправки</th>
-        <th>Время</th>
-        <th>Показатель<br>одометра, км</th>
-        <th>Сумма <br> заправки, грн</th>
-        <th>Кол-во <br>заправленных<br> литров</th>
-        <th>Цена <br>топлива, грн</th>
+<table class="table table-bordered">
+    <tr >
+        <th>#</th>
+        <th>Дата<br>Время</th>
+        <!--<th>Время</th>-->
+        <th>Одометр (km)</th>
+        <th>Стоимость</th>
+        <th>Литры</th>
+        <th>Цена (L)</th>
         <th>Действия</th>
     </tr>
     <tr>
@@ -21,19 +18,28 @@
 	    }else{
             foreach ($data as $row) {
                 echo "<td align='center'>".array_pop($dataKey)."</td>";
-                echo "<td align='center' width='100px'>" . $row['date'] . "</td>";
-                echo "<td align='center' width='100px'>" . $row['time'] . "</td>";
+                echo "<td align='center' width='100px'>".$row['date']."<br>".$row['time']."</td>";
                 echo "<td align='center'>" . $row['odometr'] . "</td>";
                 echo "<td align='center'>$row[total_sum]</td>";
                 echo "<td align='center'>$row[total_liters]</td>";
                 echo "<td align='center'>$row[price_gas]</td>";
-                echo "<td align='center'><a href='index.php?refill=$row[id]'>удалить</a>
-                <br><a href='index.php?refill=generateFormEditRecord&id=$row[id]&module=editRecord'>изменить</a></td>";
+                echo "<td align='center'>
+                            <a href='index.php?refill=deleteRecord&id=$row[id]'>
+                                <button type='button' class='btn btn-xs btn-danger'>delete</button>
+                            </a>
+                            <a href='index.php?refill=generateFormEditRecord&id=$row[id]&module=editRecord'>
+                                <button type='button' class='btn btn-xs btn-success'>edit</button>
+                            </a>
+
+                     </td>";
+
+
                 echo "</tr>";
             }
         }
     }
     ?>
+
 </table>
 <br>
 <br>
