@@ -30,21 +30,7 @@
                 <li>
                     <b style="color: white"><?=isset($_SESSION['user'])?$_SESSION['user']:""?></b>
                 </li>
-                <?if(!isset($_SESSION['user'])){ ?>
-                <li>
-                    <form class="form-signin" action="/login/verificationUser/" method="post">
-                        <!--<label for="inputEmail" class="sr-only">@</label>-->
-                        <input name="email" type="email" id="inputEmail" class="test" placeholder="Email address" required autofocus>
-                        <!--<label for="inputPassword" class="sr-only">Password</label>-->
-                        <input name="pass" type="password" id="inputPassword" class="" placeholder="Password" required>
-                        <button class="btn btn-xs btn-primary" type="submit">Sign in</button>
-                    </form>
-                </li>
-                <?}?>
-                <li>
-                    <?=isset(!$_SESSION['user'])?'
-                    <a href="/login/logout/"><button type="button" class="btn btn-xs btn-danger">Logout</button></a>':""?>
-                </li>
+
 
             </ul>
         </div><!--/.nav-collapse -->

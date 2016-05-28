@@ -2259,7 +2259,11 @@ caption {
   text-align: left;
 }
 th {
+  /*
+  slimline
   text-align: left;
+  */
+  text-align: center;
 }
 .table {
   width: 100%;
@@ -2922,6 +2926,7 @@ select[multiple].input-lg {
   }
   .form-inline .form-control {
     display: inline-block;
+    /*slimline*/
     width: auto;
     vertical-align: middle;
   }
@@ -2935,6 +2940,7 @@ select[multiple].input-lg {
   .form-inline .input-group .input-group-addon,
   .form-inline .input-group .input-group-btn,
   .form-inline .input-group .form-control {
+    /*slimline*/
     width: auto;
   }
   .form-inline .input-group > .form-control {
@@ -3830,7 +3836,9 @@ tbody.collapse.in {
   position: relative;
   z-index: 2;
   float: left;
+
   width: 100%;
+
   margin-bottom: 0;
 }
 .input-group .form-control:focus {
@@ -3899,6 +3907,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   vertical-align: middle;
 }
 .input-group-addon {
+  /*slimline*/
+  width: 120px;
+
+
   padding: 6px 12px;
   font-size: 14px;
   font-weight: normal;

@@ -86,6 +86,13 @@ class Refill
             //"id_zapravki" => Request::getPost('id_zapravki'),
             "over" => Request::getPost('over')
         );
+        foreach ($data as $item) {
+            if(!$item){
+                Result::errorCreate("add_error", "Не все поля заполнены. Проверьте!");
+                return Redirect::redirect();
+            }
+
+        }
 
         $add = new RefillRecordAction();
         $btn = Request::getPost("add_to_db");

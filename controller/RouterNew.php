@@ -42,7 +42,8 @@ class RouterNew extends Router{
                         $arr_k[] = $v;
                     }
                 }
-                $params = array_combine($arr_k, $arr_v);
+                if(isset($arr_v,$arr_k))
+                    $params = array_combine($arr_k, $arr_v);
             }
             //конец блока формирования параметров
         }

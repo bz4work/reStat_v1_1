@@ -13,17 +13,48 @@
     echo isset($_SESSION['edit_error'])? $_SESSION['edit_error'].' '.$del_but : "";
     ?>
 </div>
-<div style="text-align: left; border: 0px solid black; width: 280px;">
-    <form action="/refill/editRecord/" method="post">
-        <input type="hidden" name='id' value='<?=$data['0']['id']?>'>
+<form action="/refill/editRecord/" method="post">
+
+
+<div style="width: 350px">
+    <!--
+    для изменения ширины <span>
+    искать в bootstrap.css -> input-group-addon -> slimline
+    -->
+    <input name='id' value='<?=$data['0']['id']?>' type="hidden" >
+    <div class="input-group">
+        <input name='dt' value='<?=$data['0']['date']?>' type="text" class="form-control" placeholder="2016-12-31" aria-describedby="basic-addon1">
+        <span style="width: 120px" class="input-group-addon" id="basic-addon1">date</span>
+    </div>
+    <div class="input-group">
+        <input name='tm' value='<?=$data['0']['time']?>' type="text" class="form-control" placeholder="23:59" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">time</span>
+    </div>
+    <div class="input-group">
+        <input name='odo' value='<?=$data['0']['odometr']?>' type="text" class="form-control" placeholder="159875" aria-describedby="basic-addon3">
+        <span class="input-group-addon" id="basic-addon3">Одометр (km)</span>
+    </div>
+    <div class="input-group">
+        <input name='tot_sum' value='<?=$data['0']['total_sum']?>' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon4">
+        <span class="input-group-addon" id="basic-addon4">Стоимость</span>
+    </div>
+    <div class="input-group">
+        <input name='tot_lit' value='<?=$data['0']['total_liters']?>' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon5">
+        <span class="input-group-addon" id="basic-addon5">Литры (L)</span>
+    </div>
+    <div class="input-group">
+        <input name='prc_gas' value='<?=$data['0']['price_gas']?>' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon6">
+        <span class="input-group-addon" id="basic-addon6">Цена</span>
+    </div>
+    <br>
+    <a href="/login/checkUser/"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>
+    <input type="submit" name="go_edited" value="Сохранить" class="btn btn-xs btn-success">
+</div>
+<!--<input type="hidden" name='id' value='<?=$data['0']['id']?>'>
         date <input type='text' name='dt' value='<?=$data['0']['date']?>'><br>
         time <input type='text' name='tm' value='<?=$data['0']['time']?>'><br>
         odometr <input type='text' name='odo' value='<?=$data['0']['odometr']?>'><br>
         summa <input type='text' name='tot_sum' value='<?=$data['0']['total_sum']?>'><br>
         liters <input type='text' name='tot_lit' value='<?=$data['0']['total_liters']?>'><br>
-        price <input type='text' name='prc_gas' value='<?=$data['0']['price_gas']?>'><br>
-        <input type="submit" name="go_edited" value="Сохранить">
-    </form>
-</div>
-
-<a href="/login/checkUser/"><button>Закрыть форму</button></a>
+        price <input type='text' name='prc_gas' value='<?=$data['0']['price_gas']?>'><br>-->
+</form>

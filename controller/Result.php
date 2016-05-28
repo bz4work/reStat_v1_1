@@ -16,18 +16,18 @@ class Result{
         $_SESSION[$var_name] = $value;
     }
 
-    public function destroyGlobal($arrParam){
+    public function destroyMsg($arrParam){
         $name = $arrParam['name'];
         unset($_SESSION[$name]);
         Redirect::redirect($_SERVER['HTTP_REFERER']);
 
     }
 
-    public function destroyLocal($arrParam){
+    /*public function destroyLocal($arrParam){
         $name = $arrParam['name'];
         unset($_SESSION[$name]);
         Redirect::redirect($_SERVER['HTTP_REFERER']);
-    }
+    }*/
 
     public function clearAll(){
         $this->destroyGlobal("globalError");

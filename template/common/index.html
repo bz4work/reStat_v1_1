@@ -32,11 +32,9 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
-<!--<body role="document">-->
-<body>
+<body role="document">
 <!-- Fixed navbar -->
 <?=@$topMenu?>
 
@@ -45,14 +43,28 @@
     <?if(isset($_SESSION['globalError'])){ ?>
     <div class="alert alert-danger" role="alert">
         <strong>Error!</strong> <?=$_SESSION['globalError']?>
-        <a href='/result/destroyGlobal/name/globalError/'>
+        <a href='/result/destroyMsg/name/globalError/'>
             <button type="button" class="btn btn-xs btn-danger">x</button>
         </a>
     </div>
     <?}elseif(isset($_SESSION['globalResult'])){?>
     <div class="alert alert-success" role="alert">
         <strong>Well done!</strong> <?=$_SESSION['globalResult']?>
-        <a href='/result/destroyGlobal/name/globalResult/'><button>x</button></a>
+        <a href='/result/destroyMsg/name/globalResult/'>
+            <button type="button" class="btn btn-xs btn-success">x</button>
+        </a>
+    </div>
+    <?}?>
+
+    <?if(isset($_SESSION['user'])){ ?>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Панель пользователя</h3>
+        </div>
+        <div class="panel-body">
+            Вы вошли как, <b><?=@$_SESSION['user']?></b>
+            <a href='/login/logout/'><button type='button' class='btn btn-xs btn-danger'>Logout</button></a>
+        </div>
     </div>
     <?}?>
 
@@ -86,7 +98,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/assets/vendor/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="/js/assets/vendor/jquery.min.js"><\/script>')</script>
 
 <script src="/js/distr/bootstrap.min.js"></script>
 
