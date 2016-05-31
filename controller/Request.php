@@ -16,8 +16,9 @@ class Request{
         if (isset($_POST[$key])) {
             return self::clearData($_POST[$key]);
         } else {
-            return $_POST;
+           return false;
         }
+        if($key="all_post"){return $_POST;}
     }
 
     /**

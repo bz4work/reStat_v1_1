@@ -1,27 +1,86 @@
-<form method="post" action="/serviceIntervals/addRecord/">
-    data<input type="text" name="date_add" value="<?=date('Y-m-d',time())?>"><br>
-    time<input type="text" name="time_add" value="<?=date('H:i:s',time())?>"><br>
+<h1>Добавление нового интервала:</h1>
 
-    select interval:
-        <select size="1" name="name_interval">
-        <option disabled selected>&nbsp;</option>
+<!-- понять как выводить сюда ошибки -->
+<!--
+{% if url.add_result or url.add_error %}
+<div class="alert alert-success" role="alert">
+    <strong>Succes!</strong>
+    <?=$_SESSION['add_result']?>
+    <a href='{{ url.add_result }}'>
+        <button type="button" class="btn btn-xs btn-success">x</button>
+    </a>
+</div>
+<div class="alert alert-danger" role="alert">
+    <strong>Error!</strong>
+    <?=$_SESSION['add_error']?>
+    <a href='{{ url.add_error }}'>
+        <button type="button" class="btn btn-xs btn-danger">x</button>
+    </a>
+</div>
+{% endif %}-->
 
-        <?php
-            foreach ($data as $intervals){
-                echo "<option value='id_".$intervals['id']."'>$intervals[name]</option>";
-            }
-        ?>
-        </select><br>
+<form method="post" action="{{ url.formAction }}">
+    <div style="width: 400px">
+        <!--
+        для изменения ширины <span>
+        искать в bootstrap.css -> input-group-addon -> slimline
+        -->
+        <div class="input-group"
+             data-title="Указывать не обязательно. Автоматически будет установлена текущая дата.">
+            <input name="date_add" value=""
+                   type="text" class="form-control" placeholder="2016-12-31" aria-describedby="basic-addon1">
+            <span class="input-group-addon" id="basic-addon1">Date</span>
+        </div>
+        <div class="input-group"
+             data-title="Указывать не обязательно. Автоматически будет установлено текущее время.">
+            <input name="time_add" value=""
+                   type="text" class="form-control" placeholder="23:59" aria-describedby="basic-addon2">
+            <span class="input-group-addon" id="basic-addon2">Time</span>
+        </div>
+        <div class="input-group">
+            <select size="1" name="name_interval" class="form-control" style="width: 196px">
+                <option disabled selected>&nbsp;</option>
+                {% for item in data %}
+                    <option value='id_{{ item.id }}'>{{ item.name }}</option>
+                {% endfor %}
+            </select>
+            <span class="input-group-addon" id="basic-addon12">Выберите сервис</span>
+        </div>
+        <div class="input-group">
+            <input name="start_odo" value="" type="text" class="form-control" placeholder="159787" aria-describedby="basic-addon4">
+            <span class="input-group-addon" id="basic-addon4">Начало интервала</span>
+        </div>
+        <div class="input-group">
+            <input name="interval" value=""
+                   type="text" class="form-control" placeholder="5000" aria-describedby="basic-addon5">
+            <span class="input-group-addon" id="basic-addon5">Интервал, км</span>
+        </div>
+        <div class="input-group"
+             data-title="Если используете 'КМ' - оставить пустым">
+            <input name="start_date" value=""
+                   type="text" class="form-control" placeholder="2016-12-31" aria-describedby="basic-addon7">
+            <span class="input-group-addon" id="basic-addon7">Дата (старт интервала)</span>
+        </div>
+        <div class="input-group">
+            <input name="interval_days" value=""
+                   type="text" class="form-control" placeholder="90" aria-describedby="basic-addon8">
+            <span class="input-group-addon" id="basic-addon8">Заменить через (дней)</span>
+        </div>
+        <div class="input-group">
+            <input name="comment" value=""
+                   type="text" class="form-control" placeholder="Ваш текст" aria-describedby="basic-addon10">
+            <span class="input-group-addon" id="basic-addon10">Комментарий</span>
+        </div>
+        <div class="input-group">
+            <input name="notify" value="yes"
+                   type="text" class="form-control" placeholder="yes/no" aria-describedby="basic-addon11">
+            <span class="input-group-addon" id="basic-addon11">Уведомлять?</span>
+        </div>
+        <br>
+    </div>
 
-    start_odo<input type="text" name="start_odo" value=""><br>
-    interval<input type="text" name="interval" value=""><br>
-    finish_odo<input type="text" name="finish_odo" value=""><br>
-    start_date<input type="text" name="start_date" value="<?=date('Y-m-d',time())?>"><br>
-    interval_days<input type="text" name="interval_days" value="30"><br>
-    finish_date<input type="text" name="finish_date" value=""><br>
-    comment<input type="text" name="comment" value="test coment"><br>
-    notify<input type="text" name="notify" value="1"><br>
-
-    <a href="/login/checkUser/"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>
+    <a href="{{ url.servInterIndex }}">
+        <button type="button" class="btn btn-xs btn-primary">Закрыть форму</button>
+    </a>
     <input type="submit" name="add_to_db" value="Добавить" class="btn btn-xs btn-success">
 </form>

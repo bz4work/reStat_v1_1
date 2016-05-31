@@ -4,7 +4,7 @@
         <div class="alert alert-success" role="alert">
             <strong>Succes!</strong>
             <?=$_SESSION['add_result']?>
-            <a href='/result/destroyMsg/name/add_result/'>
+            <a href='<?=Config::getConfig("destrAddRes")?>'>
                 <button type="button" class="btn btn-xs btn-success">x</button>
             </a>
         </div>
@@ -14,7 +14,7 @@
         <div class="alert alert-danger" role="alert">
             <strong>Error!</strong>
             <?=$_SESSION['add_error']?>
-            <a href='/result/destroyMsg/name/add_error/'>
+            <a href='<?=Config::getConfig("destrAddErr")?>'>
             <button type="button" class="btn btn-xs btn-danger">x</button>
         </a>
         </div>
@@ -40,7 +40,7 @@
         <input type="submit" name="add_to_db" value="Добавить">
     </form>
 </div>-->
-<form action="/refill/addRecord/" method="post">
+<form action="<?=Config::getConfig('refAddRec')?>" method="post">
     <div style="width: 350px">
         <!--
         для изменения ширины <span>
@@ -82,7 +82,7 @@
             <span class="input-group-addon" id="basic-addon7">Заправка</span>
         </div>
         <br>
-        <a href="/login/checkUser/"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>
+        <a href="<?=Config::getConfig('refIndex')?>"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>
         <input type="submit" name="add_to_db" value="Добавить" class="btn btn-xs btn-success">
     </div>
 </form>

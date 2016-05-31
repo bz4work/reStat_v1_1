@@ -29,14 +29,24 @@ class View{
      * @param array $data
      * @throws Exception
      */
-    public function render($moduleName, $data = array()){
+    public function render($moduleName, $data = array(), $url=array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
-        $moduleContent = $this->renderModule($moduleName,$data);
+        if(!isset($url)){
+            $url = array();
+        }
+        $moduleContent = $this->renderModule($moduleName,$data,$url);
 
         ob_start();
 
-        $topMenu = file_get_contents($this->_dir.$this->_ds."template".$this->_ds."menu".$this->_ds."topMenu.html");
+        try{
+            $mod_rewrite = Config::getConfig("mod_rewrite");
+            $top_menu = "topMenu_rewrite.html";
+        }catch(Exception $e){
+            $top_menu = "topMenu.html";
+        }
+
+        $topMenu = file_get_contents($this->_dir.$this->_ds."template".$this->_ds."menu".$this->_ds.$top_menu);
 
         //$main_html = $this->_dir.$this->_ds."template".$this->_ds."common".$this->_ds."main.html";
         $main_html = $this->_dir.$this->_ds."template".$this->_ds."common".$this->_ds."index.html";
@@ -53,10 +63,31 @@ class View{
      * @return string
      * @throws Exception
      */
-    protected function renderModule($moduleName,$data = array()){
+    protected function renderModule($moduleName,$data = array(),$url = array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
-        extract($data);
+
+        if(file_exists("template/module/".$moduleName.".html")){
+            $fileName = $moduleName.".html";
+            $fileSystem = "template/module/";
+        }elseif(file_exists("template/forms/".$moduleName.".html")){
+            $fileName = $moduleName.".html";
+            $fileSystem = "template/forms/";
+        }else{
+            $fileName = "empty";
+            $fileSystem = "empty";
+        }
+
+        //$loader = new Twig_Loader_Filesystem('template/module');
+        $loader = new Twig_Loader_Filesystem($fileSystem);
+        $twig = new Twig_Environment($loader);
+
+        //$template = $twig->loadTemplate('intervals.html');
+        $template = $twig->loadTemplate($fileName);
+
+        return  $template->render(array('data' => $data, 'url' => $url));
+
+        /*extract($data);
 
         //for table "Refill statistic" in "My Cabinet"
         for ($i = 1; $i < count($data)+1; $i++){
@@ -75,7 +106,7 @@ class View{
         include "$moduleContent";
 
         $moduleDataHtml = ob_get_clean();
-        return $moduleDataHtml;
+        return $moduleDataHtml;*/
     }
 
 }

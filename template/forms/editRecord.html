@@ -1,5 +1,5 @@
 <h3>Редактирование записи:</h3>
-<div class="resultOut">
+<!--<div class="resultOut">
     <?php
         $del_but = "
         <a href='index.php?result=destroyLocal&name=edit_result'><button>x</button></a>";
@@ -12,8 +12,28 @@
         <a href='index.php?result=destroyLocal&name=edit_error'><button>x</button></a>";
     echo isset($_SESSION['edit_error'])? $_SESSION['edit_error'].' '.$del_but : "";
     ?>
-</div>
-<form action="/refill/editRecord/" method="post">
+</div>-->
+<?php
+    if (isset($_SESSION['add_result'])){?>
+        <div class="alert alert-success" role="alert">
+        <strong>Succes!</strong>
+        <?=$_SESSION['add_result']?>
+        <a href='<?=Config::getConfig("destrAddRes")?>'>
+            <button type="button" class="btn btn-xs btn-success">x</button>
+        </a>
+        </div>
+<?}?>
+<?php
+    if (isset($_SESSION['add_error'])){?>
+        <div class="alert alert-danger" role="alert">
+        <strong>Error!</strong>
+        <?=$_SESSION['add_error']?>
+        <a href='<?=Config::getConfig("destrAddErr")?>'>
+            <button type="button" class="btn btn-xs btn-danger">x</button>
+        </a>
+        </div>
+<?}?>
+<form action="<?=Config::getConfig('refEditRec')?>" method="post">
 
 
 <div style="width: 350px">
@@ -47,7 +67,7 @@
         <span class="input-group-addon" id="basic-addon6">Цена</span>
     </div>
     <br>
-    <a href="/login/checkUser/"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>
+    <a href="<?=Config::getConfig('refIndex')?>"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>
     <input type="submit" name="go_edited" value="Сохранить" class="btn btn-xs btn-success">
 </div>
 <!--<input type="hidden" name='id' value='<?=$data['0']['id']?>'>

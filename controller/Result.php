@@ -19,7 +19,7 @@ class Result{
     public function destroyMsg($arrParam){
         $name = $arrParam['name'];
         unset($_SESSION[$name]);
-        Redirect::redirect($_SERVER['HTTP_REFERER']);
+        Redirect::redirect("previous");
 
     }
 

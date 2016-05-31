@@ -1,9 +1,14 @@
 <h1>Данные по заправкам:</h1>
+
+{% if data.err.text %}
+    <span>{{ data.err.text }} Добавьте свою первую запись с помощь кнопки (Добавить запись)</span>
+    <br><br>
+{% endif %}
+
 <table class="table table-bordered">
     <tr >
         <th>#</th>
-        <th>Дата<br>Время</th>
-        <!--<th>Время</th>-->
+        <th>Дата<br>(год-д-м)<br>Время</th>
         <th>Одометр (km)</th>
         <th>Стоимость</th>
         <th>Литры</th>
@@ -11,35 +16,27 @@
         <th>Действия</th>
     </tr>
     <tr>
-    <?php
-	if (isset($data)){
-	    if(isset($data['err'])){
-	        echo $data['err']['text']." Добавьте свою первую запись с помощь кнопки <Добавить запись>";
-	    }else{
-            foreach ($data as $row) {
-                echo "<td align='center'>".array_pop($dataKey)."</td>";
-                echo "<td align='center' width='100px'>".$row['date']."<br>".$row['time']."</td>";
-                echo "<td align='center'>" . $row['odometr'] . "</td>";
-                echo "<td align='center'>$row[total_sum]</td>";
-                echo "<td align='center'>$row[total_liters]</td>";
-                echo "<td align='center'>$row[price_gas]</td>";
-                echo "<td align='center'>
-                            <a href='/refill/deleteRecord/id/$row[id]/'>
-                                <button type='button' class='btn btn-xs btn-danger'>delete</button>
-                            </a>
-                            <a href='/refill/generateFormEditRecord/id/$row[id]/module/editRecord/'>
-                                <button type='button' class='btn btn-xs btn-success'>edit</button>
-                            </a>
 
-                     </td>";
+    {% for item in data %}
+    <td>{{ item.id }}</td>
+    <td>{{ item.date }}<br>{{ item.time }}</td>
+    <td>{{ item.odometr }}</td>
+    <td>{{ item.total_sum }}</td>
+    <td>{{ item.total_liters }}</td>
+    <td>{{ item.price_gas }}</td>
+    <td>
+    {% if item.id %}
+        <a href="{{ url.refDelRec }}{{ item.id }}">
+            <button type='button' class='btn btn-xs btn-danger'>delete</button>
+        </a>
+        <a href="{{ url.refFormEdit }}{{ item.id }}">
+            <button type='button' class='btn btn-xs btn-success'>edit</button>
+        </a>
+    {% endif %}
+    </td>
 
-
-                echo "</tr>";
-            }
-        }
-    }
-    ?>
-
+    </tr>
+    {% endfor %}
 </table>
-<a href="/refill/generateFormAddRecord/module/addRefills/">
+<a href="{{ url.refFormAdd }}">
     <button type="button" class="btn btn-primary">Новая запись</button></a>

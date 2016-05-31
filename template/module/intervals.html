@@ -1,47 +1,52 @@
 <h1>Межсервисные интервалы:</h1>
 <span>Максимальное значение интервала в днях : 7500 дней, дальше система считает не правильно. </span>
 <br><br>
+
+{% if data.err.text %}
+    <span>{{ data.err.text }} Добавьте свою первую запись с помощь кнопки (Добавить запись)</span>
+    <br><br>
+{% endif %}
+
 <table class="table table-bordered">
     <tr>
-        <th>Номер<br>интревала</th>
-        <th>Дата создания</th>
-        <th>Время создания</th>
-        <th>Название интервала</th>
-        <th>Текущие показания одометра</th>
+        <th>Дата/время<br>добавления</th>
+        <th>Сервис</th>
+        <th>Начало интервала</th>
         <th>Интервал замены</th>
-        <th>Финишные показания одометра</th>
-        <th>Дата (начало интервала)</th>
-        <th>Заменить через (дней)</th>
+        <th>Конец интервала</th>
+        <th>Дата (старт интервала)</th>
+        <th>Замена через (дней)</th>
         <th>Дата (конец интревала)</th>
-        <th>Комментраий</th>
-        <th>Уведомлять о приближающемся событии?</th>
+        <th>Комментарий</th>
+        <th>Уведомлять?</th>
         <th>Действия</th>
     </tr>
     <tr>
-    <?php
-	if (isset($data)) {
-	    if(isset($data['err'])){
-	        echo $data['err']['text']." Добавьте свою первую запись с помощь кнопки (Добавить запись)";
-        }else{
-		    foreach ($data as $row) {
-                echo "<td align='center'>".array_pop($dataKey)."</td>";
-                echo "<td align='center' width='100px'>$row[date_add]</td>";
-                echo "<td align='center' width='100px'>$row[time_add]</td>";
-                echo "<td align='center'>$row[name]</td>";
-                echo "<td align='center'>$row[start_odo]</td>";
-                echo "<td align='center'>$row[interval]</td>";
-                echo "<td align='center'>$row[finish_odo]</td>";
-                echo "<td align='center'>$row[start_date]</td>";
-                echo "<td align='center'>$row[interval_days]</td>";
-                echo "<td align='center'>$row[finish_date]</td>";
-                echo "<td align='center'>$row[comment]</td>";
-                echo "<td align='center'>$row[notify]</td>";
-                echo "<td align='center'><a href='#'>Изменить</a><br><a href='#'>Удалить</a></td>";
-                echo "</tr>";
-            }
-        }
-    }
-    ?>
+    {% for item in data %}
+
+        <td>{{ item.date_add }}<br>{{ item.time_add }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.start_odo }}</td>
+        <td>{{ item.interval }}</td>
+        <td>{{ item.finish_odo }}</td>
+        <td>{{ item.start_date }}</td>
+        <td>{{ item.interval_days }}</td>
+        <td>{{ item.finish_date }}</td>
+        <td>{{ item.comment }}</td>
+        <td>{{ item.notify }}</td>
+        <td style="width: 100px">
+        {% if item.id %}
+            <a href="{{ url.hrefDelButton }}{{ item.id }} ">
+                <button type='button' class='btn btn-xs btn-danger'>delete</button>
+            </a>
+            <a href="{{ url.hrefEditButton }} ">
+                <button type='button' class='btn btn-xs btn-success'>edit</button>
+            </a>
+        {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
 </table>
-<a href="/serviceIntervals/generateFormAddRecord/module/addIntervals/">
+
+<a href="{{ url.servInterAddRec }}">
     <button type="button" class="btn btn-primary">Новая запись</button></a>

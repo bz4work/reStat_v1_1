@@ -24,19 +24,23 @@ class Refill
      */
     public function index(){
         if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
-            /*$id = $this->getUserId();
-            if(!isset($id)){
-                $this->setUserId($_SESSION['id']);
-            }*/
             Result::errorCreate("globalError","Эта страница Вам не доступна, войдите.");
             return Redirect::redirect("/login/checkUser/");
         }
 
+        //$zapas_value = new Refill();
+        //$zapas_value->getBalanceKm();
+
         $getRecord = new RefillRecordAction();
         $this->dataArr = $getRecord->getRecord($_SESSION['id']);
 
+        $url = array("refFormAdd"  => Config::getConfig('refFormAdd'),
+                     "refDelRec"   => Config::getConfig('refDelRec'),
+                     "refFormEdit" => Config::getConfig('refFormEdit'),
+        );
+
         $renderViewRefill = new View();
-        return $renderViewRefill->render("refill", $this->dataArr);
+        return $renderViewRefill->render("refill", $this->dataArr,$url);
     }
 
     public function generateFormAddRecord($param){
@@ -89,7 +93,7 @@ class Refill
         foreach ($data as $item) {
             if(!$item){
                 Result::errorCreate("add_error", "Не все поля заполнены. Проверьте!");
-                return Redirect::redirect();
+                return Redirect::redirect("previous");
             }
 
         }
@@ -106,7 +110,7 @@ class Refill
             }
         }
 
-        return Redirect::redirect();
+        return Redirect::redirect("previous");
     }
 
     public function editRecord(){
@@ -136,7 +140,9 @@ class Refill
                     Result::errorCreate('globalError', 'Данные не обновлены! Причина: ' . $result);
                 }
 
-                return Redirect::redirect("/login/checkUser/");
+                //return Redirect::redirect("/login/checkUser/");
+                $redirect = new Redirect();
+                return $redirect->refIndexLoad();
 
             } else {
                 throw new Exception ("id не существует или не передан");
@@ -144,7 +150,7 @@ class Refill
         }else{
             Log::writeToFile(__METHOD__,__FILE__,__LINE__,"попытка доступа не авторизированного юзера к методу editRecord");
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            Redirect::redirect("index.php?login=checkUser");
+            Redirect::redirect("/login/checkUser/");
         }
     }
 
@@ -164,20 +170,15 @@ class Refill
             }
         }else{
             Result::errorCreate("globalError","Вы не вошли. Войдите.");
-            Redirect::redirect();
+            Redirect::redirect("previous");
         }
-        Redirect::redirect();
-
+        Redirect::redirect("previous");
     }
 
-    public function getLiters(){
-        $ovr = Request::getPost("over");
-        $sum = Request::getPost("total_sum");
-        $prc = Request::getPost("price_gas");
-        if (isset($ovr,$sum,$prc)){
-            $result = $sum/$prc;
-            return Request::setPost("total_litres",$result);
-        }
-
+    public function getBalanceKm(){
+        $zapas = new Balance();
+        $value = $zapas->getBalance($_SESSION['id']);
+        $_SESSION['balance'] = $value[0]['sumkm'];
+        return Redirect::redirect("previous");
     }
 }

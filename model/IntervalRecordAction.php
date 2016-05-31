@@ -64,10 +64,10 @@ class IntervalRecordAction extends RefillRecordAction{
     }
 
     public function getNameIntervals($id_user){
-        if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
+        /*if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
             Result::errorCreate(SystemConfig::getConfig('globalEr'),"Эта страница Вам не доступна вам, войдите.");
             Redirect::redirect();
-        }
+        }*/
         if(!$id_user){
             throw new Exception ("Не передан id юзера или передан не верный id, не могу получить записи");
         }
@@ -83,8 +83,11 @@ class IntervalRecordAction extends RefillRecordAction{
                     $dataArray[] = $item;
                 }
             }
+            if (!isset($dataArray)){
+                $dataArray[0]['id'] = "error";
+                $dataArray[0]['name'] = "нет активных сервисов";
+            }
             return $dataArray;
-        //получаем из базы все активные сервисы пользователя
 
         }catch (Exception $e){
             $logger = new Log();

@@ -10,63 +10,78 @@
 class Router{
     private static $_route;
 
-    public function create(){
-
-        $controller = null;
-        $method = null;
-        $params = array();
-
-        //Router with non ModRewrite
-        ///bz4work/test/mvc/index.php? refill=index & username=slava & id=1
-        if (!stristr(self::getRoute(),"?")){
-            self::setRoute(Config::getConfig("defaultRoute"));
-            $url = explode("=",self::getRoute());
-            $controller = $url[0];
-            $method = $url[1];
-        }else{
-            $url = explode("?",self::getRoute());
-            $controllerArray = explode("&",$url[1]);
-
-            foreach ($controllerArray as $key=>$row) {
-                if($key == 0){
-                    $str = explode("=",$row);
-
-                    $controller .= $str[0];
-                    $method .= $str[1];
-
-                }else{
-                    $str = explode("=",$row);
-                    if ($str[0] == "XDEBUG_SESSION_START") {
-
-                    }else{
-                        $params["$str[0]"] = $str[1];
-                    }
-                }
-            }
-        }
-
-        $controllerName = ucfirst($controller);
-        $content = new $controllerName;
-
-        $reflexion = new ReflectionClass("$controllerName");
-
-        if(!$checkMethod = $reflexion->getMethod("$method")){
-            throw new Exception ("Такого метода не существует".__LINE__);
-        }
-
-        if (isset($params)){
-            return $content->$method($params);
-        }else{
-            return $content->$method();
-        }
-    }
-
     public static function getRoute(){
         return self::$_route;
     }
 
     public static function setRoute($route){
         self::$_route = $route;
+    }
+
+    public function create(){
+        $url = self::getRoute();
+
+        //если строка пустая или передано index.php
+        //загружаем контроллер=метод поумолчанию
+        if($url === "/" || $url === "/index.php"){
+
+            $controller = Config::getConfig('defaultController');
+            $method = Config::getConfig('defaultMethod');
+            $params = array();
+
+        }else{
+            $cut_url = explode('?',$url);
+
+            //если после {контроллера=метода} переданы параметры после знака & ->
+            // -> разбиваем строку по этому знаку
+
+            //в ячейке $cut_url[1] - лежит часть строки после занка ?
+            if(stristr($cut_url[1],"&")){
+                $parts = explode('&',$cut_url[1]);
+
+                //get Controller and Method
+                $controllerMethodString = array_shift($parts);
+                $part = explode('=',$controllerMethodString);
+                $controller = $part[0];
+                $method = $part[1];
+
+                //get Array Params like ([param_name1]=>[value_param1],[param_name2]=>[value_param2])
+                $params = array();
+                foreach ($parts as $row) {
+                    $arrNameVal = explode('=',$row);
+                    //$arrNameVal[0] - name param
+                    //$arrNameVal[1] - value param
+                    $params[$arrNameVal[0]] = $arrNameVal[1];
+                }
+
+            }else{
+                $parts = explode('=',$cut_url[1]);
+                $controller = array_shift($parts);
+                $method = array_shift($parts);
+
+                //ignoring XDEBUG_SESSION_START
+                if($controller == "XDEBUG_SESSION_START") {
+                    $controller = Config::getConfig('defaultController');
+                    $method = Config::getConfig('defaultMethod');
+                }
+            }//конец вложенного else
+
+        }//конец 1го else
+
+        $controllerName = ucfirst($controller);
+        $reflexion = new ReflectionClass("$controllerName");
+
+        $object = new $controllerName;
+
+        if(!$checkMethod = $reflexion->getMethod("$method")){
+            throw new Exception ("method: $method does not exist: ".__LINE__);
+        }
+
+        if (isset($params)){
+            return $object->$method($params);
+        }else{
+            return $object->$method();
+        }
     }
 
 }

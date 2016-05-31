@@ -43,14 +43,15 @@
     <?if(isset($_SESSION['globalError'])){ ?>
     <div class="alert alert-danger" role="alert">
         <strong>Error!</strong> <?=$_SESSION['globalError']?>
-        <a href='/result/destroyMsg/name/globalError/'>
+        <!--<a href='/result/destroyMsg/name/globalError/'>-->
+        <a href='<?=Config::getConfig("destrGlobErr")?>'>
             <button type="button" class="btn btn-xs btn-danger">x</button>
         </a>
     </div>
     <?}elseif(isset($_SESSION['globalResult'])){?>
     <div class="alert alert-success" role="alert">
         <strong>Well done!</strong> <?=$_SESSION['globalResult']?>
-        <a href='/result/destroyMsg/name/globalResult/'>
+        <a href='<?=Config::getConfig("destrGlobRes")?>'>
             <button type="button" class="btn btn-xs btn-success">x</button>
         </a>
     </div>
@@ -63,7 +64,21 @@
         </div>
         <div class="panel-body">
             Вы вошли как, <b><?=@$_SESSION['user']?></b>
-            <a href='/login/logout/'><button type='button' class='btn btn-xs btn-danger'>Logout</button></a>
+            <a href='<?=Config::getConfig("logout")?>'><button type='button' class='btn btn-xs btn-danger'>Logout</button></a>
+            <div>
+                Запас пробега до следующей заправки: <b><?=@$_SESSION['balance']?></b>
+                <a href='index.php?refill=getBalanceKm'>
+                    <button type='button' class='btn btn-xs btn-danger'>
+                        <span class="glyphicon glyphicon-refresh"></span>
+                    </button>
+                </a>
+            </div>
+            <div>
+                Следующая заправка (приблизительно):
+            </div>
+            <div>
+                Поледняя заправка: {дата}, на сумму {сумма}
+            </div>
         </div>
     </div>
     <?}?>

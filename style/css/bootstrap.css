@@ -263,8 +263,12 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('../../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+  url('../../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
+  url('../../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -3908,7 +3912,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon {
   /*slimline*/
-  width: 120px;
+  width: 190px;
 
 
   padding: 6px 12px;
@@ -6770,3 +6774,15 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.input-group-attr:hover::after {
+  content: attr(data-title); /* Выводим текст */
+  position: absolute; /*!* Абсолютное позиционирование *!*/
+  left: 95%; top: 20%; /* Положение подсказки */
+  z-index: 1; /* Отображаем подсказку поверх других элементов */
+  background: rgba(255,255,230,0.9); /* Полупрозрачный цвет фона */
+  font-family: Arial, sans-serif; /* Гарнитура шрифта */
+  font-size: 11px; /* Размер текста подсказки */
+  padding: 5px 10px; /* Поля */
+  border: 1px solid #333; /* Параметры рамки */
+}

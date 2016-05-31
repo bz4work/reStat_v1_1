@@ -63,13 +63,11 @@ class Login{
                 $createSession = new Session("user",$username);
                 $createSession = new Session("id",$id);
 
-                $refill_content = new Refill();
-                $refill_content->setUserId($id);
+                //$zapas_value = new Refill();
+                //$zapas_value->getBalanceKm();
 
-                /*$clearMsg = new Result();
-                $clearMsg->clearAll();*/
-
-                return $refill_content->index();
+                $url = Config::getConfig('home');
+                return Redirect::redirect($url);
             }else{
                 throw new Exception ("Пароль или логин введены не верно");
             }
@@ -83,11 +81,13 @@ class Login{
     public function formLogin(){
         $view = new View();
         //$view->renderLoginForm();
-        $view->render('loginForm');
+        $url = Config::getConfig('logVer');
+        $view->render('loginForm',$arr='',$url);
     }
 
     public function logout(){
         session_destroy();
-        Redirect::redirect("/page/main/");
+        $url = Config::getConfig("defaultRoute");
+        Redirect::redirect("$url");
     }
 }
