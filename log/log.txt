@@ -1423,3 +1423,43 @@
 [31.05.2016 22:48:00] | [GET] | [test] | IP:[127.0.0.1]
 [Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
 [RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[31.05.2016 23:02:53] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[31.05.2016 23:15:31] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[31.05.2016 23:35:54] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[31.05.2016 23:40:52] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[31.05.2016 23:50:30] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[31.05.2016 23:57:05] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[31.05.2016 23:57:06] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[31.05.2016 23:57:07] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 

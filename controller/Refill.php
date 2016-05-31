@@ -9,7 +9,7 @@
 class Refill
 {
     public $dataArr;
-    public $user_id;
+    /*public $user_id;
 
     public function setUserId($user_id){
         $this->user_id = $user_id;
@@ -17,7 +17,7 @@ class Refill
 
     public function getUserId(){
         return $this->user_id;
-    }
+    }*/
 
     /**
      * @throws Exception
@@ -25,7 +25,7 @@ class Refill
     public function index(){
         if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
             Result::errorCreate("globalError","Эта страница Вам не доступна, войдите.");
-            return Redirect::redirect("/login/checkUser/");
+            return Redirect::redirect(Config::getConfig("logCheck"));
         }
 
         //$zapas_value = new Refill();
@@ -46,10 +46,14 @@ class Refill
     public function generateFormAddRecord($param){
         if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
             $formAddRecordView = new View();
-            return $formAddRecordView->render($param['module']);
+            $url = [
+                    'refAddRec'=>Config::getConfig('refAddRec'),
+                    'refIndex' =>Config::getConfig('refIndex')
+            ];
+            return $formAddRecordView->render($param['module'],$d=[],$url);
         }else{
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            Redirect::redirect("/login/checkUser/");
+            Redirect::redirect(Config::getConfig("logCheck"));
         }
 
     }
@@ -70,7 +74,7 @@ class Refill
             return $formAddRecordView->render($param['module'], $data);
         }else{
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            Redirect::redirect("/login/checkUser/");
+            Redirect::redirect(Config::getConfig("logCheck"));
         }
     }
 
@@ -131,39 +135,36 @@ class Refill
             if (isset($id_rec) && !empty($id_rec)) {
 
                 $add = new RefillRecordAction();
-
                 $result = $add->updateRecord($id_rec, $data);
 
                 if (!is_string($result)) {
                     Result::successCreate('globalResult', 'Данные обновлены!');
                 } else {
-                    Result::errorCreate('globalError', 'Данные не обновлены! Причина: ' . $result);
+                    Result::errorCreate('globalError', 'Данные не обновлены! Причина: '.$result);
                 }
 
                 //return Redirect::redirect("/login/checkUser/");
                 $redirect = new Redirect();
                 return $redirect->refIndexLoad();
-
             } else {
                 throw new Exception ("id не существует или не передан");
             }
         }else{
             Log::writeToFile(__METHOD__,__FILE__,__LINE__,"попытка доступа не авторизированного юзера к методу editRecord");
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            Redirect::redirect("/login/checkUser/");
+            Redirect::redirect(Config::getConfig("logCheck"));
         }
     }
 
     public function deleteRecord($param){
         $id = $param['id'];
-
         $add = new RefillRecordAction();
-
 
         if (isset($_SESSION['user'])) {
 
             try {
                 $add->deleteRecord($id);
+                Redirect::redirect("previous");
             } catch (Exception $e) {
                 $err_text = $e->getMessage();
                 Result::errorCreate("globalError", $err_text);
@@ -172,7 +173,7 @@ class Refill
             Result::errorCreate("globalError","Вы не вошли. Войдите.");
             Redirect::redirect("previous");
         }
-        Redirect::redirect("previous");
+
     }
 
     public function getBalanceKm(){

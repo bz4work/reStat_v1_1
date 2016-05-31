@@ -31,11 +31,7 @@ class Config{
         }
         return self::$_config[$key];
     }
-	
-	/**
-	 *
-	 */
-	
+
     public static function setConfig($param, $value_param=""){
         if(isset($param) && is_array($param)){
             foreach ($param as $k => $v) {

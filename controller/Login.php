@@ -7,32 +7,27 @@
  */
 class Login{
 
+    /**
+     * check whether the user is logged in
+     * @throws Exception
+     */
     public function checkUser(){
-
         if(isset($_SESSION['user'])){
-
-            $userData = new UserDB();
+            /*$userData = new UserDB();
             $userData->generateUserDataArray($_SESSION['user'],"username");
-
-            //нужно дли это?
-            if (is_array($userData)){
-                throw new Exception ("Не правильно передано имя пользователя из сессии".__METHOD__);
-            }
-
             $id = $userData->getUserInfo("id");
-
+            $refill_content->setUserId($id);*/
             $refill_content = new Refill();
-
-            $refill_content->setUserId($id);
-
             return $refill_content->index();
-
         }else{
             $this->formLogin();
         }
     }
 
-
+    /**
+     * login and password entered by the user verification
+     * @throws Exception
+     */
     public function verificationUser(){
 
         $post_email = Request::getPost("email");
@@ -44,7 +39,7 @@ class Login{
 
             if($userData->generateUserDataArray($post_email) == "false"){
                 Result::errorCreate("globalError","Такого юзера не существуеты");
-                return Redirect::redirect("/login/checkUser/");
+                return Redirect::redirect(Config::getConfig("logCheck"));
             }
 
             try{
@@ -52,7 +47,7 @@ class Login{
             }catch(Exception $e){
                 $err_txt = $e->getMessage();
                 Result::errorCreate("globalError",$err_txt);
-                return Redirect::redirect("/login/checkUser/");
+                return Redirect::redirect(Config::getConfig("logCheck"));
             }
 
             if($post_password == $pass_user_db) {
@@ -63,31 +58,32 @@ class Login{
                 $createSession = new Session("user",$username);
                 $createSession = new Session("id",$id);
 
-                //$zapas_value = new Refill();
-                //$zapas_value->getBalanceKm();
-
-                $url = Config::getConfig('home');
-                return Redirect::redirect($url);
+                return Redirect::redirect(Config::getConfig('home'));
             }else{
                 throw new Exception ("Пароль или логин введены не верно");
             }
         }else{
             Result::errorCreate("globalError","Не все поля заполнены!");
-            return Redirect::redirect("/login/checkUser/");
+            return Redirect::redirect(Config::getConfig("logCheck"));
         }
     }
 
-
+    /**
+     * create login form
+     * @throws Exception
+     */
     public function formLogin(){
         $view = new View();
-        //$view->renderLoginForm();
         $url = Config::getConfig('logVer');
         $view->render('loginForm',$arr='',$url);
     }
 
+    /**
+     * destroy user sessions
+     * @throws Exception
+     */
     public function logout(){
         session_destroy();
-        $url = Config::getConfig("defaultRoute");
-        Redirect::redirect("$url");
+        Redirect::redirect(Config::getConfig("defaultRoute"));
     }
 }

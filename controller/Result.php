@@ -23,12 +23,6 @@ class Result{
 
     }
 
-    /*public function destroyLocal($arrParam){
-        $name = $arrParam['name'];
-        unset($_SESSION[$name]);
-        Redirect::redirect($_SERVER['HTTP_REFERER']);
-    }*/
-
     public function clearAll(){
         $this->destroyGlobal("globalError");
         /*static::destroyGlobal("globalResult");

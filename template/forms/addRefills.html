@@ -1,4 +1,4 @@
-<h3>Ввод данных:</h3>
+<h3>Добавить данные о заправке:</h3>
     <?php
         if (isset($_SESSION['add_result'])){?>
         <div class="alert alert-success" role="alert">
@@ -40,49 +40,49 @@
         <input type="submit" name="add_to_db" value="Добавить">
     </form>
 </div>-->
-<form action="<?=Config::getConfig('refAddRec')?>" method="post">
+<form action="{{ refAddRec }}" method="post">
     <div style="width: 350px">
         <!--
         для изменения ширины <span>
         искать в bootstrap.css -> input-group-addon -> slimline
         -->
         <div class="input-group">
-            <input name="date" value="<?=@($_POST['date'])?$_POST['date']:date('Y-m-d', time());?>"
+            <input name="date" value=""
                    type="text" class="form-control" placeholder="2016-12-31" aria-describedby="basic-addon1">
-            <span style="width: 120px" class="input-group-addon" id="basic-addon1">Date</span>
+            <span class="input-group-addon" id="basic-addon1">Date</span>
             <!--<span class="input-group-addon">
                 <input type="checkbox" aria-label="...">
                 </span>-->
         </div>
         <div class="input-group">
-            <input name="time" value="<?=@($_POST['time'])?$_POST['time']:date('H:i:s',time());?>"
+            <input name="time" value=""
                    type="text" class="form-control" placeholder="23:59" aria-describedby="basic-addon2">
             <span class="input-group-addon" id="basic-addon2">Time</span>
         </div>
         <div class="input-group">
-            <input name="odo" value="<?=@($_POST['odo'])?$_POST['odo']:''?>" type="text" class="form-control" placeholder="159875" aria-describedby="basic-addon3">
+            <input name="odo" value="" type="text" class="form-control" placeholder="159875" aria-describedby="basic-addon3">
             <span class="input-group-addon" id="basic-addon3">Одометр (km)</span>
         </div>
         <div class="input-group">
-            <input name="total_sum" value="<?=@($_POST['total_sum'])?$_POST['total_sum']:''?>" type="text" class="form-control" placeholder="250" aria-describedby="basic-addon4">
+            <input name="total_sum" value="" type="text" class="form-control" placeholder="250" aria-describedby="basic-addon4">
             <span class="input-group-addon" id="basic-addon4">Стоимость</span>
         </div>
         <div class="input-group">
-            <input name="total_litres" value="<?=@($_POST['total_litres'])?round($_POST['total_litres'],2):''?>"
+            <input name="total_litres" value=""
                    type="text" class="form-control" placeholder="21" aria-describedby="basic-addon5">
             <span class="input-group-addon" id="basic-addon5">Литры (L)</span>
         </div>
         <div class="input-group">
-            <input name="price_gas" value="<?=@($_POST['price_gas'])?$_POST['price_gas']:''?>" type="text" class="form-control" placeholder="7.69" aria-describedby="basic-addon6">
+            <input name="price_gas" value="" type="text" class="form-control" placeholder="7.69" aria-describedby="basic-addon6">
             <span class="input-group-addon" id="basic-addon6">Цена</span>
         </div>
         <div class="input-group">
-            <input name="id_zapravki" value="<?=@($_POST['id_zapravki'])?$_POST['id_zapravki']:''?>"
+            <input name="id_zapravki" value=""
                    type="text" class="form-control" placeholder="Wog" aria-describedby="basic-addon7">
             <span class="input-group-addon" id="basic-addon7">Заправка</span>
         </div>
         <br>
-        <a href="<?=Config::getConfig('refIndex')?>"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>
+        <a href="{{ refIndex }}"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>
         <input type="submit" name="add_to_db" value="Добавить" class="btn btn-xs btn-success">
     </div>
 </form>

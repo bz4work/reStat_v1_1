@@ -66,7 +66,6 @@ class View{
     protected function renderModule($moduleName,$data = array(),$url = array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
-
         if(file_exists("template/module/".$moduleName.".html")){
             $fileName = $moduleName.".html";
             $fileSystem = "template/module/";
@@ -78,35 +77,11 @@ class View{
             $fileSystem = "empty";
         }
 
-        //$loader = new Twig_Loader_Filesystem('template/module');
         $loader = new Twig_Loader_Filesystem($fileSystem);
         $twig = new Twig_Environment($loader);
-
-        //$template = $twig->loadTemplate('intervals.html');
         $template = $twig->loadTemplate($fileName);
 
         return  $template->render(array('data' => $data, 'url' => $url));
-
-        /*extract($data);
-
-        //for table "Refill statistic" in "My Cabinet"
-        for ($i = 1; $i < count($data)+1; $i++){
-            $dataKey[] = $i;
-        }
-
-        ob_start();
-
-        $moduleContent = $this->_dir.$this->_ds."template".$this->_ds."module".$this->_ds.$moduleName.".html";
-
-        //не крсивый участок, попробовать через switch чтоли
-        if (!file_exists($moduleContent)){
-            $moduleContent = $this->_dir.$this->_ds."template".$this->_ds."forms".$this->_ds.$moduleName.".html";
-        }
-
-        include "$moduleContent";
-
-        $moduleDataHtml = ob_get_clean();
-        return $moduleDataHtml;*/
     }
 
 }

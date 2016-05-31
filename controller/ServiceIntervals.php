@@ -8,11 +8,12 @@
  */
 class ServiceIntervals extends Refill{
     public $intervalsData;
+
     public function index(){
         //отображение стартовой таблицы
         if(!isset($_SESSION['id'])){
             Result::errorCreate("globalError","Эта страница Вам не доступна, войдите.");
-            return Redirect::redirect("/login/checkUser/");
+            return Redirect::redirect(Config::getConfig('logCheck'));
         }
 
         $getRecord = new IntervalRecordAction();
@@ -91,8 +92,8 @@ class ServiceIntervals extends Refill{
             $err_text = $e->getMessage();
             Result::errorCreate("globalError",$err_text);
         }
-        $url = Config::getConfig("servInterIndex");
-        return Redirect::redirect("$url");
+        //$url = Config::getConfig("servInterIndex");
+        return Redirect::redirect(Config::getConfig('servInterIndex'));
     }
 
     public function generateFormAddRecord($param){
@@ -116,8 +117,8 @@ class ServiceIntervals extends Refill{
             return $formAddRecordView->render($param['module'],$this->intervalsData,$url);
         }else{
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            $url = Config::getConfig('logCheck');
-            Redirect::redirect("$url");
+            //$url = Config::getConfig('logCheck');
+            Redirect::redirect(Config::getConfig('logCheck'));
         }
 
     }
