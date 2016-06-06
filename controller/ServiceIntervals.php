@@ -16,16 +16,14 @@ class ServiceIntervals extends Refill{
             return Redirect::redirect(Config::getConfig('logCheck'));
         }
 
+        $test = new Refill();
+        $test->getBalanceKm();
+
         $getRecord = new IntervalRecordAction();
         $this->intervalsData = $getRecord->getRecord($_SESSION['id']);
 
-        $url = array("hrefDelButton"    => Config::getConfig('hrefDelButton'),
-                     "hrefEditButton"   => Config::getConfig('hrefEditButton'),
-                     "servInterAddRec" => Config::getConfig('servInterAddRec'),
-            );
-
         $renderViewRefill = new View();
-        return $renderViewRefill->render("intervals", $this->intervalsData,$url);
+        return $renderViewRefill->render("intervals", $this->intervalsData);
     }
 
     public function addRecord(){
@@ -121,5 +119,93 @@ class ServiceIntervals extends Refill{
             Redirect::redirect(Config::getConfig('logCheck'));
         }
 
+    }
+
+    public function generateFormEditRecord($param){
+        if(!isset($_SESSION['user']) && empty($_SESSION['user'])) {
+            Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            Redirect::redirect("/login/checkUser/");
+        }
+
+            $id_rec = $param['id'];
+
+            $form = new View();
+            $getData = new IntervalRecordAction();
+            $data = $getData->getRecord($_SESSION['id'], $id_rec);
+            foreach ($data as &$record) {
+                //в каждом вложенном массиве record
+                // лежат данные по одному интервалу
+                foreach ($record as $k=>$item) {
+                    //удаляем пустые ячейки
+                    if ($item == null){
+                        unset($record[$k]);
+                    }
+                }
+            }
+            //выбираем все включенные сервисы
+            $data['services'] = $getData->getNameIntervals($_SESSION['id']);
+            return $form->render($param['module'], $data);
+    }
+
+    public function editRecord(){
+        if(!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+            Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            Redirect::redirect("/login/checkUser");
+        }
+            $data = array(
+                "dt" => Request::getPost('dt'),
+                "tm" => Request::getPost('tm'),
+                "odo" => Request::getPost('odo'),
+                "tot_sum" => Request::getPost('tot_sum'),
+                "tot_lit" => Request::getPost('tot_lit'),
+                "prc_gas" => Request::getPost('prc_gas'),
+                "fuel_type" => Request::getPost('fuel_type'),
+                "id_zapravki" => Request::getPost('id_zapravki'),
+            );
+            foreach ($data as $item) {
+                if(!$item) {
+                    //Result::errorCreate("add_error", "Не все поля заполнены. Проверьте!");
+                    $_SESSION['globalError'] = "Не все поля заполнены. Проверьте!";
+                    return Redirect::redirect("previous");
+                }
+            }
+
+            $id_rec = Request::getPost("id");
+
+            if (isset($id_rec) && !empty($id_rec)) {
+
+                $update = new RefillRecordAction();
+                $result = $update->updateRecord($id_rec, $data);
+
+                if (!is_string($result)) {
+                    Result::successCreate('globalResult', 'Данные обновлены!');
+                    return Redirect::redirect("/refill/index");
+                } else {
+                    Result::errorCreate('globalError', 'Данные не обновлены! Причина: '.$result);
+                    return Redirect::redirect("previous");
+                }
+            } else {
+                throw new Exception ("id не существует или не передан");
+            }
+
+
+    }
+
+    public function deleteRecord($param){
+        if (!isset($_SESSION['user'])) {
+            Result::errorCreate("globalError","Вы не вошли. Войдите.");
+            return Redirect::redirect("/login/checkUser/");
+        }
+
+        $id = $param['id'];
+        $del = new IntervalRecordAction();
+        $res = $del->deleteRecord($id);
+        if($res === true){
+            Result::errorCreate("globalResult", "Запись № $id - успешно удалена.");
+            return Redirect::redirect("previous");
+        }else{
+            Result::errorCreate("globalError", $res);
+            return Redirect::redirect("previous");
+        }
     }
 }

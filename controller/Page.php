@@ -14,6 +14,10 @@ class Page
 
     public function about(){
         $renderViewRefill = new View();
+
+        $test = new Refill();
+        $test->getBalanceKm();
+
         return $renderViewRefill->render("about");
     }
 
@@ -25,6 +29,8 @@ class Page
          * if (isset($options_param)){ extract($options_param);}
          *
          */
+        $test = new Refill();
+        $test->getBalanceKm();
 
         $renderViewRefill = new View();
         return $renderViewRefill->render("main");

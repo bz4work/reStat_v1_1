@@ -17,8 +17,8 @@ class Login{
             $userData->generateUserDataArray($_SESSION['user'],"username");
             $id = $userData->getUserInfo("id");
             $refill_content->setUserId($id);*/
-            $refill_content = new Refill();
-            return $refill_content->index();
+            $page = new Refill();
+            return $page->main();
         }else{
             $this->formLogin();
         }
@@ -39,7 +39,7 @@ class Login{
 
             if($userData->generateUserDataArray($post_email) == "false"){
                 Result::errorCreate("globalError","Такого юзера не существуеты");
-                return Redirect::redirect(Config::getConfig("logCheck"));
+                return Redirect::redirect("/login/checkUser/");
             }
 
             try{
@@ -47,7 +47,7 @@ class Login{
             }catch(Exception $e){
                 $err_txt = $e->getMessage();
                 Result::errorCreate("globalError",$err_txt);
-                return Redirect::redirect(Config::getConfig("logCheck"));
+                return Redirect::redirect("/login/checkUser/");
             }
 
             if($post_password == $pass_user_db) {
@@ -58,7 +58,7 @@ class Login{
                 $createSession = new Session("user",$username);
                 $createSession = new Session("id",$id);
 
-                return Redirect::redirect(Config::getConfig('home'));
+                return Redirect::redirect("/page/main/");
             }else{
                 throw new Exception ("Пароль или логин введены не верно");
             }
@@ -74,8 +74,7 @@ class Login{
      */
     public function formLogin(){
         $view = new View();
-        $url = Config::getConfig('logVer');
-        $view->render('loginForm',$arr='',$url);
+        return $view->render('loginForm');
     }
 
     /**

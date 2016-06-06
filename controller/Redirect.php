@@ -25,42 +25,4 @@ class Redirect{
         }
         return header ("Location: $url");
     }
-
-    public function refIndexLoad(){
-        if (isset($_SESSION['user'])){
-
-            try{
-                $url = Config::getConfig('refIndex');
-                return self::redirect($url);
-            }catch(Exception $e){
-                $err_txt = $e->getMessage();
-                Result::errorCreate("globalError", $err_txt);
-                return self::redirect('previous');
-            }
-
-        }else{
-            $url_logn_form = Config::getConfig("logCheck");
-            self::redirect($url_logn_form);
-        }
-    }
-
-    public function siIndexLoad(){
-        if (isset($_SESSION['user'])){
-
-            try{
-                $url = Config::getConfig('servInterIndex');
-                return self::redirect($url);
-            }catch(Exception $e){
-                $err_txt = $e->getMessage();
-                Result::errorCreate("globalError", $err_txt);
-                return self::redirect('previous');
-            }
-
-        }else{
-            $url_logn_form = Config::getConfig("logCheck");
-            self::redirect($url_logn_form);
-        }
-    }
-
-
 }

@@ -1,0 +1,99 @@
+<h3>Редактирование интервала:</h3>
+
+
+<form action="/serviceIntervals/editRecord/" method="post">
+<div style="width: 350px">
+    <!--
+    для изменения ширины <span>
+    искать в bootstrap.css -> input-group-addon -> slimline
+    -->
+
+    <input name='id' value='{{ data.0.id }}' type="hidden" >
+
+    <div class="input-group">
+        <input name='dt' style="width:160px;" value="{{ data.0.date_add }}"
+               type="text" class="form-control" placeholder="2016-12-31" aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="basic-addon1">date</span>
+    </div>
+    <div class="input-group">
+        <input name='tm' style="width:160px;" value="{{ data.0.time_add }}"
+               type="text" class="form-control" placeholder="23:59" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">time</span>
+    </div>
+    <div class="input-group">
+        <select size="1" style="width:160px;" name="name_interval" class="form-control" style="width: 196px">
+            <!--<option disabled selected>&nbsp;</option>-->
+            {% for item in data.services %}
+                {% if item.id == data.0.name %}
+                    {% set sel='selected' %}
+                {% endif %}
+                <option value='{{ item.id }}' {{sel}}>{{ item.name }}</option>
+            {% endfor %}
+        </select>
+        <span class="input-group-addon" id="basic-addon12">Выберите сервис</span>
+    </div>
+
+    {% if data.0.start_odo %}
+        {% set format = '(km)' %}
+        {% set type = 'text' %}
+
+        {% set start = data.0.start_odo %}
+        {% set name1 = 'start_odo' %}
+
+        {% set interval = data.0.interval %}
+        {% set name2 = 'interval' %}
+
+        {% set finish = data.0.finish_odo %}
+        {% set name3 = 'finish_odo' %}
+
+    {% elseif data.0.start_date %}
+        {% set format = '(д-м-год)' %}
+        {% set type = 'date' %}
+
+        {% set start = data.0.start_date %}
+        {% set name1 = 'start_date' %}
+
+        {% set interval = data.0.interval_days %}
+        {% set name2 = 'interval_days' %}
+
+        {% set finish = data.0.finish_date %}
+        {% set name3 = 'finish_date' %}
+    {% endif %}
+    <div class="input-group">
+        <input name='{{name1}}' value="{{ start }}" style="width:160px;"
+               type="{{type}}" class="form-control" aria-describedby="basic-addon3">
+        <span class="input-group-addon" id="basic-addon3">Старт {{format}}</span>
+    </div>
+    <div class="input-group">
+        <input name='{{name2}}' value='{{ interval }}'
+               type="text" class="form-control" aria-describedby="basic-addon4">
+        <span class="input-group-addon" id="basic-addon4">Интревал</span>
+    </div>
+    <div class="input-group">
+        <input name='{{name3}}' value='{{ finish }}' style="width:160px;"
+               type="{{type}}" class="form-control" aria-describedby="basic-addon5">
+        <span class="input-group-addon" id="basic-addon5">Конец {{format}}</span>
+    </div>
+
+
+    <div class="input-group">
+        <input name='comment' value='{{data.0.comment}}'
+               type="text" class="form-control" aria-describedby="basic-addon6">
+        <span class="input-group-addon" id="basic-addon6">Комментарий</span>
+    </div>
+    <div class="input-group">
+        {%if data.0.notify == 1 %}
+            {% set notify = 'yes' %}
+        {%elseif data.0.notify == 0 %}
+            {% set notify = 'no' %}
+        {%endif%}
+        <input name='notify' value='{{ notify }}'
+               type="text" class="form-control" aria-describedby="basic-addon7">
+        <span class="input-group-addon" id="basic-addon7">Уведомлять?</span>
+    </div>
+
+    <br>
+    <a href="/serviceIntervals/index/"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>
+    <input type="submit" name="go_edited" value="Сохранить" class="btn btn-xs btn-success">
+</div>
+</form>

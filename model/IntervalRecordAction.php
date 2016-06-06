@@ -48,7 +48,7 @@ class IntervalRecordAction extends RefillRecordAction{
                                notify
                         FROM service_intervals AS si LEFT JOIN name_intervals AS ni
                         ON si.name = ni.id
-                        WHERE si.id_user=".$id_user."AND id=".$id_record." ORDER BY si.id DESC;";
+                        WHERE si.id_user=".$id_user." AND si.id=".$id_record." ORDER BY si.id DESC;";
         }
         try {
             $data = WorkDB::getData($sql_get_rec);
@@ -157,7 +157,36 @@ class IntervalRecordAction extends RefillRecordAction{
         }
     }
 
-    public function deleteRecord($id){}
+    public function deleteRecord($id){
+        if(!isset($id) || empty($id)){
+            throw new Exception ("Не передан параметр для удаление или передан пустой.");
+        }
+        $sql_del = "DELETE FROM service_intervals WHERE `id` = $id;";
 
+        try {
+            WorkDB::insertData($sql_del);
+            return true;
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
+    }
 
+    public function updateRecord($id,$data){
+        $sql_upd = "UPDATE service_intervals SET
+                                    date = '{$data['dt']}',
+                                    time = '{$data['tm']}',
+                                    odometr = '{$data['odo']}',
+                                    total_sum = '{$data['tot_sum']}',
+                                    total_liters = '{$data['tot_lit']}',
+                                    price_gas = '{$data['prc_gas']}',
+                                    fuel_type = '{$data['fuel_type']}',
+                                    id_zapravki = '{$data['id_zapravki']}'
+                 WHERE id = '$id'";
+        try {
+            WorkDB::insertData($sql_upd);
+            return true;
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
+    }
 }

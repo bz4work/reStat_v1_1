@@ -9,15 +9,7 @@
 class Refill
 {
     public $dataArr;
-    /*public $user_id;
-
-    public function setUserId($user_id){
-        $this->user_id = $user_id;
-    }
-
-    public function getUserId(){
-        return $this->user_id;
-    }*/
+    public $errorArr;
 
     /**
      * @throws Exception
@@ -25,37 +17,26 @@ class Refill
     public function index(){
         if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
             Result::errorCreate("globalError","Эта страница Вам не доступна, войдите.");
-            return Redirect::redirect(Config::getConfig("logCheck"));
+            return Redirect::redirect("/login/checkUser/");
         }
 
-        //$zapas_value = new Refill();
-        //$zapas_value->getBalanceKm();
+        //$test = new Refill();
+        //$test->getBalanceKm();
 
         $getRecord = new RefillRecordAction();
         $this->dataArr = $getRecord->getRecord($_SESSION['id']);
 
-        $url = array("refFormAdd"  => Config::getConfig('refFormAdd'),
-                     "refDelRec"   => Config::getConfig('refDelRec'),
-                     "refFormEdit" => Config::getConfig('refFormEdit'),
-        );
-
         $renderViewRefill = new View();
-        return $renderViewRefill->render("refill", $this->dataArr,$url);
+        return $renderViewRefill->render("refill", $this->dataArr);
     }
 
     public function generateFormAddRecord($param){
-        if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
-            $formAddRecordView = new View();
-            $url = [
-                    'refAddRec'=>Config::getConfig('refAddRec'),
-                    'refIndex' =>Config::getConfig('refIndex')
-            ];
-            return $formAddRecordView->render($param['module'],$d=[],$url);
-        }else{
+        if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            Redirect::redirect(Config::getConfig("logCheck"));
+            return Redirect::redirect("/login/checkUser/");
         }
-
+            $formAddRecordView = new View();
+            return $formAddRecordView->render($param['module']);
     }
 
     /**
@@ -63,19 +44,20 @@ class Refill
      * @throws Exception
      */
     public function generateFormEditRecord($param){
-        if(isset($_SESSION['user']) && !empty($_SESSION['user'])) {
-            $id_rec = $param['id'];
-
-            $formAddRecordView = new View();
-
-            $getData = new RefillRecordAction();
-            $data = $getData->getRecord($_SESSION['id'], $id_rec);
-
-            return $formAddRecordView->render($param['module'], $data);
-        }else{
+        if(!isset($_SESSION['user']) || empty($_SESSION['user'])) {
             Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            Redirect::redirect(Config::getConfig("logCheck"));
+            return Redirect::redirect("/login/checkUser");
         }
+            $id_rec = $param['id'];
+            $formAddRecordView = new View();
+            $getData = new RefillRecordAction();
+            //$data = $getData->getRecord($_SESSION['id'], $id_rec);
+            $this->dataArr = $getData->getRecord($_SESSION['id'], $id_rec);
+            //return $formAddRecordView->render($param['module'], $data);
+            if (!empty($this->errorArr)){
+                $this->dataArr['error'] = $this->errorArr;
+            }
+            return $formAddRecordView->render($param['module'], $this->dataArr);
     }
 
     /**
@@ -84,41 +66,65 @@ class Refill
     public function addRecord()
     {
         $data = array(
-            "dt" => Request::getPost('date'),
-            "tm" => Request::getPost('time'),
-            "id_user" => $_SESSION['id'],
             "odo" => Request::getPost('odo'),
             "tot_sum" => Request::getPost('total_sum'),
             "tot_lit" => Request::getPost('total_litres'),
             "prc_gas" => Request::getPost('price_gas'),
-            //"id_zapravki" => Request::getPost('id_zapravki'),
-            "over" => Request::getPost('over')
+            "over" => Request::getPost('over'),
+            "fuel_type" => Request::getPost('fuel_type')
         );
+
         foreach ($data as $item) {
-            if(!$item){
+            if(!$item) {
                 Result::errorCreate("add_error", "Не все поля заполнены. Проверьте!");
                 return Redirect::redirect("previous");
             }
-
         }
+
+        $dt = Request::getPost('date');
+        $tm = Request::getPost('time');
+        $id_user = $_SESSION['id'];
+        $id_zapravki = Request::getPost('id_zapravki');
+
+        if (empty($dt)){
+            $dt = date("Y-m-d",time());
+        }
+        if (empty($tm)){
+            $tm = date("H:i",time());
+        }
+        if(empty($id_user)){
+            throw new Exception ("Сессия не существует, войдите. Не могу добавить запись в БД.".__METHOD__);
+        }
+        if (empty($id_zapravki)){
+            $id_zapravki = "null";
+        }
+
+        $data['dt'] = $dt;
+        $data['tm'] = $tm;
+        $data['id_user'] = $id_user;
+        $data['id_zapravki'] = $id_zapravki;
 
         $add = new RefillRecordAction();
         $btn = Request::getPost("add_to_db");
-        if (isset($btn)) {
 
-            try {
-                $add->createRecord($data);
-            } catch (Exception $e) {
-                $err_text = $e->getMessage();
-                Result::errorCreate("globalError", $err_text);
+        if (isset($btn)) {
+            $res = $add->createRecord($data);
+            if($res === true){
+                Result::successCreate('add_result','Данные добавлены в БД');
+                return Redirect::redirect("/refill/index/");
+            }else{
+                Result::errorCreate("globalError", $res);
+                return Redirect::redirect("previous");
             }
         }
-
-        return Redirect::redirect("previous");
     }
 
     public function editRecord(){
-        if(isset($_SESSION['user']) || !empty($_SESSION['user'])) {
+        if(!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+            Log::writeToFile(__METHOD__,__FILE__,__LINE__,"попытка доступа не авторизированного юзера к методу editRecord");
+            Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            return Redirect::redirect("/login/checkUser/");
+        }
             $data = array(
                 "dt" => Request::getPost('dt'),
                 "tm" => Request::getPost('tm'),
@@ -126,60 +132,66 @@ class Refill
                 "tot_sum" => Request::getPost('tot_sum'),
                 "tot_lit" => Request::getPost('tot_lit'),
                 "prc_gas" => Request::getPost('prc_gas'),
-                //"id_zapravki" => Request::getPost('id_zapravki'),
-                //"over" => Request::getPost('over')
+                "fuel_type" => Request::getPost('fuel_type'),
+                "id_zapravki" => Request::getPost('id_zapravki'),
             );
-
             $id_rec = Request::getPost("id");
 
-            if (isset($id_rec) && !empty($id_rec)) {
+            foreach ($data as $item) {
+                if(!$item) {
+                    $this->errorArr = "Не все поля заполнены. Проверьте!";
+                    $param = ['module'=>'editRecord', 'id'=>"$id_rec"];
+                    return $this->generateFormEditRecord($param);
+                }
+            }
 
-                $add = new RefillRecordAction();
-                $result = $add->updateRecord($id_rec, $data);
+            if (isset($id_rec) && !empty($id_rec)) {
+                $update = new RefillRecordAction();
+                $result = $update->updateRecord($id_rec, $data);
 
                 if (!is_string($result)) {
                     Result::successCreate('globalResult', 'Данные обновлены!');
+                    return Redirect::redirect("/refill/index");
                 } else {
                     Result::errorCreate('globalError', 'Данные не обновлены! Причина: '.$result);
+                    return Redirect::redirect("previous");
                 }
-
-                //return Redirect::redirect("/login/checkUser/");
-                $redirect = new Redirect();
-                return $redirect->refIndexLoad();
             } else {
                 throw new Exception ("id не существует или не передан");
             }
-        }else{
-            Log::writeToFile(__METHOD__,__FILE__,__LINE__,"попытка доступа не авторизированного юзера к методу editRecord");
-            Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            Redirect::redirect(Config::getConfig("logCheck"));
-        }
     }
 
     public function deleteRecord($param){
+        if(!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+            Log::writeToFile(__METHOD__,__FILE__,__LINE__,"попытка доступа не авторизированного юзера к методу editRecord");
+            Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            return Redirect::redirect("/login/checkUser/");
+        }
         $id = $param['id'];
         $add = new RefillRecordAction();
 
-        if (isset($_SESSION['user'])) {
-
             try {
                 $add->deleteRecord($id);
-                Redirect::redirect("previous");
+                return Redirect::redirect("previous");
             } catch (Exception $e) {
                 $err_text = $e->getMessage();
-                Result::errorCreate("globalError", $err_text);
+                return Result::errorCreate("globalError", $err_text);
             }
-        }else{
-            Result::errorCreate("globalError","Вы не вошли. Войдите.");
-            Redirect::redirect("previous");
-        }
-
     }
 
     public function getBalanceKm(){
-        $zapas = new Balance();
-        $value = $zapas->getBalance($_SESSION['id']);
-        $_SESSION['balance'] = $value[0]['sumkm'];
-        return Redirect::redirect("previous");
+        if(!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+            //Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            //return Redirect::redirect("previous");
+        }else{
+            $zapas = new Balance();
+            $value = $zapas->getBalance($_SESSION['id']);
+            if (!$value){
+                $_SESSION['balance'] = 'нет данных';
+            }
+            $_SESSION['balance'] = $value[0]['sumkm'];
+        }
+
+        //return Redirect::redirect("previous");
     }
 }

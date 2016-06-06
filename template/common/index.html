@@ -12,19 +12,21 @@
     <title>restat ver.1.1</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/style/css/bootstrap.css" rel="stylesheet">
+    <link href="/vendor/twbs/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap theme -->
-    <link href="/style/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/vendor/twbs/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/style/css/assets/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="/vendor/twbs/bootstrap/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/style/css/theme.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="/js/assets//ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="/vendor/twbs/bootstrap/docs/assets/js/ie8-responsive-file-warning.js"></script>
+    <![endif]-->
     <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,41 +39,58 @@
 <body role="document">
 <!-- Fixed navbar -->
 <?=@$topMenu?>
+<!-- Fixed navbar -->
 
 <div class="container theme-showcase" role="main">
-    <!--Block Error-->
+
+<!--Block Error-->
     <?if(isset($_SESSION['globalError'])){ ?>
     <div class="alert alert-danger" role="alert">
-        <strong>Error!</strong> <?=$_SESSION['globalError']?>
+        <strong>Error!</strong>
+            <?=@$_SESSION['globalError']?>
         <!--<a href='/result/destroyMsg/name/globalError/'>-->
-        <a href='<?=Config::getConfig("destrGlobErr")?>'>
+        <!--<a href='<?=Config::getConfig("destrGlobErr")?>'>-->
+        <a href='/result/destroyMsg/name/globalError/'>
             <button type="button" class="btn btn-xs btn-danger">x</button>
         </a>
     </div>
-    <?}elseif(isset($_SESSION['globalResult'])){?>
-    <div class="alert alert-success" role="alert">
-        <strong>Well done!</strong> <?=$_SESSION['globalResult']?>
-        <a href='<?=Config::getConfig("destrGlobRes")?>'>
-            <button type="button" class="btn btn-xs btn-success">x</button>
-        </a>
-    </div>
     <?}?>
+<!--Block Error-->
 
-    <?if(isset($_SESSION['user'])){ ?>
+<!--Block Result-->
+    <?if(isset($_SESSION['globalResult'])){
+        echo "?>
+                <div class="alert alert-success" role="alert">
+                    <strong>Well done!</strong>
+                        <?=@$_SESSION['globalResult']?>
+                    <a href='/result/destroyMsg/name/globalResult/'>
+                        <button type="button" class="btn btn-xs btn-success">x</button>
+                    </a>
+                </div>
+        <?";}
+    ?>
+<!--Block Result-->
+
+
+
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Панель пользователя</h3>
         </div>
         <div class="panel-body">
-            Вы вошли как, <b><?=@$_SESSION['user']?></b>
-            <a href='<?=Config::getConfig("logout")?>'><button type='button' class='btn btn-xs btn-danger'>Logout</button></a>
+
+
+            <?php if(isset($_SESSION['user'])){
+                echo "Вы вошли как, <b>".$_SESSION['user']."</b>";
+                echo "
+                <a href='/login/logout/'>
+                <button type='button' class='btn btn-xs btn-danger'>Logout</button>
+                </a>";
+                }
+            ?>
+
             <div>
                 Запас пробега до следующей заправки: <b><?=@$_SESSION['balance']?></b>
-                <a href='index.php?refill=getBalanceKm'>
-                    <button type='button' class='btn btn-xs btn-danger'>
-                        <span class="glyphicon glyphicon-refresh"></span>
-                    </button>
-                </a>
             </div>
             <div>
                 Следующая заправка (приблизительно):
@@ -81,30 +100,9 @@
             </div>
         </div>
     </div>
-    <?}?>
+
 
     <?=$moduleContent?>
-
-<!--    <div class="page-header">
-        <h1>Alerts</h1>
-    </div>
-
-    <div class="alert alert-info" role="alert">
-        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-    </div>
-    <div class="alert alert-warning" role="alert">
-        <strong>Warning!</strong> Best check yo self, you're not looking too good.
-    </div>
-    <div class="alert alert-danger" role="alert">
-        <strong>Oh snap!</strong> Change a few things up and try submitting again.
-    </div>
-
-    <div class="page-header">
-        <h1>Wells</h1>
-    </div>
-    <div class="well">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
-    </div>-->
 
 </div> <!-- /container -->
 
@@ -113,17 +111,13 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/assets/vendor/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="/vendor/twbs/bootstrap/docs/assets/js/vendor/jquery.min.js"><\/script>')</script>
 
-<script src="/js/distr/bootstrap.min.js"></script>
+<script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 
-
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>-->
-
-<script src="/js/assets/vendor/docs.min.js"></script>
+<script src="/vendor/twbs/bootstrap/docs/assets/js/docs.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="/js/assets/ie10-viewport-bug-workaround.js"></script>
+<script src="/vendor/twbs/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
 </body>

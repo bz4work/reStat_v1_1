@@ -16,9 +16,6 @@ class View{
         $this->setRootPath();
     }
 
-    /**
-     *
-     */
     private function setRootPath(){
         $this->_dir = dirname(__DIR__);
         $this->_ds = DIRECTORY_SEPARATOR;
@@ -29,41 +26,27 @@ class View{
      * @param array $data
      * @throws Exception
      */
-    public function render($moduleName, $data = array(), $url=array()){
+    public function render($moduleName, $data = array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
-        if(!isset($url)){
-            $url = array();
-        }
-        $moduleContent = $this->renderModule($moduleName,$data,$url);
-
+        $ds = DIRECTORY_SEPARATOR;
+        $moduleContent = $this->renderModule($moduleName,$data);
         ob_start();
-
-        try{
-            $mod_rewrite = Config::getConfig("mod_rewrite");
-            $top_menu = "topMenu_rewrite.html";
-        }catch(Exception $e){
-            $top_menu = "topMenu.html";
-        }
-
-        $topMenu = file_get_contents($this->_dir.$this->_ds."template".$this->_ds."menu".$this->_ds.$top_menu);
-
-        //$main_html = $this->_dir.$this->_ds."template".$this->_ds."common".$this->_ds."main.html";
-        $main_html = $this->_dir.$this->_ds."template".$this->_ds."common".$this->_ds."index.html";
+        $topMenu = file_get_contents("template".$ds."menu".$ds."topMenu.html");
+        $main_html = "template".$ds."common".$ds."index.html";
         include "$main_html";
-
         $final_html = ob_get_clean();
-
         echo $final_html;
     }
 
     /**
      * @param $moduleName
      * @param array $data
+     * @param array $url
      * @return string
      * @throws Exception
      */
-    protected function renderModule($moduleName,$data = array(),$url = array()){
+    protected function renderModule($moduleName,$data = array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
         if(file_exists("template/module/".$moduleName.".html")){
@@ -81,7 +64,7 @@ class View{
         $twig = new Twig_Environment($loader);
         $template = $twig->loadTemplate($fileName);
 
-        return  $template->render(array('data' => $data, 'url' => $url));
+        return  $template->render(array('data' => $data));
     }
 
 }

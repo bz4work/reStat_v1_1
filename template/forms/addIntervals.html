@@ -1,25 +1,6 @@
 <h1>Добавление нового интервала:</h1>
 
-<!-- понять как выводить сюда ошибки -->
-<!--
-{% if url.add_result or url.add_error %}
-<div class="alert alert-success" role="alert">
-    <strong>Succes!</strong>
-    <?=$_SESSION['add_result']?>
-    <a href='{{ url.add_result }}'>
-        <button type="button" class="btn btn-xs btn-success">x</button>
-    </a>
-</div>
-<div class="alert alert-danger" role="alert">
-    <strong>Error!</strong>
-    <?=$_SESSION['add_error']?>
-    <a href='{{ url.add_error }}'>
-        <button type="button" class="btn btn-xs btn-danger">x</button>
-    </a>
-</div>
-{% endif %}-->
-
-<form method="post" action="{{ url.formAction }}">
+<form method="post" action="/serviceIntervals/addRecord/">
     <div style="width: 400px">
         <!--
         для изменения ширины <span>

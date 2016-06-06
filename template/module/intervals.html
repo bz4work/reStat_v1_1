@@ -36,10 +36,10 @@
         <td>{{ item.notify }}</td>
         <td style="width: 100px">
         {% if item.id %}
-            <a href="{{ url.hrefDelButton }}{{ item.id }} ">
+            <a href="/serviceIntervals/deleteRecord/id/{{ item.id }}">
                 <button type='button' class='btn btn-xs btn-danger'>delete</button>
             </a>
-            <a href="{{ url.hrefEditButton }} ">
+            <a href="/serviceIntervals/generateFormEditRecord/module/intervaRecordEdit/id/{{ item.id }}">
                 <button type='button' class='btn btn-xs btn-success'>edit</button>
             </a>
         {% endif %}
@@ -48,5 +48,5 @@
     {% endfor %}
 </table>
 
-<a href="{{ url.servInterAddRec }}">
+<a href="/serviceIntervals/generateFormAddRecord/module/addIntervals/">
     <button type="button" class="btn btn-primary">Новая запись</button></a>

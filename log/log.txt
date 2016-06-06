@@ -1463,3 +1463,490 @@
 [31.05.2016 23:57:07] | [GET] | [test] | IP:[127.0.0.1]
 [Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
 [RefillRecordAction::getRecord] | [C:\AppServ\www\bz4work\reStat_v1_1\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 11:46:19] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 11:46:24] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 11:55:00] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:03:00] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:03:02] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:03:21] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:03:30] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:05:55] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:27:40] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:28:02] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:28:25] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:28:26] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 12:28:40] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 13:57:21] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:00:45] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:00:51] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:02:22] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:02:46] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:02:58] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:03:31] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT id,id_user,date,time,odometr,total_sum,total_liters,price_gas
+                        FROM refill WHERE (id_user = 2 AND id = %3C) ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:03:31] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:08:01] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT id,id_user,date,time,odometr,total_sum,total_liters,price_gas
+                        FROM refill WHERE (id_user = 2 AND id = %3C) ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:08:01] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:08:11] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT id,id_user,date,time,odometr,total_sum,total_liters,price_gas
+                        FROM refill WHERE (id_user = 2 AND id = %3C) ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:08:11] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:24:04] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT id,id_user,date,time,odometr,total_sum,total_liters,price_gas,fuel_type,id_zapravki
+                        FROM refill WHERE (id_user = 2 AND id = index.php) ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:24:04] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:24:05] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT id,id_user,date,time,odometr,total_sum,total_liters,price_gas,fuel_type,id_zapravki
+                        FROM refill WHERE (id_user = 2 AND id = index.php) ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:24:05] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:24:06] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT id,id_user,date,time,odometr,total_sum,total_liters,price_gas,fuel_type,id_zapravki
+                        FROM refill WHERE (id_user = 2 AND id = index.php) ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:24:06] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:27:25] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'gas',
+                                    id_zapravki = 'test',
+                 WHERE id = '30'] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:34:25] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'benzin',
+                                    id_zapravki = '121212',
+                 WHERE id = '30'] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:37:38] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'gas',
+                                    id_zapravki = '123',
+                 WHERE id = '30'] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:39:52] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'gas',
+                                    id_zapravki = '777',
+                 WHERE id = '30'] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:41:31] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'gas',
+                                    id_zapravki = 'bla',
+                 WHERE id = '30'] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:41:36] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'gas',
+                                    id_zapravki = 'test',
+                 WHERE id = '30'] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:53:52] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'benzin',
+                                    id_zapravki = 'testoo',
+                 WHERE id = '30'] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:57:50] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'gas',
+                                    id_zapravki = 'testoooo',
+                 WHERE id = '30'] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:58:27] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'gas',
+                                    id_zapravki = 'testoooo',
+                 WHERE id = 30] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 14:58:58] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [UPDATE refill SET
+                                    date = '2016-06-06',
+                                    time = '14:21:00',
+                                    odometr = '159789',
+                                    total_sum = '100',
+                                    total_liters = '13',
+                                    price_gas = '7.69',
+                                    fuel_type = 'gas',
+                                    id_zapravki = 'testooo',
+                 WHERE id = 30] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:42:47] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:43:58] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:44:46] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:49:02] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT si.id,
+                               si.id_user,
+                               date_add,
+                               time_add,
+                               ni.name,
+                               start_odo,
+                               `interval`,
+                               finish_odo,
+                               start_date,
+                               interval_days,
+                               finish_date,
+                               comment,
+                               notify
+                        FROM service_intervals AS si LEFT JOIN name_intervals AS ni
+                        ON si.name = ni.id
+                        WHERE si.id_user=2AND id=72 ORDER BY si.id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:49:02] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\IntervalRecordAction.php] | [58] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:49:33] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT si.id,
+                               si.id_user,
+                               date_add,
+                               time_add,
+                               ni.name,
+                               start_odo,
+                               `interval`,
+                               finish_odo,
+                               start_date,
+                               interval_days,
+                               finish_date,
+                               comment,
+                               notify
+                        FROM service_intervals AS si LEFT JOIN name_intervals AS ni
+                        ON si.name = ni.id
+                        WHERE si.id_user=2AND id=72 ORDER BY si.id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:49:33] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\IntervalRecordAction.php] | [58] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:49:52] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT si.id,
+                               si.id_user,
+                               date_add,
+                               time_add,
+                               ni.name,
+                               start_odo,
+                               `interval`,
+                               finish_odo,
+                               start_date,
+                               interval_days,
+                               finish_date,
+                               comment,
+                               notify
+                        FROM service_intervals AS si LEFT JOIN name_intervals AS ni
+                        ON si.name = ni.id
+                        WHERE si.id_user=2AND id=72 ORDER BY si.id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:49:52] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\IntervalRecordAction.php] | [58] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:51:49] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT si.id,
+                               si.id_user,
+                               date_add,
+                               time_add,
+                               ni.name,
+                               start_odo,
+                               `interval`,
+                               finish_odo,
+                               start_date,
+                               interval_days,
+                               finish_date,
+                               comment,
+                               notify
+                        FROM service_intervals AS si LEFT JOIN name_intervals AS ni
+                        ON si.name = ni.id
+                        WHERE si.id_user=2AND id=72 ORDER BY si.id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:51:49] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\IntervalRecordAction.php] | [58] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:53:55] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT si.id,
+                               si.id_user,
+                               date_add,
+                               time_add,
+                               ni.name,
+                               start_odo,
+                               `interval`,
+                               finish_odo,
+                               start_date,
+                               interval_days,
+                               finish_date,
+                               comment,
+                               notify
+                        FROM service_intervals AS si LEFT JOIN name_intervals AS ni
+                        ON si.name = ni.id
+                        WHERE si.id_user=2AND si.id=72 ORDER BY si.id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:53:55] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\IntervalRecordAction.php] | [58] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:54:46] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT si.id,
+                               si.id_user,
+                               date_add,
+                               time_add,
+                               ni.name,
+                               start_odo,
+                               `interval`,
+                               finish_odo,
+                               start_date,
+                               interval_days,
+                               finish_date,
+                               comment,
+                               notify
+                        FROM service_intervals AS si LEFT JOIN name_intervals AS ni
+                        ON si.name = ni.id
+                        WHERE si.id_user=2AND si.id=72 ORDER BY si.id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 15:54:52] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[IntervalRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\IntervalRecordAction.php] | [58] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 17:10:52] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT id,id_user,date,time,odometr,total_sum,total_liters,price_gas,fuel_type,id_zapravki
+                        FROM refill WHERE (id_user = 2 AND id = e) ORDER BY id DESC;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 17:10:52] | [POST] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Не удалось выполнить запрос к БД] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 17:43:46] | [GET] | [no_session_name] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT sumkm FROM total_km WHERE id_user= ORDER BY id DESC LIMIT 1;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[06.06.2016 17:44:52] | [GET] | [no_session_name] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT sumkm FROM total_km WHERE id_user= ORDER BY id DESC LIMIT 1;] | 

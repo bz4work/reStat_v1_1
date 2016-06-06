@@ -8,11 +8,13 @@
 <table class="table table-bordered">
     <tr >
         <th>#</th>
-        <th>Дата<br>(год-д-м)<br>Время</th>
+        <th>Дата<br>(год-м-д)<br>Время</th>
         <th>Одометр (km)</th>
         <th>Стоимость</th>
         <th>Литры</th>
         <th>Цена (L)</th>
+        <th>Тип топлива</th>
+        <th>Заправка</th>
         <th>Действия</th>
     </tr>
     <tr>
@@ -24,12 +26,14 @@
     <td>{{ item.total_sum }}</td>
     <td>{{ item.total_liters }}</td>
     <td>{{ item.price_gas }}</td>
+    <td>{{ item.fuel_type }}</td>
+    <td>{{ item.id_zapravki }}</td>
     <td>
     {% if item.id %}
-        <a href="{{ url.refDelRec }}{{ item.id }}">
+        <a href="/refill/deleteRecord/id/{{ item.id }}">
             <button type='button' class='btn btn-xs btn-danger'>delete</button>
         </a>
-        <a href="{{ url.refFormEdit }}{{ item.id }}">
+        <a href="/refill/generateFormEditRecord/module/editRecord/id/{{ item.id }}">
             <button type='button' class='btn btn-xs btn-success'>edit</button>
         </a>
     {% endif %}
@@ -38,5 +42,5 @@
     </tr>
     {% endfor %}
 </table>
-<a href="{{ url.refFormAdd }}">
+<a href="/refill/generateFormAddRecord/module/addRefills">
     <button type="button" class="btn btn-primary">Новая запись</button></a>
