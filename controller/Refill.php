@@ -17,7 +17,7 @@ class Refill
     public function index(){
         if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
             Result::errorCreate("globalError","Эта страница Вам не доступна, войдите.");
-            return Redirect::redirect("/login/checkUser/");
+            return Redirect::redirect("/page/aboutRefill/");
         }
 
         //$test = new Refill();

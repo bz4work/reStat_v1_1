@@ -44,21 +44,21 @@
 <div class="container theme-showcase" role="main">
 
 <!--Block Error-->
-    <?if(isset($_SESSION['globalError'])){ ?>
+    <!--<?if(isset($_SESSION['globalError'])){ ?>
     <div class="alert alert-danger" role="alert">
         <strong>Error!</strong>
             <?=@$_SESSION['globalError']?>
-        <!--<a href='/result/destroyMsg/name/globalError/'>-->
-        <!--<a href='<?=Config::getConfig("destrGlobErr")?>'>-->
+        &lt;!&ndash;<a href='/result/destroyMsg/name/globalError/'>&ndash;&gt;
+        &lt;!&ndash;<a href='<?=Config::getConfig("destrGlobErr")?>'>&ndash;&gt;
         <a href='/result/destroyMsg/name/globalError/'>
             <button type="button" class="btn btn-xs btn-danger">x</button>
         </a>
     </div>
-    <?}?>
+    <?}?>-->
 <!--Block Error-->
 
 <!--Block Result-->
-    <?if(isset($_SESSION['globalResult'])){
+    <!--<?if(isset($_SESSION['globalResult'])){
         echo "?>
                 <div class="alert alert-success" role="alert">
                     <strong>Well done!</strong>
@@ -68,44 +68,15 @@
                     </a>
                 </div>
         <?";}
-    ?>
+    ?>-->
 <!--Block Result-->
 
 
 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Панель пользователя</h3>
-        </div>
-        <div class="panel-body">
-
-
-            <?php if(isset($_SESSION['user'])){
-                echo "Вы вошли как, <b>".$_SESSION['user']."</b>";
-                echo "
-                <a href='/login/logout/'>
-                <button type='button' class='btn btn-xs btn-danger'>Logout</button>
-                </a>";
-                }
-            ?>
-
-            <div>
-                Запас пробега до следующей заправки: <b><?=@$_SESSION['balance']?></b>
-            </div>
-            <div>
-                Следующая заправка (приблизительно):
-            </div>
-            <div>
-                Поледняя заправка: {дата}, на сумму {сумма}
-            </div>
-        </div>
-    </div>
-
-
+    <?=$userProfile?>
     <?=$moduleContent?>
 
 </div> <!-- /container -->
-
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

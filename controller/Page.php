@@ -36,8 +36,13 @@ class Page
         return $renderViewRefill->render("main");
     }
 
-    /*public function emptyPage(){
+    public function aboutRefill(){
         $renderViewRefill = new View();
-        return $renderViewRefill->renderEmptyPage("empty");
-    }*/
+        return $renderViewRefill->render("aboutRefill");
+    }
+
+    public function aboutIntervals(){
+        $renderViewRefill = new View();
+        return $renderViewRefill->render("aboutIntervals");
+    }
 }

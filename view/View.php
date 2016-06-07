@@ -32,12 +32,45 @@ class View{
         $ds = DIRECTORY_SEPARATOR;
         $moduleContent = $this->renderModule($moduleName,$data);
         ob_start();
-        $topMenu = file_get_contents("template".$ds."menu".$ds."topMenu.html");
+
+        $topMenu = $this->renderMenu("topMenu");
+        $userProfile = $this->renderUserBlock("userProfile");
+
         $main_html = "template".$ds."common".$ds."index.html";
         include "$main_html";
         $final_html = ob_get_clean();
         echo $final_html;
+    }
 
+    public function renderMenu($menuName){
+        $fileName = $menuName.".html";
+        $fileSystem = "template/menu/";
+
+        $loader = new Twig_Loader_Filesystem($fileSystem);
+        $twig = new Twig_Environment($loader);
+        $template = $twig->loadTemplate($fileName);
+
+        if(isset($_SESSION['user'])){
+            return  $template->render(array('user'=>$_SESSION['user']));
+        }else{
+            return  $template->render(array('user'=>@$_SESSION['user']));
+        }
+    }
+
+    public function renderUserBlock($blockName){
+        $fileName = $blockName.".html";
+        $fileSystem = "template/module/";
+
+        $loader = new Twig_Loader_Filesystem($fileSystem);
+        $twig = new Twig_Environment($loader);
+        $template = $twig->loadTemplate($fileName);
+
+        if(isset($_SESSION['user'])){
+            return  $template->render(array('user'=>$_SESSION['user'],
+                                            'balance'=>$_SESSION['balance']));
+        }else{
+            return  $template->render(array('user'=>@$_SESSION['user']));
+        }
 
     }
 

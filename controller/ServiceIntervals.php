@@ -13,7 +13,7 @@ class ServiceIntervals extends Refill{
         //отображение стартовой таблицы
         if(!isset($_SESSION['id'])){
             Result::errorCreate("globalError","Эта страница Вам не доступна, войдите.");
-            return Redirect::redirect(Config::getConfig('logCheck'));
+            return Redirect::redirect('/page/aboutIntervals');
         }
 
         $test = new Refill();

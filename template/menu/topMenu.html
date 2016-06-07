@@ -15,7 +15,66 @@
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="/page/about/">About</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Services
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/refill/index/">Reffils</a></li>
+                        <li><a href="/serviceIntervals/index/">Intervals</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">#</a></li>
+                        <li><a href="#">#</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Registration/newUser/">Registration</a></li>
+
+
+
+                {% if user == false%}
+                <form class="navbar-form navbar-left" role="search" action="/login/verificationUser/" method="post">
+                    <div class="form-group">
+                        <input name="email" type="text" class="form-control" placeholder="email">
+                    </div>
+                    <div class="form-group">
+                        <input name="pass" type="password" class="form-control" placeholder="password">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+                {% elseif user == true%}
+                <!--<li>
+                    <div style="background-color: white" class="panel-default panel-body" >
+                        <b>{{user}}</b>
+                    </div>
+                </li>-->
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <b>{{user}}</b>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Setting</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">#</a></li>
+                        <li><a href="#">#</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href='/login/logout/'>
+                        <button type='button' class='btn btn-xs btn-danger'>Logout</button>
+                    </a>
+                </li>
+                {% else %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Services
+                        <span class="caret"></span>
+                    </a>
                     <ul class="dropdown-menu">
                         <li><a href="/refill/index/">Reffils</a></li>
                         <li><a href="/serviceIntervals/index/">Intervals</a></li>
@@ -27,11 +86,8 @@
                         <li><a href="#">#</a></li>
                     </ul>
                 </li>
-                <li><a href="/Registration/newUser/">Registration</a></li>
-                <li>
-                    <b style="color: white"><?=isset($_SESSION['user'])?$_SESSION['user']:""?></b>
-                </li>
 
+                {% endif %}
 
             </ul>
         </div><!--/.nav-collapse -->
