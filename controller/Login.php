@@ -5,6 +5,8 @@
  * Date: 20.05.2016
  * Time: 11:25
  */
+//namespace restat\controller;
+
 class Login{
 
     /**
@@ -13,10 +15,6 @@ class Login{
      */
     public function checkUser(){
         if(isset($_SESSION['user'])){
-            /*$userData = new UserDB();
-            $userData->generateUserDataArray($_SESSION['user'],"username");
-            $id = $userData->getUserInfo("id");
-            $refill_content->setUserId($id);*/
             $page = new Refill();
             return $page->main();
         }else{
@@ -49,6 +47,8 @@ class Login{
                 Result::errorCreate("globalError",$err_txt);
                 return Redirect::redirect("/login/checkUser/");
             }
+
+            //if(hash_equals($expected, $correct)){}
 
             if($post_password == $pass_user_db) {
 

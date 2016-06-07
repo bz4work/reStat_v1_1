@@ -1,0 +1,19 @@
+<!--{% if data.login == false %}
+    {% set error_login = 'has-error' %}
+    {% set error_login_p = 'Field login not be empty' %}
+{% endif %}
+
+{% if data.email == false %}
+    {% set error_email = 'has-error' %}
+    {% set error_email_p = 'Field email not be empty' %}
+{% endif %}
+
+{% if data.pass == false %}
+    {% set error_pass = 'has-error' %}
+    {% set error_pass_p = 'Field email not be empty' %}
+{% endif %}
+
+{% if data.confirm_pass == false %}
+    {% set error_confirm_pass = 'has-error' %}
+    {% set error_confirm_pass_p = 'Field email not be empty' %}
+{% endif %}-->
