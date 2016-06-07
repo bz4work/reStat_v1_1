@@ -5,8 +5,6 @@
  * Date: 20.05.2016
  * Time: 11:25
  */
-//namespace restat\controller;
-
 class Login{
 
     /**
@@ -15,7 +13,7 @@ class Login{
      */
     public function checkUser(){
         if(isset($_SESSION['user'])){
-            $page = new Refill();
+            $page = new Page();
             return $page->main();
         }else{
             $this->formLogin();
@@ -32,62 +30,30 @@ class Login{
         $post_password = Request::getPost("pass");
 
         if(isset($post_email,$post_password) && !empty($post_password) && !empty($post_email)){
-
-            /*$userData = new UserDB();
-
-            if($userData->generateUserDataArray($post_email) == "false"){
-                Result::errorCreate("globalError","Такого юзера не существуеты");
-                return Redirect::redirect("/login/checkUser/");
-            }
-
-            try{
-                $pass_user_db = $userData->getUserInfo("password");
-            }catch(Exception $e){
-                $err_txt = $e->getMessage();
-                Result::errorCreate("globalError",$err_txt);
-                return Redirect::redirect("/login/checkUser/");
-            }*/
             $userData = new UserDB();
 
             if($userData->generateUserDataArray($post_email) == "false"){
                 Result::errorCreate("globalError","Такого юзера не существуеты");
-                return Redirect::redirect("/login/checkUser/");
+                return Redirect::redirect("/page/main/");
             }
-            //if(hash_equals($expected, $correct)){}
+
             $check = new Crypt();
 
             if($check->compare($post_email,$post_password)){
                 //пароль подошел
                 $id = $userData->getUserInfo("id");
                 $username = $userData->getUserInfo("username");
-
                 $createSession = new Session("user",$username);
                 $createSession = new Session("id",$id);
-
                 return Redirect::redirect("/page/main/");
             }else{
                 //пароль не подошел
                 Result::errorCreate("globalError","Пароль введен не верно!");
-                return Redirect::redirect("/login/checkUser/");
-//                throw new Exception ("Пароль или логин введены не верно");
-            }
-
-
-            /*if($post_password == $pass_user_db) {
-
-                $id = $userData->getUserInfo("id");
-                $username = $userData->getUserInfo("username");
-
-                $createSession = new Session("user",$username);
-                $createSession = new Session("id",$id);
-
                 return Redirect::redirect("/page/main/");
-            }else{
-                throw new Exception ("Пароль или логин введены не верно");
-            }*/
+            }
         }else{
             Result::errorCreate("globalError","Не все поля заполнены!");
-            return Redirect::redirect("login/checkUser");
+            return Redirect::redirect("/page/main/");
         }
     }
 

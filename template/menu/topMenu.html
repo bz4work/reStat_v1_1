@@ -30,10 +30,8 @@
                 </li>
                 <li><a href="/Registration/newUser/">Registration</a></li>
 
-
-
                 {% if user == false%}
-                <form class="navbar-form navbar-left" role="search" action="/login/verificationUser/" method="post">
+                <form class="navbar-form navbar-left" role="form" action="/login/verificationUser/" method="post">
                     <div class="form-group">
                         <input name="email" type="text" class="form-control" placeholder="email">
                     </div>

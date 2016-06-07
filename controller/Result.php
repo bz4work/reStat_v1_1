@@ -25,8 +25,6 @@ class Result{
 
     public function clearAll(){
         $this->destroyGlobal("globalError");
-        /*static::destroyGlobal("globalResult");
-        static::destroyLocal("add_error");
-        static::destroyLocal("add_result");*/
+
     }
 }
