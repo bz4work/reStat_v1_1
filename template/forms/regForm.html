@@ -12,7 +12,11 @@
     <div class="alert alert-success" role="alert">{{ data.success }}</div>
 {% endif %}
 
-<div class="container">
+{% if data.error != false %}
+    <div class="alert alert-danger" role="alert">{{ data.error }}</div>
+{% endif %}
+
+<div class="container" >
     <form class="form-horizontal" method="POST" action="/registration/createUser/">
         <div class="form-group {{data.error_login}}">
             <label for="login" class="col-sm-2 control-label">Login</label>

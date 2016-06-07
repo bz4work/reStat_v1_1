@@ -189,7 +189,12 @@ class Refill
             if (!$value){
                 $_SESSION['balance'] = 'нет данных';
             }
-            $_SESSION['balance'] = $value[0]['sumkm'];
+            if(array_key_exists('err',$value)){
+                $_SESSION['balance'] = 'нет данных';
+            }else{
+                $_SESSION['balance'] = $value[0]['sumkm'];
+            }
+
         }
 
         //return Redirect::redirect("previous");

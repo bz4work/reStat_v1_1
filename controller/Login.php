@@ -33,7 +33,7 @@ class Login{
 
         if(isset($post_email,$post_password) && !empty($post_password) && !empty($post_email)){
 
-            $userData = new UserDB();
+            /*$userData = new UserDB();
 
             if($userData->generateUserDataArray($post_email) == "false"){
                 Result::errorCreate("globalError","Такого юзера не существуеты");
@@ -46,11 +46,34 @@ class Login{
                 $err_txt = $e->getMessage();
                 Result::errorCreate("globalError",$err_txt);
                 return Redirect::redirect("/login/checkUser/");
+            }*/
+            $userData = new UserDB();
+
+            if($userData->generateUserDataArray($post_email) == "false"){
+                Result::errorCreate("globalError","Такого юзера не существуеты");
+                return Redirect::redirect("/login/checkUser/");
+            }
+            //if(hash_equals($expected, $correct)){}
+            $check = new Crypt();
+
+            if($check->compare($post_email,$post_password)){
+                //пароль подошел
+                $id = $userData->getUserInfo("id");
+                $username = $userData->getUserInfo("username");
+
+                $createSession = new Session("user",$username);
+                $createSession = new Session("id",$id);
+
+                return Redirect::redirect("/page/main/");
+            }else{
+                //пароль не подошел
+                Result::errorCreate("globalError","Пароль введен не верно!");
+                return Redirect::redirect("/login/checkUser/");
+//                throw new Exception ("Пароль или логин введены не верно");
             }
 
-            //if(hash_equals($expected, $correct)){}
 
-            if($post_password == $pass_user_db) {
+            /*if($post_password == $pass_user_db) {
 
                 $id = $userData->getUserInfo("id");
                 $username = $userData->getUserInfo("username");
@@ -61,10 +84,10 @@ class Login{
                 return Redirect::redirect("/page/main/");
             }else{
                 throw new Exception ("Пароль или логин введены не верно");
-            }
+            }*/
         }else{
             Result::errorCreate("globalError","Не все поля заполнены!");
-            return Redirect::redirect(Config::getConfig("logCheck"));
+            return Redirect::redirect("login/checkUser");
         }
     }
 

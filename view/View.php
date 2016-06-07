@@ -37,6 +37,8 @@ class View{
         include "$main_html";
         $final_html = ob_get_clean();
         echo $final_html;
+
+
     }
 
     /**

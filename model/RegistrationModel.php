@@ -23,8 +23,6 @@ class RegistrationModel
         }catch (Exception $e){
             return $e->getMessage();
         }
-        //return true is user add in DB
-        //return error message if user not add
     }
 
 }

@@ -1950,3 +1950,26 @@
 [06.06.2016 17:44:52] | [GET] | [no_session_name] | IP:[127.0.0.1]
 [Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
 [WorkDB::getData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [36] | [SELECT sumkm FROM total_km WHERE id_user= ORDER BY id DESC LIMIT 1;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[07.06.2016 21:49:07] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[RefillRecordAction::getRecord] | [C:\xampp\htdocs\restat_11\model\RefillRecordAction.php] | [30] | [Записи в БД отсутствуют.] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[07.06.2016 23:47:04] | [POST] | [no_session_name] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [INSERT INTO `users1` (`username`,`password`,`email`,activated)
+                VALUE ('rrr', '$24gPKpWgK/AY','r@t.ua',1);] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[07.06.2016 23:48:13] | [POST] | [no_session_name] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [INSERT INTO `users1` (`username`,`password`,`email`,activated)
+                VALUE ('rrr', '$24gPKpWgK/AY','r@t.ua',1);] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[07.06.2016 23:48:49] | [POST] | [no_session_name] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [INSERT INTO `users1` (`username`,`password`,`email`,activated)
+                VALUE ('rrr', '$24gPKpWgK/AY','r@t.ua',1);] | 

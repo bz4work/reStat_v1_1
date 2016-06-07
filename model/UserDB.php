@@ -25,10 +25,6 @@ class UserDB
 
             $this->userData = $arr[0];
         }else{
-
-            $log = new Log();
-            $log->writeToFile(__METHOD__,__FILE__,__LINE__,$user_email,$column_table);
-
             throw new Exception ("Не передано имя пользователя и/или имя колонки не верное");
         }
     }
@@ -37,10 +33,18 @@ class UserDB
         if (isset($this->userData[$key])){
             return $this->userData[$key];
         }else{
-            $log = new Log();
-            $log->writeToFile(__METHOD__,__FILE__,__LINE__,$key);
+            return false;
+        }
 
-            throw new Exception ("Не удалось получить данные юзера, переданный ключ не существует.");
+    }
+
+    public function getUserInfoValue($key,$value){
+        if (isset($this->userData[$key])){
+            if ($this->userData[$key] == $value){
+                return $this->userData[$key];
+            }
+        }else{
+            return false;
         }
 
     }

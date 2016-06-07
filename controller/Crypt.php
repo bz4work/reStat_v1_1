@@ -8,19 +8,21 @@
  */
 class Crypt
 {
-    public static function cryptPass($pass){
+    public function cryptPass($pass){
         $salt = '$2aysn07$gforsa07$lt$';
         $str = md5($salt.md5($salt.$pass.$salt).$salt);
         $crypt_pass = crypt($str,$salt);
         return $crypt_pass;
     }
 
-    public static function compare($email,$pass){
+    public function compare($email,$pass){
         $user = new UserDB();
         $user->generateUserDataArray($email,'email');
 
         try{
             $passDB = $user->getUserInfo('password');
+
+            $pass = $this->cryptPass($pass);
 
             if ($pass == $passDB){
                 return true;
