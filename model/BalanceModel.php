@@ -6,7 +6,7 @@
  * Date: 31.05.2016
  * Time: 19:55
  */
-class Balance
+class BalanceModel
 {
     public function getBalance($id_user){
         $sql = "SELECT sumkm FROM total_km WHERE id_user=$id_user ORDER BY id DESC LIMIT 1;";

@@ -14,7 +14,7 @@ class UserProfile
             return Redirect::redirect(Config::getConfig("logCheck"));
         }
         $view = new View();
-        $data = new UserProfile();
+        $data = new UserProfileModel();
 
         //$data->getPersonalData($_SESSION['user']);
         $data = [ "name" => "slava",

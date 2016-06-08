@@ -43,30 +43,13 @@
 
 <div class="container theme-showcase" role="main">
 
-<!--Block Error-->
-    <!--<?if(isset($_SESSION['globalError'])){ ?>
-    <div class="alert alert-danger" role="alert">
-        <strong>Error!</strong>
-            <?=@$_SESSION['globalError']?>
-        &lt;!&ndash;<a href='/result/destroyMsg/name/globalError/'>&ndash;&gt;
-        &lt;!&ndash;<a href='<?=Config::getConfig("destrGlobErr")?>'>&ndash;&gt;
-        <a href='/result/destroyMsg/name/globalError/'>
-            <button type="button" class="btn btn-xs btn-danger">x</button>
-        </a>
-    </div>
-    <?}?>-->
-<!--Block Error-->
+    <?=@$errorBlock?>
+
 
 <!--Block Result-->
     <!--<?if(isset($_SESSION['globalResult'])){
         echo "?>
-                <div class="alert alert-success" role="alert">
-                    <strong>Well done!</strong>
-                        <?=@$_SESSION['globalResult']?>
-                    <a href='/result/destroyMsg/name/globalResult/'>
-                        <button type="button" class="btn btn-xs btn-success">x</button>
-                    </a>
-                </div>
+
         <?";}
     ?>-->
 <!--Block Result-->

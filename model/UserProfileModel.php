@@ -6,7 +6,7 @@
  * Date: 31.05.2016
  * Time: 23:22
  */
-class UserProfile
+class UserProfileModel
 {
     /**
      * get in the DB personal user data for start page "userProfile"
