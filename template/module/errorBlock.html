@@ -1,0 +1,24 @@
+
+{% if data %}
+<div class="alert alert-danger" role="alert">
+    <strong>Error!</strong>
+
+    {%for error in data %}
+
+        {{error}}
+
+    {%endfor%}
+
+    <a href='/result/destroyMsg/name/error/'>
+        <button type="button" class="btn btn-xs btn-danger">x</button>
+    </a>
+</div>
+{%endif%}
+
+<div class="alert alert-success" role="alert">
+    <strong>Well done!</strong>
+    <?=@$_SESSION['globalResult']?>
+    <a href='/result/destroyMsg/name/globalResult/'>
+        <button type="button" class="btn btn-xs btn-success">x</button>
+    </a>
+</div>

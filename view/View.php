@@ -33,6 +33,8 @@ class View{
         $moduleContent = $this->renderModule($moduleName,$data);
         ob_start();
 
+        $errorBlock = $this->renderModule('errorBlock',@$_SESSION['error']);
+
         $topMenu = $this->renderMenu("topMenu");
         $userProfile = $this->renderUserBlock("userProfile");
 
@@ -81,7 +83,7 @@ class View{
      * @return string
      * @throws Exception
      */
-    protected function renderModule($moduleName,$data = array()){
+    public function renderModule($moduleName,$data = array()){
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
         if(file_exists("template/module/".$moduleName.".html")){

@@ -88,7 +88,7 @@ class Registration
         $email = $data['email'];
         $login = $data['login'];
 
-        $userData = new UserDB();
+        $userData = new UserGetInfoModel();
 
         //проверяем существуют ли данные
         //которые совпадают с введенными

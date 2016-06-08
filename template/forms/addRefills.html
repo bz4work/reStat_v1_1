@@ -14,6 +14,7 @@
                    type="date" class="form-control" placeholder="2016-12-31" aria-describedby="basic-addon1">
             <span class="input-group-addon" id="basic-addon1">Date</span>
         </div>
+        <p class="alert-danger"></p>
 
         <div class="input-group">
             <div class="form-control" style="width:160px;">
@@ -24,7 +25,7 @@
 
             <span class="input-group-addon" id="basic-addon111">Empty tank? *</span>
         </div>
-
+        <p class="alert-danger"></p>
 
         <div class="input-group"
              data-title="Указывать не обязательно. Автоматически будет установлено текущее время.">
@@ -32,29 +33,45 @@
                    type="time" class="form-control" placeholder="23:59" aria-describedby="basic-addon2">
             <span class="input-group-addon" id="basic-addon2">Time</span>
         </div>
-        <div class="input-group" data-title="Текущий пробег по одометру. Нельзя оставлять пустым.">
-            <input name="odo" value="159789" type="text" class="form-control" placeholder="159875" aria-describedby="basic-addon3">
+        <p class="alert-danger"></p>
+
+        <div class="input-group {{data.error_odo}}" data-title="Текущий пробег по одометру. Нельзя оставлять пустым.">
+            <input name="odo" value="{{data.odo}}" type="text" class="form-control" placeholder="159875" aria-describedby="basic-addon3">
             <span class="input-group-addon" id="basic-addon3">Одометр (km) *</span>
         </div>
-        <div class="input-group" data-title="Общая сумма. Нельзя оставлять пустым.">
-            <input name="total_sum" value="100" type="text" class="form-control" placeholder="250" aria-describedby="basic-addon4">
+        <p class="alert-danger">{{data.error_odo_p}}</p>
+
+        <div class="input-group {{data.error_tot_sum}}" data-title="Общая сумма. Нельзя оставлять пустым.">
+            <input name="total_sum" value="{{data.tot_sum}}" type="text" class="form-control" placeholder="250" aria-describedby="basic-addon4">
             <span class="input-group-addon" id="basic-addon4">Стоимость *</span>
         </div>
-        <div class="input-group"
+        <p class="alert-danger">{{data.error_tot_sum_p}}</p>
+
+        <div class="input-group {{data.error_tot_lit}}"
              data-title="Указывать не обязательно. Расчет будет произведен автоматически.">
-            <input name="total_litres" value="13"
+            <input name="total_litres" value="{{data.tot_lit}}"
                    type="text" class="form-control" placeholder="21" aria-describedby="basic-addon5">
             <span class="input-group-addon" id="basic-addon5">Литры (L)</span>
         </div>
-        <div class="input-group" data-title="Стоимость топлива. Нельзя оставлять пустым.">
-            <input name="price_gas" value="7.69" type="text" class="form-control" placeholder="7.69" aria-describedby="basic-addon6">
+        <p class="alert-danger">{{data.error_tot_lit_p}}</p>
+
+        <div class="input-group {{data.error_prc_gas}}"
+             data-title="Стоимость топлива. Нельзя оставлять пустым.">
+            <input name="price_gas" value="{{data.prc_gas}}" type="text" class="form-control" placeholder="7.69" aria-describedby="basic-addon6">
             <span class="input-group-addon" id="basic-addon6">Цена*</span>
         </div>
-        <div class="input-group" data-title="Название заправки. Можно оставить пустым.">
-            <input name="id_zapravki" value="test"
+        <p class="alert-danger">{{data.error_prc_gas_p}}</p>
+
+        <div class="input-group {{data.error_id_zap}}"
+             data-title="Название заправки. Можно оставить пустым.">
+            <input name="id_zapravki" value="{{data.id_zap}}"
                    type="text" class="form-control" placeholder="Wog" aria-describedby="basic-addon7">
             <span class="input-group-addon" id="basic-addon7">Заправка</span>
+
         </div>
+        <p class="alert-danger">{{data.error_id_zap_p}}</p>
+
+
         <div class="input-group" data-title="Выберите тип топлива.">
             <select size="1" name="fuel_type" class="form-control" style="width: 160px">
                 <!--<option disabled selected>&nbsp;</option>-->

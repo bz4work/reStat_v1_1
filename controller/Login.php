@@ -25,24 +25,21 @@ class Login{
      * @throws Exception
      */
     public function verificationUser(){
-
         $post_email = Request::getPost("email");
         $post_password = Request::getPost("pass");
 
         if(isset($post_email,$post_password) && !empty($post_password) && !empty($post_email)){
-            $userData = new UserDB();
-
+            $userData = new UserGetInfoModel();
             if($userData->generateUserDataArray($post_email) == "false"){
                 Result::errorCreate("globalError","Такого юзера не существуеты");
                 return Redirect::redirect("/page/main/");
             }
 
             $check = new Crypt();
-
             if($check->compare($post_email,$post_password)){
                 //пароль подошел
-                $id = $userData->getUserInfo("id");
-                $username = $userData->getUserInfo("username");
+                $id = $userData->getUserInfoValue("id");
+                $username = $userData->getUserInfoValue("username");
                 $createSession = new Session("user",$username);
                 $createSession = new Session("id",$id);
                 return Redirect::redirect("/page/main/");

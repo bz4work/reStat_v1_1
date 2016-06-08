@@ -15,24 +15,21 @@ class Crypt
         return $crypt_pass;
     }
 
-    public function compare($email,$pass){
-        $user = new UserDB();
-        $user->generateUserDataArray($email,'email');
+    public function compare($email, $pass)
+    {
+        $user = new UserGetInfoModel();
+        $user->generateUserDataArray($email, 'email');
 
-        try{
-            $passDB = $user->getUserInfo('password');
+        $passDB = $user->getUserInfoValue('password');
 
-            $pass = $this->cryptPass($pass);
+        $pass = $this->cryptPass($pass);
 
-            if ($pass == $passDB){
-                return true;
-            }else{
-                return false;
-            }
-
-        }catch(Exception $e){
-
+        if ($pass == $passDB) {
+            return true;
+        } else {
+            return false;
         }
+
 
     }
 

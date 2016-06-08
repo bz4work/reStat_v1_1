@@ -36,7 +36,13 @@ class Refill
             return Redirect::redirect("/login/checkUser/");
         }
             $formAddRecordView = new View();
+        if(isset($param['data'])){
+            return $formAddRecordView->render($param['module'],$param['data']);
+        }else{
             return $formAddRecordView->render($param['module']);
+        }
+
+
     }
 
     /**
@@ -71,14 +77,27 @@ class Refill
             "tot_lit" => Request::getPost('total_litres'),
             "prc_gas" => Request::getPost('price_gas'),
             "over" => Request::getPost('over'),
+            "id_zap" => Request::getPost('id_zapravki'),
             "fuel_type" => Request::getPost('fuel_type')
         );
 
-        foreach ($data as $item) {
+        foreach ($data as $key=>$item) {
             if(!$item) {
-                Result::errorCreate("add_error", "Не все поля заполнены. Проверьте!");
-                return Redirect::redirect("previous");
+                $data['error_'.$key] = 'has-error';
+                $data['error_'.$key.'_p'] = "Field $key not be empty";
+                $data['err'] = 'err';
+
             }
+        }
+        if(array_key_exists('err',$data)){
+            $param['module'] = 'addRefills';
+            $param['data'] = $data;
+            unset($data['err']);
+
+            $msg = 'Зполните пустые поля';
+            ErrorController::createErr($msg,"err");
+
+            return $this->generateFormAddRecord($param);
         }
 
         $dt = Request::getPost('date');
@@ -88,21 +107,22 @@ class Refill
 
         if (empty($dt)){
             $dt = date("Y-m-d",time());
+            $data['dt'] = $dt;
         }
         if (empty($tm)){
             $tm = date("H:i",time());
+            $data['tm'] = $tm;
         }
         if(empty($id_user)){
             throw new Exception ("Сессия не существует, войдите. Не могу добавить запись в БД.".__METHOD__);
         }
         if (empty($id_zapravki)){
             $id_zapravki = "null";
+            $data['id_zapravki'] = $id_zapravki;
         }
 
-        $data['dt'] = $dt;
-        $data['tm'] = $tm;
         $data['id_user'] = $id_user;
-        $data['id_zapravki'] = $id_zapravki;
+
 
         $add = new RefillRecordAction();
         $btn = Request::getPost("add_to_db");
@@ -184,7 +204,7 @@ class Refill
             //Result::errorCreate("globalError","Войдите в систему под своим логином!");
             //return Redirect::redirect("previous");
         }else{
-            $zapas = new Balance();
+            $zapas = new BalanceModel();
             $value = $zapas->getBalance($_SESSION['id']);
             if (!$value){
                 $_SESSION['balance'] = 'нет данных';
