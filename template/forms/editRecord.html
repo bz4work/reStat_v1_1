@@ -1,11 +1,5 @@
 <h3>Редактирование записи:</h3>
 
-{% if data.error %}
-<div class="alert alert-danger" role="alert">
-    <strong>Error!</strong>{{ data.error }}
-</div>
-{% endif %}
-
 <form action="/refill/editRecord/" method="post">
 <div style="width: 350px">
     <!--
@@ -13,40 +7,52 @@
     искать в bootstrap.css -> input-group-addon -> slimline
     -->
 
+    <input name='id' value='{{data.id}}' type="hidden" >
 
-    <input name='id' value='{{data.0.id}}' type="hidden" >
-    <div class="input-group">
-        <input style="width:160px;" name='dt' value='{{data.0.date}}' type="date" class="form-control" placeholder="2016-12-31" aria-describedby="basic-addon1">
+    <div class="input-group {{data.error_date}}">
+        <input style="width:160px;" name='date' value='{{data.date}}' type="date" class="form-control" placeholder="2016-12-31" aria-describedby="basic-addon1">
         <span class="input-group-addon" id="basic-addon1">date</span>
     </div>
-    <div class="input-group">
-        <input style="width:160px;" name='tm' value='{{data.0.time}}' type="time" class="form-control" placeholder="23:59" aria-describedby="basic-addon2">
+    <p class="alert-danger">{{data.error_date_p}}</p>
+
+    <div class="input-group {{data.error_time}}">
+        <input style="width:160px;" name='time' value='{{data.time}}' type="time" class="form-control" placeholder="23:59" aria-describedby="basic-addon2">
         <span class="input-group-addon" id="basic-addon2">time</span>
     </div>
-    <div class="input-group">
-        <input name='odo' value='{{data.0.odometr}}' type="text" class="form-control" placeholder="159875" aria-describedby="basic-addon3">
+    <p class="alert-danger">{{data.error_time_p}}</p>
+
+    <div class="input-group {{data.error_odometr}}">
+        <input name='odometr' value='{{data.odometr}}' type="text" class="form-control" placeholder="159875" aria-describedby="basic-addon3">
         <span class="input-group-addon" id="basic-addon3">Одометр (km)</span>
     </div>
-    <div class="input-group">
-        <input name='tot_sum' value='{{data.0.total_sum}}' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon4">
+    <p class="alert-danger">{{data.error_odometr_p}}</p>
+
+    <div class="input-group {{data.error_total_sum}}">
+        <input name='total_sum' value='{{data.total_sum}}' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon4">
         <span class="input-group-addon" id="basic-addon4">Стоимость</span>
     </div>
-    <div class="input-group">
-        <input name='tot_lit' value='{{data.0.total_liters}}' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon5">
+    <p class="alert-danger">{{data.error_total_sum_p}}</p>
+
+    <div class="input-group {{data.error_total_liters}}">
+        <input name='total_liters' value='{{data.total_liters}}' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon5">
         <span class="input-group-addon" id="basic-addon5">Литры (L)</span>
     </div>
-    <div class="input-group">
-        <input name='prc_gas' value='{{data.0.price_gas}}' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon6">
+    <p class="alert-danger">{{data.error_total_liters_p}}</p>
+
+    <div class="input-group {{data.error_price_gas}}">
+        <input name='price_gas' value='{{data.price_gas}}' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon6">
         <span class="input-group-addon" id="basic-addon6">Цена</span>
     </div>
-    <div class="input-group">
+    <p class="alert-danger">{{data.error_price_gas_p}}</p>
+
+    <div class="input-group {{data.fuel_type}}">
         <select size="1" name="fuel_type" class="form-control" style="width: 160px">
 
-            {% if data.0.fuel_type == 'gas' %}
+            {% if data.fuel_type == 'gas' %}
                 {% set selected_gas = 'selected' %}
-            {%elseif data.0.fuel_type == 'benzin'%}
+            {%elseif data.fuel_type == 'benzin'%}
                 {% set selected_benz = 'selected' %}
-            {%elseif data.0.fuel_type == 'diesel' %}
+            {%elseif data.fuel_type == 'diesel' %}
                 {% set selected_diesel = 'selected' %}
             {%else%}
                 {% set selected_null = 'selected' %}
@@ -59,13 +65,12 @@
         </select>
         <span class="input-group-addon" id="basic-addon9">Fuel type?*</span>
     </div>
+    <p class="alert-danger">{{data.fuel_type_p}}</p>
+
     <div class="input-group">
-        <input name='id_zapravki' value='{{data.0.id_zapravki}}' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon8">
+        <input name='id_zapravki' value='{{data.id_zapravki}}' type="text" class="form-control" placeholder="250" aria-describedby="basic-addon8">
         <span class="input-group-addon" id="basic-addon8">Заправка</span>
     </div>
-
-
-
 
     <br>
     <a href="/refill/index/"><button type="button" class="btn btn-xs btn-primary">Закрыть форму</button></a>

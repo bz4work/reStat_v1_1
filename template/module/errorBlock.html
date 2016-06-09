@@ -1,24 +1,23 @@
-
-{% if data %}
+{% if data.error %}
 <div class="alert alert-danger" role="alert">
     <strong>Error!</strong>
 
-    {%for error in data %}
+    {{data.error}}
 
-        {{error}}
-
-    {%endfor%}
-
-    <a href='/result/destroyMsg/name/error/'>
+    <a href='/errorController/destroyMsg/name/error/'>
         <button type="button" class="btn btn-xs btn-danger">x</button>
     </a>
 </div>
-{%endif%}
+{% endif %}
 
+{% if data.success %}
 <div class="alert alert-success" role="alert">
     <strong>Well done!</strong>
-    <?=@$_SESSION['globalResult']?>
-    <a href='/result/destroyMsg/name/globalResult/'>
+
+    {{data.success}}
+
+    <a href='/errorController/destroyMsg/name/success/'>
         <button type="button" class="btn btn-xs btn-success">x</button>
     </a>
 </div>
+{% endif %}

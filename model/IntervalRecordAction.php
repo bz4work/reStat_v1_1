@@ -50,55 +50,36 @@ class IntervalRecordAction extends RefillRecordAction{
                         ON si.name = ni.id
                         WHERE si.id_user=".$id_user." AND si.id=".$id_record." ORDER BY si.id DESC;";
         }
-        try {
-            $data = WorkDB::getData($sql_get_rec);
+
+        $data = WorkDB::getData($sql_get_rec);
+        if (is_array($data)){
             return $data;
-        }catch (Exception $e){
-            $logger = new Log();
-            Log::writeToFile(__METHOD__,__FILE__,__LINE__,$e->getMessage());
-
-            $dataArray['err']['text'] = $err_txt = $e->getMessage();
-
+        }else{
+            //инициализация переменной для правильного отображения в шаблоне
+            $dataArray['err']['text'] = " ";
             return $dataArray;
         }
     }
 
     public function getNameIntervals($id_user){
-        /*if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
-            Result::errorCreate(SystemConfig::getConfig('globalEr'),"Эта страница Вам не доступна вам, войдите.");
-            Redirect::redirect();
-        }*/
-        if(!$id_user){
-            throw new Exception ("Не передан id юзера или передан не верный id, не могу получить записи");
-        }
-
         //получаем из базы все активные сервисы пользователя
         $sql_get_all_name = "SELECT id,name,status FROM name_intervals WHERE id_user=".$id_user." ORDER BY id DESC;";
-        try {
-            $dt = WorkDB::getData($sql_get_all_name);
+
+        $dt = WorkDB::getData($sql_get_all_name);
+        if(is_array($dt)) {
             foreach ($dt as $item) {
-                if($item['status'] == 0){
+                if ($item['status'] == 0) {
                     unset($item);
-                }else{
+                } else {
                     $dataArray[] = $item;
                 }
             }
-            if (!isset($dataArray)){
-                $dataArray[0]['id'] = "error";
-                $dataArray[0]['name'] = "нет активных сервисов";
-            }
-            return $dataArray;
-
-        }catch (Exception $e){
-            $logger = new Log();
-            Log::writeToFile(__METHOD__,__FILE__,__LINE__,$e->getMessage());
-            $err_txt = $e->getMessage();
-            Result::errorCreate("globalError", $err_txt);
-
-            $dataArray[0]['id'] = "error";
-            $dataArray[0]['name'] = "error";
-            return $dataArray;
         }
+        if (!isset($dataArray)) {
+            $dataArray[0]['id'] = "error";
+            $dataArray[0]['name'] = "нет активных сервисов";
+        }
+        return $dataArray;
     }
 
     public function createRecord($data){
@@ -140,7 +121,6 @@ class IntervalRecordAction extends RefillRecordAction{
 						   '{$data['notify']}'
 						   )";
                 }
-
 
                 try {
                     WorkDB::insertData($sql_add_rec);

@@ -26,22 +26,20 @@ class WorkDB{
             }
 
             if (count($res_data) == 0) {
-                throw new Exception ("Записи в БД отсутствуют.");
+                //throw new Exception ("Записи в БД отсутствуют.");
+                return false;
             }else{
                 return $res_data;
             }
 
         }else{
-            $log = new Log();
-            $log->writeToFile(__METHOD__,__FILE__,__LINE__,$sql);
-
             throw new Exception ("Не удалось выполнить запрос к БД");
         }
 
     }
 
     /**
-     * insert, update, delete only. No return result
+     * insert, update, delete only. Not return result
      * @param $sql
      * @return bool
      * @throws Exception
@@ -50,11 +48,7 @@ class WorkDB{
         if ($result = DB::getDB()->query($sql)){
             return true;
         }else{
-            $logger = new Log();
-            Log::writeToFile(__METHOD__,__FILE__,__LINE__,$sql);
-
-            throw new Exception ("Не удалось выполнить запрос в методе:".__METHOD__.
-                ". Проверить правильность запроса.");
+            return false;
         }
     }
 }

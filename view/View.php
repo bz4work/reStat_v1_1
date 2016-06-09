@@ -33,7 +33,7 @@ class View{
         $moduleContent = $this->renderModule($moduleName,$data);
         ob_start();
 
-        $errorBlock = $this->renderModule('errorBlock',@$_SESSION['error']);
+        $errorBlock = $this->renderModule('errorBlock',@$_SESSION['msg']);
 
         $topMenu = $this->renderMenu("topMenu");
         $userProfile = $this->renderUserBlock("userProfile");

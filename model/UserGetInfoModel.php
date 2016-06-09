@@ -12,20 +12,22 @@ class UserGetInfoModel
 
     public function __construct(){}
 
-    public function generateUserDataArray ($user_email=null, $column_table="email"){
-        if (isset($user_email) && !empty($user_email)) {
-            $sql = "SELECT * FROM users
-                                WHERE ".$column_table."='" . $user_email . "';";
-            try{
-                $arr = WorkDB::getData($sql);
-                $this->userData = $arr[0];
-            }catch(Exception $e){
-                //если поймали исключение "Записей нет", отдаем false
-                return "false";
-            }
+    public function generateUserDataArray($user_email = null, $column_table = "email"){
+        /*if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+            ErrorController::createErr("Войдите в систему под своим логином!");
+            return Redirect::redirect("/login/checkUser/");
+        }*/
+
+        $sql = "SELECT * FROM users
+                                WHERE $column_table = '$user_email';";
+
+        $arr = WorkDB::getData($sql);
+        if (is_array($arr)){
+            $this->userData = $arr[0];
         }else{
-            throw new Exception ("Не передано имя пользователя и/или имя колонки не верное");
+            return "false";
         }
+
     }
 
     public function getUserInfoValue($key,$value=null){

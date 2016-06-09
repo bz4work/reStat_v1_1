@@ -12,18 +12,21 @@ class ServiceIntervals extends Refill{
     public function index(){
         //отображение стартовой таблицы
         if(!isset($_SESSION['id'])){
-            Result::errorCreate("globalError","Эта страница Вам не доступна, войдите.");
             return Redirect::redirect('/page/aboutIntervals');
         }
 
-        $test = new Refill();
-        $test->getBalanceKm();
+        $reserve = RefillRecordAction::getRideReserve($_SESSION['id']);
+        if(isset($reserve)){
+            $_SESSION['balance'] = $reserve;
+        }else{
+            $_SESSION['balance'] = 'нет данных';
+        }
 
-        $getRecord = new IntervalRecordAction();
-        $this->intervalsData = $getRecord->getRecord($_SESSION['id']);
+        $record = new IntervalRecordAction();
+        $this->intervalsData = $record->getRecord($_SESSION['id']);
 
-        $renderViewRefill = new View();
-        return $renderViewRefill->render("intervals", $this->intervalsData);
+        $view = new View();
+        return $view->render("intervals", $this->intervalsData);
     }
 
     public function addRecord(){
@@ -88,45 +91,33 @@ class ServiceIntervals extends Refill{
             $add->createRecord($data);
         }catch(Exception $e){
             $err_text = $e->getMessage();
-            Result::errorCreate("globalError",$err_text);
+            ErrorController::createErr($err_text);
+
         }
-        //$url = Config::getConfig("servInterIndex");
-        return Redirect::redirect(Config::getConfig('servInterIndex'));
+        return Redirect::redirect("/serviceIntervals/index/");
     }
 
     public function generateFormAddRecord($param){
         if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
 
             $names = new IntervalRecordAction();
-            try {
-                $this->intervalsData = $names->getNameIntervals($_SESSION['id']);
-            }catch(Exception $e){
-                $this->intervalsData = $e->getMessage();
-                /*$err_txt = $e->getMessage();
-                Result::errorCreate("globalError",$err_txt);
-                Redirect::redirect();*/
-            }
-            $url = array("servInterIndex" => Config::getConfig('servInterIndex'),
-                         "formAction"     => Config::getConfig('formAction'),
-                         "add_error"      => Config::getConfig('destrAddErr'),
-                         "add_result"     => Config::getConfig('destrAddRes'),
-            );
+            $this->intervalsData = $names->getNameIntervals($_SESSION['id']);
+
             $formAddRecordView = new View();
-            return $formAddRecordView->render($param['module'],$this->intervalsData,$url);
+            return $formAddRecordView->render($param['module'],$this->intervalsData);
         }else{
-            Result::errorCreate("globalError","Войдите в систему под своим логином!");
-            //$url = Config::getConfig('logCheck');
-            Redirect::redirect(Config::getConfig('logCheck'));
+            ErrorController::createErr('Войдите в систему под своим логином!');
+
+            Redirect::redirect("/login/checkUser/");
         }
 
     }
 
     public function generateFormEditRecord($param){
         if(!isset($_SESSION['user']) && empty($_SESSION['user'])) {
-            Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            ErrorController::createErr('Войдите в систему под своим логином!');
             Redirect::redirect("/login/checkUser/");
         }
-
             $id_rec = $param['id'];
 
             $form = new View();
@@ -149,7 +140,7 @@ class ServiceIntervals extends Refill{
 
     public function editRecord(){
         if(!isset($_SESSION['user']) || empty($_SESSION['user'])) {
-            Result::errorCreate("globalError","Войдите в систему под своим логином!");
+            ErrorController::createErr('Войдите в систему под своим логином!');
             Redirect::redirect("/login/checkUser");
         }
             $data = array(
@@ -164,8 +155,7 @@ class ServiceIntervals extends Refill{
             );
             foreach ($data as $item) {
                 if(!$item) {
-                    //Result::errorCreate("add_error", "Не все поля заполнены. Проверьте!");
-                    $_SESSION['globalError'] = "Не все поля заполнены. Проверьте!";
+                    ErrorController::createErr('Не все поля заполнены. Проверьте!');
                     return Redirect::redirect("previous");
                 }
             }
@@ -178,22 +168,20 @@ class ServiceIntervals extends Refill{
                 $result = $update->updateRecord($id_rec, $data);
 
                 if (!is_string($result)) {
-                    Result::successCreate('globalResult', 'Данные обновлены!');
+                    ErrorController::createSuccess('Данные обновлены!');
                     return Redirect::redirect("/refill/index");
                 } else {
-                    Result::errorCreate('globalError', 'Данные не обновлены! Причина: '.$result);
+                    ErrorController::createErr('Данные не обновлены! Причина: '.$result);
                     return Redirect::redirect("previous");
                 }
             } else {
                 throw new Exception ("id не существует или не передан");
             }
-
-
     }
 
     public function deleteRecord($param){
         if (!isset($_SESSION['user'])) {
-            Result::errorCreate("globalError","Вы не вошли. Войдите.");
+            ErrorController::createErr('Вы не вошли. Войдите.');
             return Redirect::redirect("/login/checkUser/");
         }
 
@@ -201,10 +189,10 @@ class ServiceIntervals extends Refill{
         $del = new IntervalRecordAction();
         $res = $del->deleteRecord($id);
         if($res === true){
-            Result::errorCreate("globalResult", "Запись № $id - успешно удалена.");
+            ErrorController::createSuccess("Запись № $id - успешно удалена.");
             return Redirect::redirect("previous");
         }else{
-            Result::errorCreate("globalError", $res);
+            ErrorController::createErr($res);
             return Redirect::redirect("previous");
         }
     }

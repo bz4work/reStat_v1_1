@@ -1973,3 +1973,33 @@
 [Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
 [WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [INSERT INTO `users1` (`username`,`password`,`email`,activated)
                 VALUE ('rrr', '$24gPKpWgK/AY','r@t.ua',1);] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[09.06.2016 12:41:08] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [DELETE FROM AAAArefill WHERE `id` = 29;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[09.06.2016 12:41:13] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [DELETE FROM AAAArefill WHERE `id` = 29;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[09.06.2016 12:41:40] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [DELETE FROM AAAArefill WHERE `id` = 29;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[09.06.2016 12:42:36] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [DELETE FROM AAAArefill WHERE `id` = 29;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[09.06.2016 12:43:07] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [DELETE FROM AAAArefill WHERE `id` = 29;] | 
+
+[Date&Time] |  [RequestMethod] | [SESSION_NAME] | [User IP]
+[09.06.2016 12:45:43] | [GET] | [test] | IP:[127.0.0.1]
+[Class::Method] | [File] | [Line] | [Arg1] | [Arg2] | [etc...]
+[WorkDB::insertData] | [C:\xampp\htdocs\restat_11\model\WorkDB.php] | [54] | [DELETE FROM AAAArefill WHERE `id` = 29;] | 
