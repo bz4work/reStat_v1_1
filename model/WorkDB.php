@@ -20,6 +20,16 @@ class WorkDB{
     static public function getData ($sql){
         $res_data = array();
 
+        $connect = DB::getDB();
+
+        if (isset($connect->connect_error)){
+            //return ErrorController::createErr('no connect to DB');
+            throw new Exception (
+                "Error: ".$connect->connect_error.'.<br> Error code: '.$connect->connect_errno);
+            exit();
+        }
+
+
         if ($result = DB::getDB()->query($sql)) {
             while ($row = $result->fetch_assoc()) {
                 $res_data[] = $row;

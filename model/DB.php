@@ -11,7 +11,6 @@ class DB{
 
     private function __construct(){
     }
-
     private function __clone(){
     }
 
@@ -21,12 +20,20 @@ class DB{
      */
     static public function getDB()
     {
-        return
+        /*return
             self::$_db == null
 
                 ? self::$_db = new mysqli(Config::getConfig('db_host'), Config::getConfig('db_user'),
                 Config::getConfig('db_pass'), Config::getConfig('db_name'))
 
-                : self::$_db;
+                : self::$_db;*/
+
+        if(self::$_db == null){
+            //@ - подавление ошибок от PHP, нам она не нужна, дальше сами погасим ошибку
+            return self::$_db = @new mysqli(Config::getConfig('db_host'), Config::getConfig('db_user'),
+                Config::getConfig('db_pass'), Config::getConfig('db_name'));
+        }else{
+            return self::$_db;
+        }
     }
 }

@@ -54,14 +54,6 @@ class Request{
         $data = strip_tags($data);
         $data = trim($data);
 
-        /*if ($type == "float"){
-            $data = (float)$data;
-        }elseif ($type == "string"){
-            $data = (string)$data;
-        }else {
-            $data = (int)$data;
-        }*/
-
         $data = DB::getDB()->escape_string($data);
 
         return $data;
