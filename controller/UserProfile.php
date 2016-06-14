@@ -55,6 +55,11 @@ class UserProfile
         return $settingsPage->render('userSettings',$data);
     }
 
+    //
+    //Включена ветка user_block
+    //не забыть переключить и слить
+    //
+
     public function updateSettings()
     {
         $data = [
