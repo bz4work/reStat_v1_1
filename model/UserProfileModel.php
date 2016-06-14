@@ -9,13 +9,38 @@
 class UserProfileModel
 {
     /**
-     * get in the DB personal user data for start page "userProfile"
-     * @param $id
+     * returns amount last Refill for concrete user
+     *
+     * @param $user_id
+     * @return string
+     * @throws Exception
      */
-    public function getPersonalData($id){
-        //$sql = "WHERE id =".$id;
-        //$data = WorkDB::getData($sql);
-        //return $data;
+    static public function getLastAmount($user_id){
+        $sql = "SELECT date,total_sum FROM refill WHERE id_user = $user_id ORDER BY id DESC LIMIT 1;";
+        $arr = WorkDB::getData($sql);
+        if($arr){
+            $lastAmount = $arr[0]['total_sum'];
+        }else{
+            $lastAmount = '{no data}';
+        }
+        return $lastAmount;
+    }
 
+    /**
+     * returns last date of Refill for concrete user
+     *
+     * @param $user_id
+     * @return string
+     * @throws Exception
+     */
+    static public function getLastDate($user_id){
+        $sql = "SELECT date FROM refill WHERE id_user = $user_id ORDER BY id DESC LIMIT 1;";
+        $arr = WorkDB::getData($sql);
+        if($arr){
+            $lastDate = $arr[0]['date'];
+        }else{
+            $lastDate = '{empty}';
+        }
+        return $lastDate;
     }
 }

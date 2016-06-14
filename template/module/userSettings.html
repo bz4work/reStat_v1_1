@@ -1,0 +1,30 @@
+<h1>Настройки:</h1>
+<form action="/userProfile/updateSettings/" method="post">
+    Fuel economy: <input type="text" name="fuel_economy" value="{{data.fuel_economy}}"><br>
+    <!--<p class="bg-danger">...</p>-->
+    <p class="{{data.stat.fuel_economy}}">{{data.stat.fuel_economy_msg}}</p>
+
+    Main fuel type <input type="text" name="main_fuel_type" value="{{data.main_fuel_type}}"><br>
+    <!--<p class="bg-danger">...</p>-->
+    <p class="{{data.stat.main_fuel_type}}">{{data.stat.main_fuel_type_msg}}</p>
+
+    <input type="submit" value="save">
+</form>
+
+<br>
+<span>Сменить пароль:</span>
+<form>
+    current password: <input><br>
+    new password: <input><br>
+    repeat new password: <input><br>
+    <input type="submit" value="save">
+</form>
+
+<br>
+<span>Сменить e-mail:</span>
+<form>
+    current e-mail: <input><br>
+    new e-mail: <input><br>
+    repeat new e-mail: <input><br>
+    <input type="submit" value="save">
+</form>

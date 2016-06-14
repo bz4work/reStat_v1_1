@@ -9,7 +9,7 @@ session_start();
 error_reporting(-1);
 
 include_once "./vendor/lib-custom-func.php";
-require_once "vendor/autoload.php";
+require_once 'vendor/autoload.php';
 
 SystemConfig::initConfig("sysconfig.ini");
 Config::initConfig("config.ini");

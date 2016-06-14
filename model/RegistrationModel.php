@@ -17,12 +17,14 @@ class RegistrationModel
         $sql_add_user = "INSERT INTO `users` (`username`,`password`,`email`,activated)
                 VALUE ('$us', '$pass','$email',1);";
 
-        try {
-            WorkDB::insertData($sql_add_user);
-            return true;
-        }catch (Exception $e){
-            return $e->getMessage();
-        }
+
+            if(WorkDB::insertData($sql_add_user)){
+                return true;
+            }else{
+                return 'user not added!';
+            }
+
+
     }
 
 }

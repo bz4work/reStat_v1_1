@@ -21,13 +21,6 @@ class Refill extends BaseController
         $all_record = new RefillRecordAction();
         $this->dataArr = $all_record->getRecord($_SESSION['id']);
 
-        $reserve = RefillRecordAction::getRideReserve($_SESSION['id']);
-        if(isset($reserve)){
-            $_SESSION['balance'] = $reserve;
-        }else{
-            $_SESSION['balance'] = 'нет данных';
-        }
-
         $view = new View();
         return $view->render("refill", $this->dataArr);
     }
@@ -43,8 +36,6 @@ class Refill extends BaseController
         }else{
             return $view->render($param['module']);
         }
-
-
     }
 
     /**
@@ -82,7 +73,7 @@ class Refill extends BaseController
             "tot_sum" => Request::getPost('total_sum'),
             "prc_gas" => Request::getPost('price_gas'),
             "over" => Request::getPost('over'),
-            "id_zap" => Request::getPost('id_zapravki'),
+            //"id_zapravki" => Request::getPost('id_zapravki'),
             "fuel_type" => Request::getPost('fuel_type')
         );
 
@@ -97,7 +88,7 @@ class Refill extends BaseController
 
         $dt = Request::getPost('date');
         $tm = Request::getPost('time');
-        $id_user = $_SESSION['id'];
+        //$id_user = $_SESSION['id'];
         $id_zapravki = Request::getPost('id_zapravki');
         $tot_lit = Request::getPost('total_litres');
 
@@ -110,29 +101,38 @@ class Refill extends BaseController
             $data['tm'] = $tm;
         }
         if (empty($id_zapravki)){
-            $id_zapravki = "null";
+            $id_zapravki = "empty";
             $data['id_zapravki'] = $id_zapravki;
         }
         if(empty($tot_lit)){
             $tot_lit = $data['tot_sum']/$data['prc_gas'];
             $data['tot_lit'] = round($tot_lit,2);
         }
-        $data['id_user'] = $id_user;
+        $data['id_user'] = $_SESSION['id'];
+        $data['id_zapravki'] = $id_zapravki;
 
         $refillModel = new RefillRecordAction();
 
         $fuel_economy = UserSettingsModel::getValueSetting('fuel_economy');
         $mainFuelType = UserSettingsModel::getValueSetting('main_fuel_type');
 
+        if ($fuel_economy == 0 or $mainFuelType == ''){
+            ErrorController::createErr("Сначала нужно заполнить настройки");
+            return Redirect::redirect("/userProfile/settingsPage/");
+            exit();
+        }
+
         if($mainFuelType == $data['fuel_type']){
             if ($data['over'] == 'no'){
-                $currentReserve = RefillRecordAction::getRideReserve($data['id_user']);
-                $currentReserve += round(($data['tot_lit']/$fuel_economy)*100,1);
+                $current['reserve'] = RefillRecordAction::getRideReserve($data['id_user']);
+                $current['reserve'] += round(($data['tot_lit']/$fuel_economy)*100,0);
+                $current['over'] = 'no';
             }else{
-                $currentReserve = round(($data['tot_lit']/$fuel_economy)*100,1);
+                $current['reserve'] = round(($data['tot_lit']/$fuel_economy)*100,0);
+                $current['over'] = 'yes';
             }
 
-            $refillModel->setRideReserve($currentReserve);
+            $refillModel->setRideReserve($current);
         }
 
         $btn = Request::getPost("add_to_db");

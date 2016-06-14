@@ -1,26 +1,26 @@
-{% if user != false%}
+{% if data.name != false%}
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Панель пользователя</h3>
     </div>
     <div class="panel-body">
         <div>
-            Вы вошли как: <b>{{ user }}</b>
+            Вы вошли как: <b>{{data.name}}</b>
         </div>
         <div>
-            Запас пробега до следующей заправки: <b>{{ balance }}</b>
+            Запас пробега до следующей заправки: <b>{{data.reserve}}</b>
         </div>
         <div>
-            Следующая заправка (приблизительно):
+            Следующая заправка (приблизительно): {{data.nextRefill}}
         </div>
         <div>
-            Поледняя заправка: {дата}, на сумму {сумма}
+            Поледняя заправка: {{data.lastRefill}}, на сумму {{data.lastAmountRefill}} грн
         </div>
         <div>
-            Последний эффективный расход топлива: {l/100km}
+            Последний эффективный расход топлива: {{data.lastAverageRate}}
         </div>
         <div>
-            Ближайшие сервисы: <a>{сервис 1}</a>/{сервис 2}/{сервис 3}
+            Ближайшие сервисы: {{data.ThreeNextServices}}
             <a href="#">смотреть все</a>
         </div>
     </div>
