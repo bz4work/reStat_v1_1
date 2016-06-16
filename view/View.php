@@ -34,13 +34,11 @@ class View{
         ob_start();
 
         //генерируем юзер-панель
-        $userProfile = $this->renderModule('userProfile',UserProfile::getUserInfo());
+        $userPanel = $this->renderModule('userPanel',UserPanel::getUserPanelData());
 
         $moduleContent = $this->renderModule($moduleName,$data);
         $errorBlock = $this->renderModule('errorBlock',@$_SESSION['msg']);
         $topMenu = $this->renderMenu("topMenu");
-
-
 
         $main_html = "template".$ds."common".$ds."index.html";
         include "$main_html";
@@ -62,24 +60,6 @@ class View{
             return  $template->render(array('user'=>@$_SESSION['user']));
         }
     }
-
-    /*public function renderUserBlock($blockName,$userInfo){
-        $fileName = $blockName.".html";
-        $fileSystem = "template/module/";
-
-        $loader = new Twig_Loader_Filesystem($fileSystem);
-        $twig = new Twig_Environment($loader);
-        $template = $twig->loadTemplate($fileName);
-
-//        if(isset($_SESSION['user'])){
-//            return  $template->render(array('user'=>$_SESSION['user'],
-//                                            'balance'=>$_SESSION['balance']));
-//        }else{
-//            return  $template->render(array('user'=>@$_SESSION['user']));
-//        }
-        return  $template->render(array('userInfo'=>$userInfo));
-
-    }*/
 
     /**
      * @param $moduleName

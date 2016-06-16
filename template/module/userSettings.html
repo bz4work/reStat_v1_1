@@ -1,13 +1,46 @@
+{% set fruits = ['apple', 'orange', 'citrus'] %}
+
+{% for i in 1..10 %}
+{{ cycle(fruits, i) }}
+{% endfor %}
+
+
 <h1>Настройки:</h1>
-<form action="/userProfile/updateSettings/" method="post">
-    Fuel economy: <input type="text" name="fuel_economy" value="{{data.fuel_economy}}"><br>
-    <!--<p class="bg-danger">...</p>-->
+<form action="/userSettings/updateSettings/" method="post">
+    Current economy: [ <b>{{data.fuel_economy}}</b> ], new value:
+    <input type="text" name="fuel_economy" maxlength="3" style="width:30px;" placeholder="12"><br>
     <p class="{{data.stat.fuel_economy}}">{{data.stat.fuel_economy_msg}}</p>
+    <i>Данный параметр обязателен и должен быть больше нуля,<br>
+        только число типа "11" или "11.5"</i><br>
+    ----------------------<br>
+    Selected fuel type: [ <b>{{ data.main_fuel_type }}</b> ],
 
-    Main fuel type <input type="text" name="main_fuel_type" value="{{data.main_fuel_type}}"><br>
-    <!--<p class="bg-danger">...</p>-->
-    <p class="{{data.stat.main_fuel_type}}">{{data.stat.main_fuel_type_msg}}</p>
+    select your main type: <select size="1" name="main_fuel_type" >
+        {% if data.main_fuel_type == 'gas' %}
+            {% set gas = 'selected=selected' %}
+        {% elseif data.main_fuel_type == 'benzin' %}
+            {% set benzin = 'selected=selected' %}
+        {% elseif data.main_fuel_type == 'diesel' %}
+            {% set diesel = 'selected=selected' %}
+        {% endif %}
+        <option disabled selected>&nbsp;</option>
+        <option value='gas'>gas</option>
+        <option value='benzin'>benzin</option>
+        <option value='diesel'>diesel</option>
+    </select><br>
 
+    ----------------------<br>
+    <b>Volume tank:</b> current value = <b>{{data.volume_tank}}</b>, new value:
+    <input type="text" name="volume_tank" maxlength="3" style="width:30px;" placeholder="50"><br>
+    <p class="{{data.stat.volume_tank}}">{{data.stat.volume_tank_msg}}</p>
+    <i>Данный параметр обязателен и должен быть больше нуля,<br>
+        только число типа "11" или "11.5"</i><br>
+    ----------------------<br>
+    <b>Mileage per day:</b> current value = <b>{{data.mileage_per_day}}</b>, new value:
+    <input type="text" name="mileage_per_day" value=""><br>
+    <p class="{{data.stat.mileage_per_day}}">{{data.stat.mileage_per_day_msg}}</p>
+    <i>Данный параметр обязателен и должен быть больше нуля,<br>
+        только число типа "11" или "11.5"</i><br>
     <input type="submit" value="save">
 </form>
 
@@ -21,6 +54,7 @@
 </form>
 
 <br>
+<i>Данная функция на стадии доработки...</i><br>
 <span>Сменить e-mail:</span>
 <form>
     current e-mail: <input><br>

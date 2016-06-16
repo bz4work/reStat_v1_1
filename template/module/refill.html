@@ -20,7 +20,9 @@
     <tr>
 
     {% for item in data %}
-    <td>{{ item.id }}</td>
+
+    <td>{{ item.num }}
+    </td>
     <td>{{ item.date }}<br>{{ item.time }}</td>
     <td>{{ item.odometr }}</td>
     <td>{{ item.total_sum }}</td>
@@ -40,6 +42,7 @@
     </td>
 
     </tr>
+
     {% endfor %}
 </table>
 <a href="/refill/generateFormAddRecord/module/addRefills">

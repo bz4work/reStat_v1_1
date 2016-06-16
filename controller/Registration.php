@@ -68,7 +68,7 @@ class Registration
         if(is_bool($result) && $result == true){
             //создаем юзеру настройки по-умолчанию
             $id = WorkDB::getData("SELECT id FROM users WHERE `username` = '{$data['login']}';");
-            UserSettingsModel::insertSetting(UserProfile::allowSetting(),$id[0]['id']);
+            UserSettingsModel::insertSetting(UserSettings::allowSetting(),$id[0]['id']);
 
             $name = $data['login'];
             unset($data);

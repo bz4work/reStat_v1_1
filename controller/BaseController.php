@@ -29,4 +29,17 @@ class BaseController
 
     }
 
+    static public function numeratingArr($data){
+        $cnt = count($data);
+        for ($i=$cnt; $i > 0 ; $i--){
+            $arr[] = $i;
+        }
+
+        $cnt = count($data)-1;
+        for ($i=$cnt; $i >=0 ; $i--){
+            $data[$i]['num'] = $arr[$i];
+        }
+        return $data;
+    }
+
 }

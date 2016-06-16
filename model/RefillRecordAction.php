@@ -28,7 +28,6 @@ class RefillRecordAction
                             AND id = ".$id_record.")
                             ORDER BY id DESC;";
         }
-
             $data = WorkDB::getData($sql_get_rec);
             if(is_array($data)){
                 if (isset($id_record)) {
@@ -36,6 +35,7 @@ class RefillRecordAction
                     //вернуть обычный массив (не вложенный)
                     return $data[0];
                 }else{
+                    $data = Refill::numeratingArr($data);
                     return $data;
                 }
             }else{

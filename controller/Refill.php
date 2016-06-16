@@ -113,8 +113,8 @@ class Refill extends BaseController
 
         $refillModel = new RefillRecordAction();
 
-        $fuel_economy = UserSettingsModel::getValueSetting('fuel_economy');
-        $mainFuelType = UserSettingsModel::getValueSetting('main_fuel_type');
+        $fuel_economy = UserSettingsModel::getValueSetting('fuel_economy',$data['id_user']);
+        $mainFuelType = UserSettingsModel::getValueSetting('main_fuel_type',$data['id_user']);
 
         if ($fuel_economy == 0 or $mainFuelType == ''){
             ErrorController::createErr("Сначала нужно заполнить настройки");
