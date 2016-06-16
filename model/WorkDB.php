@@ -36,7 +36,6 @@ class WorkDB{
             }
 
             if (count($res_data) == 0) {
-                //throw new Exception ("Записи в БД отсутствуют.");
                 return false;
             }else{
                 return $res_data;

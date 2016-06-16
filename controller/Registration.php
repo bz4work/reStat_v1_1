@@ -66,6 +66,10 @@ class Registration
         //если addUser вернул true - все ок
         //если вернул строку - не получилось добавить данные в БД
         if(is_bool($result) && $result == true){
+            //создаем юзеру настройки по-умолчанию
+            $id = WorkDB::getData("SELECT id FROM users WHERE `username` = '{$data['login']}';");
+            UserSettingsModel::insertSetting(UserSettings::allowSetting(),$id[0]['id']);
+
             $name = $data['login'];
             unset($data);
             $data['success'] = $name." - user is registered successfully. Log In.";

@@ -15,13 +15,6 @@ class ServiceIntervals extends Refill{
             return Redirect::redirect('/page/aboutIntervals');
         }
 
-        $reserve = RefillRecordAction::getRideReserve($_SESSION['id']);
-        if(isset($reserve)){
-            $_SESSION['balance'] = $reserve;
-        }else{
-            $_SESSION['balance'] = 'нет данных';
-        }
-
         $record = new IntervalRecordAction();
         $this->intervalsData = $record->getRecord($_SESSION['id']);
 

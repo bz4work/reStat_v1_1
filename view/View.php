@@ -30,13 +30,15 @@ class View{
         if(!isset($moduleName)){ throw new Exception("Не передано имя метода");}
 
         $ds = DIRECTORY_SEPARATOR;
-        $moduleContent = $this->renderModule($moduleName,$data);
+
         ob_start();
 
-        $errorBlock = $this->renderModule('errorBlock',@$_SESSION['msg']);
+        //генерируем юзер-панель
+        $userPanel = $this->renderModule('userPanel',UserPanel::getUserPanelData());
 
+        $moduleContent = $this->renderModule($moduleName,$data);
+        $errorBlock = $this->renderModule('errorBlock',@$_SESSION['msg']);
         $topMenu = $this->renderMenu("topMenu");
-        $userProfile = $this->renderUserBlock("userProfile");
 
         $main_html = "template".$ds."common".$ds."index.html";
         include "$main_html";
@@ -59,27 +61,9 @@ class View{
         }
     }
 
-    public function renderUserBlock($blockName){
-        $fileName = $blockName.".html";
-        $fileSystem = "template/module/";
-
-        $loader = new Twig_Loader_Filesystem($fileSystem);
-        $twig = new Twig_Environment($loader);
-        $template = $twig->loadTemplate($fileName);
-
-        if(isset($_SESSION['user'])){
-            return  $template->render(array('user'=>$_SESSION['user'],
-                                            'balance'=>$_SESSION['balance']));
-        }else{
-            return  $template->render(array('user'=>@$_SESSION['user']));
-        }
-
-    }
-
     /**
      * @param $moduleName
      * @param array $data
-     * @param array $url
      * @return string
      * @throws Exception
      */

@@ -1,0 +1,28 @@
+{% if data.name != false%}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Панель пользователя</h3>
+    </div>
+    <div class="panel-body">
+        <div>
+            Вы вошли как: <b>{{data.name}}</b>
+        </div>
+        <div>
+            Запас пробега до следующей заправки: <b>{{data.reserve}}</b>
+        </div>
+        <div>
+            Следующая заправка (приблизительно): <b>{{data.nextRefill}}</b>
+        </div>
+        <div>
+            Поледняя заправка: <b>{{data.lastRefill}}</b>, на сумму <b>{{data.lastAmountRefill}}</b> грн
+        </div>
+        <div>
+            Последний эффективный расход топлива: <b>{{data.lastAverageRate}}</b>
+        </div>
+        <div>
+            Ближайшие сервисы: {{data.ThreeNextServices}}
+            <a href="#">смотреть все</a>
+        </div>
+    </div>
+</div>
+{% endif %}

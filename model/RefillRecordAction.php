@@ -28,7 +28,6 @@ class RefillRecordAction
                             AND id = ".$id_record.")
                             ORDER BY id DESC;";
         }
-
             $data = WorkDB::getData($sql_get_rec);
             if(is_array($data)){
                 if (isset($id_record)) {
@@ -36,6 +35,7 @@ class RefillRecordAction
                     //вернуть обычный массив (не вложенный)
                     return $data[0];
                 }else{
+                    $data = Refill::numeratingArr($data);
                     return $data;
                 }
             }else{
@@ -44,11 +44,6 @@ class RefillRecordAction
             }
     }
 
-    /**
-     * @param $data
-     * @return bool
-     * @throws Exception
-     */
     public function createRecord($data){
         if(isset($data)){
             if (is_array($data)){
@@ -89,11 +84,6 @@ class RefillRecordAction
 
     }
 
-    /**
-     * @param $id
-     * @param $data
-     * @return bool|string
-     */
     public function updateRecord($id,$data){
         $sql_upd = "UPDATE refill SET
                                     date = '{$data['date']}',
@@ -115,6 +105,10 @@ class RefillRecordAction
 
     public function setRideReserve ($currentReserve){
         $user_id = $_SESSION['id'];
+        if(is_array($currentReserve)){
+            $currentReserve = $currentReserve['reserve'];
+        }
+
         $sql = "INSERT INTO total_km (id_user,sumkm) VALUE ($user_id,$currentReserve);";
         if($data = WorkDB::insertData($sql)){
             return true;

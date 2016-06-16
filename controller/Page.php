@@ -14,16 +14,6 @@ class Page
 
     public function about(){
         $renderViewRefill = new View();
-
-        if (isset($_SESSION['id'])){
-            $reserve = RefillRecordAction::getRideReserve($_SESSION['id']);
-        }
-        if(isset($reserve)){
-            $_SESSION['balance'] = $reserve;
-        }else{
-            $_SESSION['balance'] = 'нет данных';
-        }
-
         return $renderViewRefill->render("about");
     }
 
@@ -35,14 +25,6 @@ class Page
          * if (isset($options_param)){ extract($options_param);}
          *
          */
-        if (isset($_SESSION['id'])){
-            $reserve = RefillRecordAction::getRideReserve($_SESSION['id']);
-        }
-        if(isset($reserve)){
-            $_SESSION['balance'] = $reserve;
-        }else{
-            $_SESSION['balance'] = 'нет данных';
-        }
 
         $renderViewRefill = new View();
         return $renderViewRefill->render("main");

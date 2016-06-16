@@ -42,7 +42,7 @@ class Login{
                 $username = $userData->getUserInfoValue("username");
                 $createSession = new Session("user",$username);
                 $createSession = new Session("id",$id);
-                return Redirect::redirect("/page/main/");
+                return Redirect::redirect("/userSettings/settingsPage/");
             }else{
                 //пароль не подошел
                 Result::errorCreate("globalError","Пароль введен не верно!");
