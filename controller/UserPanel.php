@@ -19,13 +19,18 @@ class UserPanel
             return self::$_data = null;
         }
         $id = $_SESSION['id'];
+        //$lastRide = UserPanelModel::getLastSevices($id);
+
         $data = [ "name" => $_SESSION['user'],
             "reserve" => RefillRecordAction::getRideReserve($id),
             "nextRefill" => UserPanelModel::nextRefill($id),
             "lastRefill" => UserPanelModel::getLastDate($id),
             "lastAmountRefill" => UserPanelModel::getLastAmount($id),
             "lastAverageRate" => "{need_calc}",
-            "ThreeNextServices" => "{a} {b} {c}"];
+            "ThreeNextServices" => UserPanelModel::getLastSevices($id,"getCount"),
+            "lastValueOdomentr" => UserPanelModel::getLastOdometrValue($id)
+        ];
+
         return self::$_data = $data;
     }
 

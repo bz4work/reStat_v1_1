@@ -11,6 +11,9 @@
             Запас пробега до следующей заправки: <b>{{data.reserve}}</b>
         </div>
         <div>
+            Последний зафиксированный показатель одометра: <b>{{data.lastValueOdomentr}}</b>
+        </div>
+        <div>
             Следующая заправка (приблизительно): <b>{{data.nextRefill}}</b>
         </div>
         <div>
@@ -20,8 +23,9 @@
             Последний эффективный расход топлива: <b>{{data.lastAverageRate}}</b>
         </div>
         <div>
-            Ближайшие сервисы: {{data.ThreeNextServices}}
-            <a href="#">смотреть все</a>
+            Ближайшие сервисы: ( <b>{{data.ThreeNextServices}}</b> )
+
+            | <a href="/serviceIntervals/index/">посмотреть</a>
         </div>
     </div>
 </div>

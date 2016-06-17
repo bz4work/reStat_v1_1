@@ -8,25 +8,28 @@
         -->
         <div class="input-group"
              data-title="Указывать не обязательно. Автоматически будет установлена текущая дата.">
-            <input name="date_add" value=""
+            <input name="date_add" value="{{data.date}}"
                    type="text" class="form-control" placeholder="2016-12-31" aria-describedby="basic-addon1">
             <span class="input-group-addon" id="basic-addon1">Date</span>
         </div>
         <div class="input-group"
              data-title="Указывать не обязательно. Автоматически будет установлено текущее время.">
-            <input name="time_add" value=""
+            <input name="time_add" value="{{data.time}}"
                    type="text" class="form-control" placeholder="23:59" aria-describedby="basic-addon2">
             <span class="input-group-addon" id="basic-addon2">Time</span>
         </div>
         <div class="input-group">
             <select size="1" name="name_interval" class="form-control" style="width: 196px">
-                <option disabled selected>&nbsp;</option>
+                <option disabled selected>выберите сервис:</option>
                 {% for item in data %}
                     <option value='id_{{ item.id }}'>{{ item.name }}</option>
                 {% endfor %}
             </select>
-            <span class="input-group-addon" id="basic-addon12">Выберите сервис</span>
+            <span class="input-group-addon" id="basic-addon12">* Выберите сервис</span>
         </div>
+
+        <br>
+        <i>- используйте показатели одометра или дату:</i>
         <div class="input-group">
             <input name="start_odo" value="" type="text" class="form-control" placeholder="159787" aria-describedby="basic-addon4">
             <span class="input-group-addon" id="basic-addon4">Начало интервала</span>
@@ -36,6 +39,9 @@
                    type="text" class="form-control" placeholder="5000" aria-describedby="basic-addon5">
             <span class="input-group-addon" id="basic-addon5">Интервал, км</span>
         </div>
+
+        <br>
+        <i>- если используете показатели одометра - оставьте пустыми:</i>
         <div class="input-group"
              data-title="Если используете 'КМ' - оставить пустым">
             <input name="start_date" value=""
@@ -47,21 +53,30 @@
                    type="text" class="form-control" placeholder="90" aria-describedby="basic-addon8">
             <span class="input-group-addon" id="basic-addon8">Заменить через (дней)</span>
         </div>
+        <br>
         <div class="input-group">
             <input name="comment" value=""
                    type="text" class="form-control" placeholder="Ваш текст" aria-describedby="basic-addon10">
             <span class="input-group-addon" id="basic-addon10">Комментарий</span>
         </div>
         <div class="input-group">
-            <input name="notify" value="yes"
-                   type="text" class="form-control" placeholder="yes/no" aria-describedby="basic-addon11">
-            <span class="input-group-addon" id="basic-addon11">Уведомлять?</span>
+            <select name="notify" size="1" name="name_interval" class="form-control" style="width: 196px">
+                <option disabled selected>выберите:</option>
+                <option value='yes'>yes</option>
+                <option value='no'>no</option>
+            </select>
+            <span class="input-group-addon" id="basic-addon13">Уведомлять?</span>
         </div>
+
         <br>
     </div>
-
+    <p>* - обязательные поля</p>
     <a href="/serviceIntervals/index/">
         <button type="button" class="btn btn-xs btn-primary">Закрыть форму</button>
     </a>
     <input type="submit" name="add_to_db" value="Добавить" class="btn btn-xs btn-success">
 </form>
+<br>
+<p>Используйте или показатели одометра - если сервис проводится через определенный пробег,<br>
+или используйте дату - если сервис нужно провести через определенное кол-во дней.<br>
+Одновременное использование обоих вариантов - не поддерживается.</p>

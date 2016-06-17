@@ -1,0 +1,19 @@
+<h1>User Profile:</h1>
+
+<b>Ближайшие события/сервисы:</b><br>
+
+
+{%for item in data.nextServicesList%}
+
+
+<form action="/userProfile/notifyOff/" method="post">
+{{item.service}}
+<input type="hidden" name="id" value="{{item.id}}">
+    <input type="submit" class="btn btn-xs btn-danger" value="x">
+<!--<button formaction="/userProfile/notifyOff/" formmethod="post" type="submit" class="btn btn-xs btn-danger" title="отключить уведомление">
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</button>-->
+</form>
+{%endfor%}
+
+

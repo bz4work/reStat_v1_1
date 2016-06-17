@@ -14,9 +14,6 @@
         <th>Начало интервала</th>
         <th>Интервал замены</th>
         <th>Конец интервала</th>
-        <th>Дата (старт интервала)</th>
-        <th>Замена через (дней)</th>
-        <th>Дата (конец интревала)</th>
         <th>Комментарий</th>
         <th>Уведомлять?</th>
         <th>Действия</th>
@@ -26,12 +23,20 @@
 
         <td>{{ item.date_add }}<br>{{ item.time_add }}</td>
         <td>{{ item.name }}</td>
-        <td>{{ item.start_odo }}</td>
-        <td>{{ item.interval }}</td>
-        <td>{{ item.finish_odo }}</td>
-        <td>{{ item.start_date }}</td>
-        <td>{{ item.interval_days }}</td>
-        <td>{{ item.finish_date }}</td>
+
+
+        {% if item.start_odo %}
+            <td>{{ item.start_odo }}</td>
+            <td>{{ item.interval }}</td>
+            <td>{{ item.finish_odo }}</td>
+        {%endif%}
+
+        {% if item.start_date %}
+            <td>{{ item.start_date }}</td>
+            <td>{{ item.interval_days }}</td>
+            <td>{{ item.finish_date }}</td>
+        {%endif%}
+
         <td>{{ item.comment }}</td>
         <td>{{ item.notify }}</td>
         <td style="width: 100px">

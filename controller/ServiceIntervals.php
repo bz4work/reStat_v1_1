@@ -55,11 +55,11 @@ class ServiceIntervals extends Refill{
         }
 
         //считаем дату кончания интервала если указана начальная дата
-        if(isset($data['start_date'])) {
+        if(!empty($data['start_date'])) {
             $date_parts = explode('-', $data['start_date']);
-            $year = array_shift($date_parts);//yer
-            $month = array_shift($date_parts);//monts
-            $day = array_shift($date_parts);//day
+            $year = array_shift($date_parts);
+            $month = array_shift($date_parts);
+            $day = array_shift($date_parts);
             $day += $data['interval_days'];
             $data['finish_date'] = date("Y-m-d", mktime(0, 0, 0, $month, $day, $year));
         }else{
@@ -85,7 +85,6 @@ class ServiceIntervals extends Refill{
         }catch(Exception $e){
             $err_text = $e->getMessage();
             ErrorController::createErr($err_text);
-
         }
         return Redirect::redirect("/serviceIntervals/index/");
     }
@@ -95,12 +94,13 @@ class ServiceIntervals extends Refill{
 
             $names = new IntervalRecordAction();
             $this->intervalsData = $names->getNameIntervals($_SESSION['id']);
+            $this->intervalsData['date'] = date('Y-m-d',time());
+            $this->intervalsData['time'] = date('H:i',time());
 
             $formAddRecordView = new View();
             return $formAddRecordView->render($param['module'],$this->intervalsData);
         }else{
             ErrorController::createErr('Войдите в систему под своим логином!');
-
             Redirect::redirect("/login/checkUser/");
         }
 

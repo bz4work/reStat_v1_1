@@ -124,11 +124,9 @@ class IntervalRecordAction extends RefillRecordAction{
 
                 try {
                     WorkDB::insertData($sql_add_rec);
-                    Result::successCreate('add_result','Данные добавлены в БД');
                     return true;
                 }catch (Exception $e){
                     $err_text = $e->getMessage();
-                    Result::errorCreate('add_error',"$err_text");
                     return false;
                 }
             }
