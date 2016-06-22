@@ -14,6 +14,9 @@
     <!-- Bootstrap core CSS -->
     <link href="/vendor/twbs/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link href="/style/css/main.css" rel="stylesheet">
+
     <!-- Bootstrap theme -->
     <link href="/vendor/twbs/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
 
@@ -37,26 +40,19 @@
 </head>
 
 <body role="document">
+
+
+
+
 <!-- Fixed navbar -->
 <?=@$topMenu?>
 <!-- Fixed navbar -->
 
 <div class="container theme-showcase" role="main">
-
+    <?=$userPanel?>
     <?=@$errorBlock?>
 
 
-<!--Block Result-->
-    <!--<?if(isset($_SESSION['globalResult'])){
-        echo "?>
-
-        <?";}
-    ?>-->
-<!--Block Result-->
-
-
-
-    <?=$userPanel?>
     <?=$moduleContent?>
 
 </div> <!-- /container -->
@@ -72,7 +68,22 @@
 <script src="/vendor/twbs/bootstrap/docs/assets/js/docs.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/vendor/twbs/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
-
-
+<br>
+<div class="new-footer">
+    <br>
+    <div class="footer-section left last">
+        <ul class="footer-section-dop">
+            <li><a href="/">Главная</a></li>
+            <li><a href="/about_drivernotes.html">О проекте</a></li>
+            <li><a href="/register.html">Регистрация</a></li>
+            <li><a href="/help.html">Заправки</a></li>
+            <li><a href="/partners.html">Сервисы</a></li>
+            <li><a href="/mobile.html">Настройки</a></li>
+            <li><a href="/rules.html">Профиль</a></li>
+        </ul>
+    </div>
+    <br>
+</div>
+<span>© 2009-2016 DriverNotes - учет событий вашего автомобиля, Все права защищены</span>
 </body>
 </html>
